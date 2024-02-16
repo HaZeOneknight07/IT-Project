@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Information - Gelder Group Surveyors</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header, nav, main, footer {
+            text-align: center;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding-right:49em;
+        }
+
+        header img {
+            width: 100px;
+            margin-right: auto;
+        }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 0.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 16px;
+            transition: background-color 0.5s;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 1em;
+            margin: 0 1.5em;
+            transition: background-color 0.5s;
+            border-radius: 20px;
+        }
+
+        nav a:hover {
+            background-color: #333;
+        }
+
+        main {
+            padding: 2em;
+        }
+
+        form {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        label, input, select {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .option-boxes {
+            display: none;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Add new style for info-box */
+        .info-box {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="https://gnet.geldergroup.co.uk/" target="_blank">
+            <img src="img/logo.png" alt="GelderGroupLogo">
+        </a>
+        <h1>Gelder Group Surveyors</h1>
+    </header>
+
+    <nav>
+        <a href="home.html">Home</a>
+        <a href="site information.html">Site Information</a>
+        <a href="reference.html">Reference</a>
+    </nav>
+
+    <main>
+        <h2>Site Information</h2>
+        <form id="scheduling-form">
+            <label for="scheduling-option">Select Client:</label>
+            <select id="scheduling-option" onchange="showOptionBoxes()">
+                <option value="">Select an option</option>
+                <option value="Xactimate">Xactimate</option>
+                <option value="Sedgwick">Sedgwick</option>
+            </select>
+
+            <div class="option-boxes" id="Xactimate-boxes">
+                <label for="Xactimate-input1">Job Number:</label>
+                <input type="text" id="Xactimate-input1" name="Xactimate-input1">
+
+                <label for="Xactimate-input2">Client Reference Number:</label>
+                <input type="text" id="Xactimate-input2" name="Xactimate-input2">
+
+                <label for="Xactimate-date">Date:</label>
+                <input type="date" id="Xactimate-date" name="Xactimate-date" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="dd/mm/yyyy">
+
+                <label for="Xactimate-input4">Address:</label>
+                <input type="text" id="Xactimate-input4" name="Xactimate-input4">
+
+                <label for="Xactimate-input5">Phone Number:</label>
+                <input type="text" id="Xactimate-input5" name="Xactimate-input5">
+            </div>
+
+            <div class="option-boxes" id="Sedgwick-boxes">
+                <label for="Sedgwick-input1">Job Number:</label>
+                <input type="text" id="Sedgwick-input1" name="Sedgwick-input1">
+
+                <label for="Sedgwick-date">Date:</label>
+                <input type="date" id="Sedgwick-date" name="Sedgwick-date" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="dd/mm/yyyy">
+
+                <label for="Sedgwick-input4">Address:</label>
+                <input type="text" id="Sedgwick-input4" name="Sedgwick-input4">
+
+                <label for="Sedgwick-input5">Phone Number:</label>
+                <input type="text" id="Sedgwick-input5" name="Sedgwick-input5">
+            </div>
+
+            <button type="button" onclick="submitForm()">Submit</button>
+        </form>
+    </main>
+
+    <footer>
+        &copy; 2024 Gelder Group. All rights reserved.
+    </footer>
+
+    <script>
+        function showOptionBoxes() {
+            var selectedOption = document.getElementById("scheduling-option").value;
+            var XactimateBoxes = document.getElementById("Xactimate-boxes");
+            var SedgwickBoxes = document.getElementById("Sedgwick-boxes");
+    
+            XactimateBoxes.style.display = (selectedOption === "Xactimate") ? "block" : "none";
+            SedgwickBoxes.style.display = (selectedOption === "Sedgwick") ? "block" : "none";
+        }
+    
+        function submitForm() {
+            var selectedOption = document.getElementById("scheduling-option").value;
+            var jobNumber, clientRefNumber, date, address, phoneNumber;
+    
+            if (selectedOption === "Xactimate") {
+                jobNumber = document.getElementById("Xactimate-input1").value;
+                clientRefNumber = document.getElementById("Xactimate-input2").value;
+                date = document.getElementById("Xactimate-date").value;
+                address = document.getElementById("Xactimate-input4").value;
+                phoneNumber = document.getElementById("Xactimate-input5").value;
+            } else if (selectedOption === "Sedgwick") {
+                jobNumber = document.getElementById("Sedgwick-input1").value;
+                date = document.getElementById("Sedgwick-date").value;
+                address = document.getElementById("Sedgwick-input4").value;
+                phoneNumber = document.getElementById("Sedgwick-input5").value;
+            }
+    
+            if (!jobNumber || !date || !address || !phoneNumber) {
+                alert("Please fill in all fields.");
+                return;
+            }
+    
+            // Store data in local storage
+            localStorage.setItem("selectedOption", selectedOption);
+            localStorage.setItem("jobNumber", jobNumber);
+            localStorage.setItem("clientRefNumber", clientRefNumber);
+            localStorage.setItem("date", date);
+            localStorage.setItem("address", address);
+            localStorage.setItem("phoneNumber", phoneNumber);
+    
+            // Redirect to report.html
+            window.location.href = "report.html";
+        }
+    </script>
+</body>
+</html>
