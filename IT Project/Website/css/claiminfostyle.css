@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: #151515;
+}
+
+header {
+    background-color: #405C59;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Change back to space-between */
+    padding-right:49em;
+}
+
+header img {
+    width: 100px;
+    margin-right: auto; /* Set margin-right to auto to push the logo to the left */
+}
+
+header h1 {
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex: 1; /* Grow to fill available space */
+    align-items: stretch; /* Make the container stretch vertically */
+}
+
+.button-container {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribute the available space vertically */
+    background-color: #444; /* Set the background color to match the nav bar */
+    box-sizing: border-box;
+    width: 175px; /* Set the width */
+    height: 100%; /* Set the height to 100% of the viewport height */
+}
+
+.rounded-button {
+    display: block;
+    padding: 10px; /* Adjusted padding for a smaller button */
+    font-size: 20px; /* Adjusted font size */
+    border: none;
+    border-radius: 20px;
+    background-color: #444; /* Set the background color to match the nav bar */
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 20px; /* Reduced margin between buttons */
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+    transition: background-color 0.5s; /* Add smooth transition effect */
+}
+
+.rounded-button:hover {
+    background-color: #333; /* Darker shade when hovered over */
+}
+
+.special-button {
+    margin-bottom: 70px; /* Maintain the larger margin for special buttons */
+}
+
+footer {
+    background-color: #405C59;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
