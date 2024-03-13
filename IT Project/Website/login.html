@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Gelder Group Surveyors</title>
+    <link rel="stylesheet" href="css/loginstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="icon" type="image/x-icon" href="img/logo.svg">
+    
+</head>
+<body>
+    <header>
+        <a href="https://gnet.geldergroup.co.uk/" target="_blank">
+            <img src="img/logo.svg" alt="GelderGroupLogo">
+        </a>
+        <h1>Gelder Group Surveyors</h1>
+    </header>
+
+    <main>
+       
+        <div id="login-form">
+            <form onsubmit="redirectToHome(); return false;">
+                <label for="username">
+                    <i class="fas fa-user"></i> <!-- User icon from Font Awesome -->
+                </label>
+                <input type="text" id="username" name="username" placeholder="Username" required>
+                
+                <label for="password">
+                    <i class="fas fa-lock"></i> <!-- Lock icon from Font Awesome -->
+                </label>
+                <input type="password" id="password" name="password" placeholder="Password" required>
+
+                <button type="submit">Login</button>
+            </form>
+        </div>
+    </main>
+
+    <footer>
+        2024 &copy; Gelder Group.
+   </footer>
+
+    <script>
+        var credentials = [
+            { username: "surveys@gelder.co.uk", password: "test" },
+            { username: "admin@gelder.co.uk", password: "test1" },
+            // Add more username/password pairs as needed using same format
+        ];
+
+        function redirectToHome() {
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
+
+            for (var i = 0; i < credentials.length; i++) {
+                if (username === credentials[i].username && password === credentials[i].password) {
+                    // Store data in local storage
+                    localStorage.setItem("loggedInUsername", username);
+
+                    window.location.href = "home.html"; // Redirect to home page if credentials match
+                    return;
+                }
+            }
+
+            // If no match found in the loop
+            alert("Invalid login credentials. Please try again.");
+        }
+    </script>
+</body>
+</html>

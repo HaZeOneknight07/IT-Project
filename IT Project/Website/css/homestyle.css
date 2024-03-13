@@ -1,0 +1,106 @@
+    body 
+    {
+        font-family: Arial, sans-serif;
+        margin: 0;  
+        padding: 0;  
+        background-color: #151515;
+    }
+
+    header 
+    {
+        background-color: #405C59;  
+        color: #fff;  
+        text-align: center;  
+        padding: 1em;  
+        display: flex;  
+        align-items: center;  
+        justify-content: space-between;  
+        padding-right: 49em;  
+    }
+
+    
+    header img 
+    {
+        width: 100px;  
+        margin-right: auto;  
+    }
+
+    
+    header h1 
+    {
+        margin: 0;
+    }
+
+    /* Styling for the navigation bar */
+    nav 
+    {
+        background-color: #D22A3A;  
+        color: #151515;  
+        text-align: center;  
+        padding: 0.5em 0;  
+        display: flex;  
+        justify-content: center;  
+        align-items: center;  
+        font-size: 16px;  
+        transition: background-color 0.5s;  
+    }
+
+    /* Styling for navigation links */
+    nav a 
+    {
+        color: #fff;
+        text-decoration: none; 
+        padding: 1em;
+        margin: 0 1.5em;
+        transition: background-color 0.5s;
+        border-radius: 20px;
+        align-items: center;
+
+    }
+
+    /* Styling for navigation links on hover */
+    nav a:hover 
+    {
+        background-color: #333; 
+    }
+
+    main {
+        padding: 2em;
+        text-align: center;
+        color: #fff;
+    }
+
+    /* Styling for the footer section */
+    footer 
+    {
+        background-color: #405C59;  
+        color: #fff; 
+        text-align: center; 
+        padding: 1em 0; 
+        position: fixed;  
+        bottom: 0;  
+        width: 100%;  
+    }
+
+    /* Styling for tables */
+    table 
+    {
+        width: 100%; 
+        border-collapse: collapse; 
+        margin-top: 20px;  
+    }
+
+    /* Styling for table header and data cells */
+    th, td 
+    {
+        border: 1px solid #ddd;  
+        padding: 8px;  
+        text-align: left;  
+    }
+
+    /* Styling for table header cells */
+    th 
+    {
+        background-color: #333;  
+        color: #fff;  
+    }
