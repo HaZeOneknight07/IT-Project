@@ -1,0 +1,46 @@
+/* Colour theme:
+
+Beige: #c8b7a6
+
+Perriwinkle: #7d94b5
+
+Dusty Rose: #c29591
+
+Maroon Brown: #703f37
+
+Muted Green: #b6c199 
+/*/
+
+body {
+
+    background-color: #c8b7a6;
+    
+
+}
+
+h1 {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    color: #fff;
+    background-color: #141414;
+    font-weight: 700;
+
+}
+
+p {
+
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    padding-top: 5rem;
+    color: #fff;
+    font-weight: 400;
+}
+
+button {
+    
+    place-items: center;
+    background-color: purple;
+}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test 2</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/test2.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/loadingbarstyle.css">
+</head>
+<body>
+
+<button id="continueToTest3">Continue to Test 3</button>
+
+<footer>
+    2024 &copy; Gelder Group.
+</footer>
+
+<script src="js/loadingbar.js"></script>
+<script>
+    document.getElementById('continueToTest3').addEventListener('click', function () {
+        // Trigger the loading bar and redirect to test3.html
+        simulateLoadingAndRedirect('test3.html');
+    });
+</script>
+
+</body>
+</html>
