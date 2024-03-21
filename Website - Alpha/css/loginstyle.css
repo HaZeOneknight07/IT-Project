@@ -1,0 +1,125 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #151515;
+}
+
+header {
+    background-color: #405C59;
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+}
+
+header img {
+    width: 100px;
+    margin-right: auto; /* Set margin-right to auto to push the logo to the left */
+}
+
+header h1 {
+    margin: 0;
+}
+
+@media screen and (min-width: 1600px) { /* Padding for other screen resolutions*/
+    h1 {
+        padding-right: 37.5rem;
+    }
+}
+
+@media screen and (min-width: 1620px) { /* Padding for iPad resolution*/
+    h1 {
+        padding-left: 2.2rem;
+    }
+}
+@media screen and (min-width: 1920px) {
+    h1 {
+        padding-left:42.5rem
+    }
+}
+
+nav {
+  background-color: #444;
+  color: #fff;
+  text-align: center;
+  padding: 0.5em 0;
+  display: flex;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center;
+  font-size: 16px;
+}
+
+nav img {
+    width: 50px; /* Adjust the width as needed */
+    margin-right: 10px; /* Add some space between the image and text */
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 1em;
+    margin: 0 1.5em;
+}
+
+main {
+    padding: 2em;
+    text-align: center; /* Center the text within the main element */
+}
+
+#login-form {
+    max-width: 300px;
+    margin: 0 auto;
+    align-items: center;
+    justify-content: center;
+    padding-top: 20vh;
+}
+
+#login-form h2 {
+    margin-bottom: 10px;
+}
+
+#login-form label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#login-form label i {
+    margin-right: 10px; /* Adjust the spacing between the icon and the input */
+}
+
+#login-form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 10px;
+}
+
+#login-form button {
+    background-color: #333;
+    width: 300px;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+}
+
+#login-form button:hover {
+    background-color: #555;
+}
+
+footer {
+    background-color: #405C59;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}

@@ -1,0 +1,152 @@
+    body 
+        {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #151515;
+        }
+
+    header
+        {
+            background-color:#405C59;
+            color:#fff;
+            text-align:center;
+            padding:1em;
+            display:flex;
+            align-items:center;
+        }
+
+    header img
+        {
+            width:100px;
+            margin-right:auto
+        }
+
+    header h1
+        {
+            margin:0
+        }
+
+        @media screen and (max-width: 1600px) { /* Padding for other screen resolutions */
+            h1 {
+                padding-left: 32rem;
+            }
+        }
+
+        @media screen and (min-width: 1620px) { /* Padding for iPad resolution */
+            h1 {
+                padding-right: 30rem;
+            }
+        }
+
+        @media screen and (min-width: 1920px) {
+            h1 {
+                padding-left: 42.5rem
+            }
+        }
+    nav
+        {
+            background-color:#D22A3A;
+            color:#151515;
+            text-align:center;
+            padding:.5em 0;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            font-size:16px
+        }
+
+    nav img
+        {
+            width:50px;
+            margin-right:10px
+        }
+
+    nav a
+        {
+            color:#fff;
+            text-decoration:none;
+            padding:1em;
+            margin:0 1.5em;
+            transition:background-color .5s;
+            border-radius:20px
+        }
+
+    nav a:hover
+        {
+            background-color:#333
+        }
+
+    main
+        {
+            padding:2em;
+            text-align:center
+        }
+
+    .main-container 
+        {
+            background-color: #333; /* Slightly darker grey than the nav bar */
+            padding: 20px;
+            margin: 50px auto; /* Center the container and provide equal spacing top and bottom */
+            max-width: 800px; /* Adjust the max-width as needed */
+            border-radius: 10px;
+        }
+        
+    .info-box 
+        {
+            background-color: #444; 
+            color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px; 
+        }
+
+    form
+        {
+            max-width:300px;
+            margin:0 auto
+        }
+
+    label
+        {
+            display:block;
+            margin-bottom:10px
+        }
+
+    textarea
+        {
+            width:100%;
+            padding:8px;
+            margin-bottom:10px;
+            box-sizing:border-box;
+            border-radius: 10px;
+        }
+
+    button
+        {
+            background-color:#405C59;
+            color:#fff;
+            padding: 10px;
+            border-radius: 5px;
+            cursor:pointer;
+            width: 100px;
+
+        }
+
+    .info-box
+        {
+            margin:10px 0
+        }
+
+    footer
+        {
+            background-color:#405C59;
+            color:#fff;
+            text-align:center;
+            padding:1em 0;
+            position:fixed;
+            bottom:0;
+            width:100%
+        }
+
+

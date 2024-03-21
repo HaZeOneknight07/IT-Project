@@ -1,0 +1,126 @@
+    body 
+    {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #151515;
+        color: #fff;
+        text-align: center;
+    }
+
+    header {
+        background-color: #405C59;
+        color: #fff;
+        text-align: center;
+        padding: 1em;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Change back to space-between */
+    }
+    
+    header img {
+        width: 100px;
+        margin-right: auto; /* Set margin-right to auto to push the logo to the left */
+    }
+    
+    header h1 {
+        margin: 0;
+    }
+
+    @media screen and (max-width: 1600px) { /* Padding for other screen resolutions*/
+        h1 {
+            padding-right: 37rem;
+        }
+    }
+    
+    @media screen and (max-width: 1620px) { /* Padding for iPad resolution*/
+        h1 {
+            padding-left: 3rem;
+        }
+    }
+
+    @media screen and (min-width: 1920px) {
+        h1 {
+            padding-right: 47rem
+        }
+    }
+
+    nav 
+    {
+        background-color: #D22A3A;
+        color: #fff;
+        padding: 0.5em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 16px;
+        transition: background-color 0.5s;
+    }
+
+    nav a 
+    {
+        color: #fff;
+        text-decoration: none;
+        padding: 1em;
+        margin: 0 1.5em;
+        transition: background-color 0.5s;
+        border-radius: 20px;
+    }
+
+    nav a:hover 
+    {
+        background-color: #333;
+    }
+
+    main 
+    {
+        padding: 2em;
+    }
+
+    form 
+    {
+        max-width: 300px;
+        margin: 0 auto;
+        color: #fff;
+    }
+
+    label, input, select 
+    {
+        display: block;
+        width: 100%;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+    }
+
+    button 
+    {
+        background-color: #405C59;
+        color: #fff;
+        padding: 10px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }   
+
+    .option-boxes {
+        display: none;
+        border-radius: 5px;
+    }
+
+    footer 
+    {
+        background-color: #405C59;
+        color: #fff;
+        padding: 1em 0;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+
+    .info-box 
+    {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+        background-color: #fff;
+    }
