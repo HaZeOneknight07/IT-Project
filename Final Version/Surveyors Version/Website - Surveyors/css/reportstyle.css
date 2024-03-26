@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #151515;
+    color: #fff;
+    text-align: center;
+    align-items: 100vw;
+}
+
+header {
+    background-color: #405C59;
+    color: #fff;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+header img {
+    width: 100px;
+    margin-right: auto; /* Push the logo to the left */
+}
+
+header h1 {
+    margin: 0 auto; 
+    text-align: 100vw;
+    padding-right: 5rem;
+}
+
+h2 {
+    font-weight: 700;
+}
+
+@media screen and (max-width: 1600px) {
+    h1 {
+        padding-left: 2rem;
+    }
+}
+
+main {
+    padding:2em;
+    text-align:center
+}
+
+.main-container {
+    background-color: #333; 
+    padding: 20px;
+    margin: 50px auto; /* Center the container and provide equal spacing top and bottom */
+    width: 50vw; 
+    border-radius: 10px;
+}
+        
+.info-box {
+    background-color: #444; 
+    color: white;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px; 
+}
+
+form {
+    max-width:300px;
+    margin:0 auto;
+    font-weight: 700;
+}
+
+label {
+    display:block;
+    margin-bottom:10px
+}
+
+textarea {
+    width:100%;
+    padding:8px;
+    margin-bottom:10px;
+    box-sizing:border-box;
+    border-radius: 10px;
+}
+
+button {
+    background-color:#405C59;
+    color:#fff;
+    padding: 10px;
+    border-radius: 5px;
+    cursor:pointer;
+    width: 100px;
+}
+
+.info-box {
+    margin:10px 0
+}
+
+footer {
+    background-color: #405C59;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.darkmode {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem; 
+    z-index: 1000; /* Ensure it appears above other content */
+}
+
+.darkmode .light,
+.darkmode .dark {
+    display: none;
+}
+
+.dark .darkmode .light,
+:not(.dark) .darkmode .dark {
+    display: inline-block;
+}
