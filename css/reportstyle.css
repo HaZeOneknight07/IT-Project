@@ -10,7 +10,7 @@ main {
     background-color: var(--button-hover-colour); 
     padding: 20px;
     margin: 50px auto; 
-    width: 150%; 
+    width: 100%; 
     border-radius: 10px;
 }
         
