@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Animated Loading Screen</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='test1.css'>
+</head>
+
+<body>
+    <div class="preloader-container">
+        <main class="container">
+            <div class="ring"></div>
+            <div class="ring"></div>
+            <div class="ring"></div>
+        </main>
+    </div>
+    <script>
+        window.addEventListener('load', function () {
+            // Hide the preloader
+            document.querySelector('.preloader-container').classList.add('hide');
+            // Show the main content
+            document.getElementById('main-content').classList.remove('hide');
+        });
+    </script>
+</body>
+
+</html>
