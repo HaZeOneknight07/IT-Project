@@ -48,3 +48,10 @@ button {
     border-radius: 5px;
     color: var(--footer-header-colour);
 }
+
+input[type="date"] {
+    width: 100%; 
+    padding: 10px;
+    border-radius: 5px; 
+    box-sizing: border-box;
+}
