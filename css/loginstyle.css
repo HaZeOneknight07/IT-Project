@@ -76,10 +76,6 @@
     box-shadow: 0 0 15px var(--button-colour-submit);
 }
 
-.login-box form {
-    text-align: center;
-}
-
 .login-box form button {
     margin: 0 auto;
 }
