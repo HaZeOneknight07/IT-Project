@@ -42,7 +42,7 @@ h3 {
     margin: 2.5rem;
     font-weight: 700;
     font-size: 3rem;
-    width: 1500px;
+    width: 1500px !important;
 }
 
 /* Style for the item name */
