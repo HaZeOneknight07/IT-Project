@@ -8,33 +8,31 @@
     background: rgba(0, 0, 0, .5);
     box-sizing: border-box;
     border-radius: 10px;
-    animation: glow 4s linear infinite;
+    overflow: hidden; /* Ensure pseudo-element does not overflow */
+    box-shadow: none; /* Remove box-shadow from main box */
+    /* Add relative positioning for pseudo-element */
+    position: relative;
+}
+
+/* Create a pseudo-element */
+.login-box::before {
+    content: "";
+    position: absolute;
+    top: -5px; /* Adjust to match the border-radius */
+    left: -5px; /* Adjust to match the border-radius */
+    right: -5px; /* Adjust to match the border-radius */
+    bottom: -5px; /* Adjust to match the border-radius */
+    border-radius: 15px; /* Adjust to match the border-radius */
+    box-shadow: 0 0 10px red; /* Apply the initial box-shadow */
+    animation: glow 2s linear infinite; /* Apply the animation */
 }
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
-    }
-    15% {
-        box-shadow: 0 0 10px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
-    }
-    30% {
-        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
-    }
-    45% {
-        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
-    }
-    60% {
-        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
-    }
-    75% {
-        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 0px red, 0 0 0px red;
-    }
-    90% {
-        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 0px red;
+        transform: rotate(0deg);
     }
     100% {
-        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red;
+        transform: rotate(360deg);
     }
 }
 
