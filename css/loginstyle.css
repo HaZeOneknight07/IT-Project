@@ -12,28 +12,28 @@
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        box-shadow: 0 0 2px rgba(255, 0, 0, 0.5);
     }
     25% {
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5),
-                    0 0 20px rgba(255, 0, 0, 0.5),
-                    0 0 20px rgba(255, 0, 0, 0.5),
-                    0 0 20px rgba(255, 0, 0, 0.5);
+        box-shadow: 0 0 2px rgba(255, 0, 0, 0.5),
+                    0 0 2px rgba(255, 0, 0, 0.5),
+                    0 0 2px rgba(255, 0, 0, 0.5),
+                    0 0 2px rgba(255, 0, 0, 0.5);
     }
     50% {
-        box-shadow: 40px 0 20px rgba(255, 0, 0, 0.5),
-                    0 40px 20px rgba(255, 0, 0, 0.5),
-                    -40px 0 20px rgba(255, 0, 0, 0.5),
-                    0 -40px 20px rgba(255, 0, 0, 0.5);
+        box-shadow: 4px 0 2px rgba(255, 0, 0, 0.5),
+                    0 4px 2px rgba(255, 0, 0, 0.5),
+                    -4px 0 2px rgba(255, 0, 0, 0.5),
+                    0 -4px 2px rgba(255, 0, 0, 0.5);
     }
     75% {
-        box-shadow: 40px 40px 20px rgba(255, 0, 0, 0.5),
-                    -40px 40px 20px rgba(255, 0, 0, 0.5),
-                    -40px -40px 20px rgba(255, 0, 0, 0.5),
-                    40px -40px 20px rgba(255, 0, 0, 0.5);
+        box-shadow: 4px 4px 2px rgba(255, 0, 0, 0.5),
+                    -4px 40px 2px rgba(255, 0, 0, 0.5),
+                    -4px -4px 2px rgba(255, 0, 0, 0.5),
+                    4px -4px 2px rgba(255, 0, 0, 0.5);
     }
     100% {
-        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+        box-shadow: 0 0 2px rgba(255, 0, 0, 0.5);
     }
 }
 
