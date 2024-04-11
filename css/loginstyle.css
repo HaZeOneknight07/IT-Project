@@ -8,15 +8,33 @@
     background: rgba(0, 0, 0, .5);
     box-sizing: border-box;
     border-radius: 10px;
-    animation: glow 2s infinite alternate;
+    animation: glow 4s linear infinite;
 }
 
 @keyframes glow {
     0% {
-        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red;
+        box-shadow: 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
+    }
+    15% {
+        box-shadow: 0 0 10px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
+    }
+    30% {
+        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
+    }
+    45% {
+        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 0px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
+    }
+    60% {
+        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 0px red, 0 0 0px red, 0 0 0px red;
+    }
+    75% {
+        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 0px red, 0 0 0px red;
+    }
+    90% {
+        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 0px red;
     }
     100% {
-        box-shadow: 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red, 0 0 80px red;
+        box-shadow: 0 0 10px red, 0 0 20px red, 0 0 30px red, 0 0 40px red, 0 0 50px red, 0 0 60px red, 0 0 70px red;
     }
 }
 
