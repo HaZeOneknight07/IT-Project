@@ -78,7 +78,7 @@ header h1 {
     margin: 0 auto;
     /* Center horizontally */
     text-align: center;
-    padding-right: 5rem;
+    padding-right: 5rem; /* Adjust as needed */
 }
 
 @media screen and (max-width: 1600px) {
@@ -90,7 +90,6 @@ header h1 {
 nav {
     background-color: var(--navigation-colour);
     color: var(--text-colour);
-    text-align: center;
     padding: 0.5em 0;
     display: flex;
     justify-content: center;
@@ -116,9 +115,7 @@ nav a:hover {
 main {
     display: flex;
     flex: 1;
-    /* Grow to fill available space */
     align-items: stretch;
-    /* Make the container stretch vertically */
 }
 
 footer {
