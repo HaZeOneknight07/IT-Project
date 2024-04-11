@@ -1,5 +1,5 @@
 :root {
-    
+
     /*General Colours*/
     --footer-header-colour: #405C59;
     --navigation-colour: #D22A3A;
@@ -43,88 +43,116 @@
     background-color: #454a4d;
 }
 
-    /* General Styles for Website */
+/* General Styles for Website */
 
-    body {
-        font-family: Arial, sans-serif;
-        margin: 0;
-        padding: 0;
-        background-color: var(--background-colour-dark);
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        color: var(--text-color);
-    }
-    
-    header {
-        background-color: var(--footer-header-colour);
-        color: var(--text-colour);
-        padding: 1em;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        border-radius: 0 0 1rem 0;
-        width: 100% !important;
-    }
-    
-    header img {
-        width: 100px;
-        margin-right: auto; /* Push the logo to the left */
-    }
-    
-    header h1 {
-        margin: 0 auto; /* Center horizontally */
-        text-align: 100vw;
-        padding-right: 5rem;
-    }
-    
-    @media screen and (max-width: 1600px) {
-        h1 {
-            padding-left: 2rem;
-        }
-    }
-    
-    nav {
-        background-color: var(--navigation-colour);
-        color: var(--text-colour);
-        text-align: 100vw;
-        padding: 0.5em 0;
-        display: flex;
-        justify-content: center; /* Center the items horizontally */
-        align-items: center;
-        font-size: 16px;
-        transition: background-color 0.5s; 
-        border-radius: 0 0 1rem 0;
-    }
-    
-    nav a {
-        color: var(--text-colour);
-        text-decoration: none;
-        padding: 1em;
-        margin: 0 1.5em;
-        transition: background-color 0.5s;
-        border-radius: 20px;
-    }
-    
-    nav a:hover {
-        background-color: var(--button-colour); 
-    }
-    
-    main {
-        display: flex;
-        flex: 1; /* Grow to fill available space */
-        align-items: stretch; /* Make the container stretch vertically */
-    }
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-colour-dark);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--text-color);
+}
 
-    footer {
-        background-color: var(--footer-header-colour);
-        color: var(--text-colour);
-        text-align: center;
-        padding: 1em 0;
-        margin-top: auto;
-        width: 100vw;
+header {
+    background-color: var(--footer-header-colour);
+    color: var(--text-colour);
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 0 0 1rem 0;
+    width: 100% !important;
+}
+
+header img {
+    width: 100px;
+    margin-right: auto;
+    /* Push the logo to the left */
+}
+
+header h1 {
+    margin: 0 auto;
+    /* Center horizontally */
+    text-align: 100vw;
+    padding-right: 5rem;
+}
+
+@media screen and (max-width: 1600px) {
+    h1 {
+        padding-left: 2rem;
     }
+<<<<<<< HEAD
+}
+
+nav {
+    background-color: var(--navigation-colour);
+    color: var(--text-colour);
+    text-align: 100vw;
+    padding: 0.5em 0;
+    display: flex;
+    justify-content: center;
+    /* Center the items horizontally */
+    align-items: center;
+    font-size: 16px;
+    transition: background-color 0.5s;
+    border-radius: 0 0 1rem 0;
+}
+
+nav a {
+    color: var(--text-colour);
+    text-decoration: none;
+    padding: 1em;
+    margin: 0 1.5em;
+    transition: background-color 0.5s;
+    border-radius: 20px;
+}
+
+nav a:hover {
+    background-color: var(--button-colour);
+}
+
+main {
+    display: flex;
+    flex: 1;
+    /* Grow to fill available space */
+    align-items: stretch;
+    /* Make the container stretch vertically */
+}
+
+footer {
+    background-color: var(--footer-header-colour);
+    color: var(--text-colour);
+    text-align: center;
+    padding: 1em 0;
+    margin-top: auto;
+    width: 100vw;
+}
+
+.darkmode {
+    display: inline-block;
+    font-size: 2rem;
+    padding: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 1;
+}
+
+.darkmode .light,
+.darkmode .dark {
+    display: none;
+}
+
+.dark .darkmode .light,
+:not(.dark) .darkmode .dark {
+    display: inline-block;
+}
+=======
     
     .darkmode {
         display: inline-block;
@@ -146,3 +174,5 @@
     :not(.dark) .darkmode .dark {
         display: inline-block;
     }
+
+>>>>>>> 8eaf85cca515f653d200a397c9abb5863cd1f4f3
