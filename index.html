@@ -79,30 +79,33 @@
 
       var credentials = [
         { username: "surveys@gelder.co.uk", password: "GelderSurveyors1" },
+        { username: "managers@gelder.co.uk", password: "GelderManagers1" },
         // Add more username/password pairs as needed using same format
       ];
 
       function redirectToHome() {
-        var username = document.getElementById("username").value;
-        var password = document.getElementById("password").value;
+            var username = document.getElementById("username").value;
+            var password = document.getElementById("password").value;
 
-        for (var i = 0; i < credentials.length; i++) {
-          if (
-            username === credentials[i].username &&
-            password === credentials[i].password
-          ) {
-            // Store data in local storage
-            localStorage.setItem("loggedInUsername", username);
-            localStorage.setItem("loggedInPassword", password);
+            for (var i = 0; i < credentials.length; i++) {
+                if (username === credentials[i].username && password === credentials[i].password) {
+                    // Store data in local storage
+                    localStorage.setItem("loggedInUsername", username);
+                    localStorage.setItem("loggedInPassword", password);
 
-            window.location.href = "siteinformation.html"; // Redirect to Site Information Page
+                    // Redirect based on username
+                    if (username === "managers@gelder.co.uk") {
+                        window.location.href = "scheduleoptionM.html"; // Redirect to Schedule Option page
+                    } else {
+                        window.location.href = "siteinformation.html"; // Redirect to Schedule Option
+                    }
+                    return;
+                }
+            }
 
-            return;
-          }
+            // If no match found in the loop
+            alert("Invalid login credentials. Please try again.");
         }
-        // If no match found in the loop
-        alert("Invalid login credentials. Please try again.");
-      }
     </script>
 
     <!-- Theme Toggle Script -->
