@@ -1,3 +1,7 @@
+header {
+    border-radius: 0 0 1rem 1rem !important;
+} 
+
 .login-box {
     position: absolute;
     top: 50%;
