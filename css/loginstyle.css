@@ -32,7 +32,6 @@
     border-bottom: 1px solid var(--text-colour);
     outline: none;
     background: transparent;
-    text-align: center;
 }
 
 .login-box .user-box label {
@@ -67,6 +66,7 @@
     margin-top: 10px;
     letter-spacing: 4px;
     cursor: pointer;
+    text-align: center;
 }
 
 .login-box form button:hover {
