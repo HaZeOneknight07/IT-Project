@@ -32,7 +32,6 @@
     border-bottom: 1px solid var(--text-colour);
     outline: none;
     background: transparent;
-    text-align: center;
 }
 
 .login-box .user-box label {
@@ -55,7 +54,6 @@
 }
 
 .login-box form button {
-    display: flex;
     padding: 10px 20px;
     background: var(--button-colour-submit);
     color: var(--text-colour);
@@ -68,19 +66,8 @@
     margin-top: 10px;
     letter-spacing: 4px;
     cursor: pointer;
-    text-align: center;
-    justify-content: center;
 }
 
 .login-box form button:hover {
     box-shadow: 0 0 15px var(--button-colour-submit);
-}
-
-.login-box form {
-    text-align: center;
-}
-
-.login-box form button {
-    display: block; /* Change display to block */
-    margin: 0 auto; /* Center horizontally */
 }
