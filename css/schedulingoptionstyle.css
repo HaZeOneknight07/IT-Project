@@ -1,3 +1,8 @@
+body {
+    height: 100% !important;
+    width: 100% !important;
+}
+
 header {
     border-radius: 0 0 1rem 1rem !important; /* Makes header bottom rounded*/
 }
