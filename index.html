@@ -93,9 +93,10 @@
                     localStorage.setItem("loggedInUsername", username);
                     localStorage.setItem("loggedInPassword", password);
 
-                    // Redirect based on username
+                    // Redirect to Managers Version
                     if (username === "managers@gelder.co.uk") {
                         window.location.href = "scheduleoptionM.html"; // Redirect to Schedule Option Surveyors Version
+                    // Redirect to Surveyors Version
                     } else {
                         window.location.href = "siteinformation.html"; // Redirect to Schedule Option Managers Version
                     }
