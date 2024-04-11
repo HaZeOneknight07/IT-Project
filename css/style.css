@@ -85,7 +85,6 @@ header h1 {
     h1 {
         padding-left: 2rem;
     }
-<<<<<<< HEAD
 }
 
 nav {
@@ -152,27 +151,3 @@ footer {
 :not(.dark) .darkmode .dark {
     display: inline-block;
 }
-=======
-    
-    .darkmode {
-        display: inline-block;
-        font-size: 2rem;
-        padding: 1rem;
-        cursor: pointer;
-        position: absolute;
-        top: 1rem;
-        right: 1rem; 
-        z-index: 1; 
-    }
-    
-    .darkmode .light,
-    .darkmode .dark {
-        display: none;
-    }
-    
-    .dark .darkmode .light,
-    :not(.dark) .darkmode .dark {
-        display: inline-block;
-    }
-
->>>>>>> 8eaf85cca515f653d200a397c9abb5863cd1f4f3
