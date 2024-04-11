@@ -8,32 +8,37 @@
     background: rgba(0, 0, 0, .5);
     box-sizing: border-box;
     border-radius: 10px;
-    overflow: hidden; /* Ensure pseudo-element does not overflow */
-    box-shadow: none; /* Remove box-shadow from main box */
-    /* Add relative positioning for pseudo-element */
-    position: relative;
-}
-
-/* Create a pseudo-element */
-.login-box::before {
-    content: "";
-    position: absolute;
-    top: -5px; /* Adjust to match the border-radius */
-    left: -5px; /* Adjust to match the border-radius */
-    right: -5px; /* Adjust to match the border-radius */
-    bottom: -5px; /* Adjust to match the border-radius */
-    border-radius: 15px; /* Adjust to match the border-radius */
-    box-shadow: 0 0 10px red; /* Apply the initial box-shadow */
-    animation: glow 2s linear infinite; /* Apply the animation */
 }
 
 @keyframes glow {
     0% {
-        transform: rotate(0deg);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    25% {
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5),
+                    0 0 20px rgba(255, 0, 0, 0.5),
+                    0 0 20px rgba(255, 0, 0, 0.5),
+                    0 0 20px rgba(255, 0, 0, 0.5);
+    }
+    50% {
+        box-shadow: 40px 0 20px rgba(255, 0, 0, 0.5),
+                    0 40px 20px rgba(255, 0, 0, 0.5),
+                    -40px 0 20px rgba(255, 0, 0, 0.5),
+                    0 -40px 20px rgba(255, 0, 0, 0.5);
+    }
+    75% {
+        box-shadow: 40px 40px 20px rgba(255, 0, 0, 0.5),
+                    -40px 40px 20px rgba(255, 0, 0, 0.5),
+                    -40px -40px 20px rgba(255, 0, 0, 0.5),
+                    40px -40px 20px rgba(255, 0, 0, 0.5);
     }
     100% {
-        transform: rotate(360deg);
+        box-shadow: 0 0 20px rgba(255, 0, 0, 0.5);
     }
+}
+
+.login-box {
+    animation: glow 4s linear infinite;
 }
 
 .login-box h2 {
