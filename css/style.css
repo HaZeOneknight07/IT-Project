@@ -9,14 +9,14 @@
     --text-colour: #FFF;
     --button-text-colour: #405C59;
     --button-colour-submit: #D22A3A;
-    --background-colour: #FFF;
+    --background-colour: #f9f9f9;
 
     /*Light Mode Colours*/
-    --background-colour-light: #FFF;
+    --background-colour: #f9f9f9;
     --text-colour-light: #151515;
 
     /*Dark Mode Colours*/
-    --background-colour-dark: #151515;
+    --background-colour-dark: #202225;
     --text-colour-dark: #405C59;
 
     /*Loading Bar Colours*/
