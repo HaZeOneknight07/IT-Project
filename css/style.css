@@ -80,7 +80,7 @@ header img {
 header h1 {
     margin: 0 auto;
     /* Center horizontally */
-    text-align: 100vw;
+    text-align: center;
     padding-right: 5rem;
 }
 
@@ -93,7 +93,7 @@ header h1 {
 nav {
     background-color: var(--navigation-colour);
     color: var(--text-colour);
-    text-align: 100vw;
+    text-align: center;
     padding: 0.5em 0;
     display: flex;
     justify-content: center;
