@@ -41,7 +41,7 @@
     <link
      rel="icon"
      type="image/x-icon"
-     href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKVJREFUOE9jdIiJ/M9AAWAcGgbw/P7LEH7nHQPrX0zfEvQCSHPluecM8p9/YQ0pvAbw/vrLUAHS/AW7ZpCJOA0Aaa4694xB9stvvHGE0wDTV18ZpPHYDDMVwwCJr78Z7J99IjploBgg9fUXQ9XZ5wwCv/6SboDMl1/g0OYnQTM8EOU+/2SoPPeCgfc38TbDw8A1KuJ/+O13DKD4JgcQTEiEDB14AwDexFdNWTgGZgAAAABJRU5ErkJggg=="
+     href="img/favicon.png"
     />
   </head>
   <body>
@@ -93,17 +93,7 @@
     <footer>2024 &copy; Gelder Group.</footer>
 
     <!-- Loading Bar Script -->
-    <script>
-      function loadPage(url) {
-        // Show loading animation
-        document.querySelector(".container").style.opacity = "1";
-
-        // Redirect to the next page after a delay
-        setTimeout(function () {
-          window.location.href = url;
-        }, 5000); // Adjust the delay time as needed (should match the loading animation duration)
-      }
-    </script>
+    <script src="js/loadingbar.js"></script>
 
     <!-- Theme Toggle Script -->
     <script src="js/darkmode.js"></script>
