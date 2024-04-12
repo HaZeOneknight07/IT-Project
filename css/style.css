@@ -73,13 +73,11 @@ header {
 
 header img {
     width: 100px;
-    margin-right: auto;
-    /* Push the logo to the left */
+    margin-right: auto; 
 }
 
 header h1 {
-    margin: 0 auto;
-    /* Center horizontally */
+    margin: 0 auto; 
     text-align: center;
     padding-right: 5rem;
 }
@@ -118,10 +116,8 @@ nav a:hover {
 
 main {
     display: flex;
-    flex: 1;
-    /* Grow to fill available space */
-    align-items: stretch;
-    /* Make the container stretch vertically */
+    flex: 1; /* Grow to fill available space */
+    align-items: stretch; /* Make the container stretch vertically */
 }
 
 footer {
