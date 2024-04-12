@@ -43,10 +43,13 @@
     background-color: #454a4d;
 }
 
+/* Google Poppins Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 /* General Styles for Website */
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: var(--background-colour-dark);
