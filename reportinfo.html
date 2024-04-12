@@ -1,77 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Insured Info - Gelder Group Surveyors</title>
-    <link rel="stylesheet" href="css/reportinfostyle.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/darkmode.css" />
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="icon" type="image/x-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKVJREFUOE9jdIiJ/M9AAWAcGgbw/P7LEH7nHQPrX0zfEvQCSHPluecM8p9/YQ0pvAbw/vrLUAHS/AW7ZpCJOA0Aaa4694xB9stvvHGE0wDTV18ZpPHYDDMVwwCJr78Z7J99IjploBgg9fUXQ9XZ5wwCv/6SboDMl1/g0OYnQTM8EOU+/2SoPPeCgfc38TbDw8A1KuJ/+O13DKD4JgcQTEiEDB14AwDexFdNWTgGZgAAAABJRU5ErkJggg==">
-</head>
-<body>
+    <link rel="stylesheet" href="css/reportinfostyle.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      media="screen"
+      href="css/darkmode.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAKVJREFUOE9jdIiJ/M9AAWAcGgbw/P7LEH7nHQPrX0zfEvQCSHPluecM8p9/YQ0pvAbw/vrLUAHS/AW7ZpCJOA0Aaa4694xB9stvvHGE0wDTV18ZpPHYDDMVwwCJr78Z7J99IjploBgg9fUXQ9XZ5wwCv/6SboDMl1/g0OYnQTM8EOU+/2SoPPeCgfc38TbDw8A1KuJ/+O13DKD4JgcQTEiEDB14AwDexFdNWTgGZgAAAABJRU5ErkJggg=="
+    />
+  </head>
+  <body>
     <!-- Header Content -->
     <header>
-        <a href="https://gnet.geldergroup.co.uk/" target="_blank">
-            <img src="img/logo.svg" alt="GelderGroupLogo">
-        </a>
-        <h1>Gelder Group Surveyors</h1>
+      <a href="https://gnet.geldergroup.co.uk/" target="_blank">
+        <img src="img/logo.svg" alt="GelderGroupLogo" />
+      </a>
+      <h1>Gelder Group Surveyors</h1>
 
-        <!-- Dark mode toggle -->
-        <div class="darkmode">
-            <div class="light fas fa-sun"></div>
-            <div class="dark fas fa-moon"></div>
-        </div>
+      <!-- Dark mode toggle -->
+      <div class="darkmode">
+        <div class="light fas fa-sun"></div>
+        <div class="dark fas fa-moon"></div>
+      </div>
     </header>
 
     <!-- Report Info Container -->
     <main>
-        <h3>Report:</h3>
-        <p id="displayReportText"></p> 
-        <a href="claiminfo.html" id="backButton">Back to Claim Info</a>
+      <h3>Report:</h3>
+      <p id="displayReportText"></p>
+      <a href="claiminfo.html" id="backButton">Back to Claim Info</a>
     </main>
 
     <!-- Footer Content -->
-    <footer>
-        2024 &copy; Gelder Group.
-   </footer>
+    <footer>2024 &copy; Gelder Group.</footer>
 
     <!-- Report Info Local Storage Pull & Display Script -->
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
-                // Retrieve report text from localStorage
-                var reportText = localStorage.getItem("ReportText");
+      document.addEventListener("DOMContentLoaded", function () {
+        // Retrieve report text from localStorage
+        var reportText = localStorage.getItem("ReportText");
 
-                // Display report text on the page
-                document.getElementById("displayReportText").textContent = reportText || "No report text available.";
-            });
+        // Display report text on the page
+        document.getElementById("displayReportText").textContent =
+          reportText || "No report text available.";
+      });
     </script>
 
     <!-- Theme Switch Toggle Script -->
     <script>
-            const darkmodeToggle = document.querySelector(".darkmode");
+      const darkmodeToggle = document.querySelector(".darkmode");
 
-    darkmodeToggle.addEventListener("click", function () {
-    document.body.classList.toggle("dark");
+      darkmodeToggle.addEventListener("click", function () {
+        document.body.classList.toggle("dark");
 
-    const isDarkMode = document.body.classList.contains("dark");
-    document.body.style.background = isDarkMode ? "#202225" : "#f9f9f9";
-    document.body.style.color = isDarkMode ? "#f9f9f9" : "#202225";
+        const isDarkMode = document.body.classList.contains("dark");
+        document.body.style.background = isDarkMode ? "#202225" : "#f9f9f9";
+        document.body.style.color = isDarkMode ? "#f9f9f9" : "#202225";
 
-    // Toggle visibility of light and dark mode icons
-    const lightIcon = document.querySelector('.darkmode .light');
-    const darkIcon = document.querySelector('.darkmode .dark');
+        // Toggle visibility of light and dark mode icons
+        const lightIcon = document.querySelector(".darkmode .light");
+        const darkIcon = document.querySelector(".darkmode .dark");
 
-    if (isDarkMode) {
-        lightIcon.style.display = 'inline-block';
-        darkIcon.style.display = 'none';
-    } else {
-        lightIcon.style.display = 'none';
-        darkIcon.style.display = 'inline-block';
-    }
-});
+        if (isDarkMode) {
+          lightIcon.style.display = "inline-block";
+          darkIcon.style.display = "none";
+        } else {
+          lightIcon.style.display = "none";
+          darkIcon.style.display = "inline-block";
+        }
+      });
     </script>
-</body>
+  </body>
 </html>
