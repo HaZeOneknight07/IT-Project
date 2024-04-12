@@ -6,24 +6,17 @@
     --container-colour: #ADD8E6;
     --button-hover-colour: #333;
     --button-colour: #444;
-    --text-colour: #FFF;
+    --text-colour: #405C59;
     --button-text-colour: #405C59;
     --button-colour-submit: #D22A3A;
     --background-colour: #f9f9f9;
-
-    /*Light Mode Colours*/
-    --background-colour: #f9f9f9;
-    --text-colour-light: #151515;
-
-    /*Dark Mode Colours*/
     --background-colour-dark: #202225;
-    --text-colour-dark: #405C59;
 
     /*Loading Bar Colours*/
     --empty-box-colour: #405C59;
     --full-box-colour: #D22A3A;
-
     /*Search Styles*/
+    
     --search-box-colour: #DDD;
     --rate-container-colour: #888;
 
