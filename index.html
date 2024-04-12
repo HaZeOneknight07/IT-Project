@@ -46,51 +46,54 @@
   </head>
 
   <body>
-    <!-- Preloader Container with Video -->
+    <!-- Preloader container -->
     <div class="preloader-container">
-        <video autoplay muted loop id="preloader-video">
-            <source src="preloader.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+      <main class="container">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+      </main>
     </div>
 
-    <!-- Main Content - Initially Hidden -->
+    <!-- Header Content -->
+    <header>
+      <a href="https://gnet.geldergroup.co.uk/" target="_blank">
+        <img src="img/logo.svg" alt="GelderGroupLogo" />
+      </a>
+      <h1>Gelder Group Surveyors</h1>
+
+      <!-- Dark mode toggle -->
+      <div class="darkmode">
+        <div class="light fas fa-sun"></div>
+        <div class="dark fas fa-moon"></div>
+      </div>
+    </header>
+    <!-- Login Form -->
     <main id="main-content" class="hide">
-        <!-- Your index.html content goes here -->
-        <header>
-            <h1>Welcome to Gelder Group Surveyors</h1>
-        </header>
-        <section>
-            <h2>About Us</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sit amet enim vel tortor tincidunt bibendum. Morbi efficitur magna vel nisl malesuada interdum. Ut vel ipsum nec justo convallis sagittis sed ac lacus.</p>
-        </section>
-        <section>
-            <h2>Contact Us</h2>
-            <p>Email: info@geldergroup.com</p>
-            <p>Phone: 123-456-7890</p>
-        </section>
-        <footer>&copy; 2024 Gelder Group Surveyors</footer>
+      <div class="login-box">
+        <h2>Login Form</h2>
+        <form onsubmit="event.preventDefault(); redirectToHome();">
+          <div class="user-box">
+            <input type="text" id="username" name="username" required />
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="password" id="password" name="password" required />
+            <label>Password</label>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </main>
 
-    <!-- JavaScript to control preloader timing -->
-    <script>
-        // Function to hide preloader and show content after 3 seconds
-        function showContentAfterDelay() {
-            var preloader = document.querySelector('.preloader-container');
-            var mainContent = document.getElementById('main-content');
+    <!-- Footer Content -->
 
-            // Hide the preloader after 3 seconds
-            setTimeout(function() {
-                preloader.classList.add('hide');
-                mainContent.classList.remove('hide');
-            }, 3000); // 3000 milliseconds = 3 seconds
-        }
+    <footer>2024 &copy; Gelder Group.</footer>
 
-        // Execute the function when the document is fully loaded
-        document.addEventListener('DOMContentLoaded', function () {
-            // Call the function to show content after delay
-            showContentAfterDelay();
-        });
-    </script>
-</body>
+    <!-- Login Script -->
+    <script src="js/loginvalidation.js"></script>
+
+    <!-- Theme Toggle Script -->
+    <script src="js/darkmode.js"></script>
+  </body>
 </html>

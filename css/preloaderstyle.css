@@ -5,8 +5,75 @@
 }
 
 body {
-    margin: 0;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #111;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ring {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: -30px;
+    border-radius: 50%;
+    border-left: 4px solid #D22A3A;
+    border-top: 4px solid #D22A3A;
+    animation: animate 4s linear infinite;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.ring:nth-child(2) {
+    animation: animate2 4s linear infinite;
+    animation-delay: -1s;
+    border-top: 4px solid #fff;
+    border-left: 4px solid #fff;
+}
+
+@keyframes animate2 {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.ring:nth-child(3) {
+    animation: animate3 4s linear infinite;
+    animation-delay: -3s;
+    position: absolute;
+    top: -66.66px;
+    border-top: 4px solid #405C59;
+    border-left: 4px solid #405C59;
+}
+
+@keyframes animate3 {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 /* Additional styles for the preloader container */
@@ -24,8 +91,7 @@ body {
     /* Make sure it appears above other content */
 }
 
-#preloader-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+.hide {
+    display: none;
+    /* Hide the preloader */
 }
