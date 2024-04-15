@@ -217,8 +217,17 @@
       alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
     }
   }
-</script>
 
+  // Function to handle File Manager link
+  function handleFileManagerLink() {
+    var currentUser = document.getElementById("name").textContent.trim().toLowerCase();
+    if (currentUser !== "ty ashmore") {
+      // Display insufficient privileges message
+      alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
+    }
+    // You can add additional logic here if needed
+  }
+</script>
   <!-- Your other JavaScript files can be included here -->
   <script src="js/admin.js"></script>
 </body>
