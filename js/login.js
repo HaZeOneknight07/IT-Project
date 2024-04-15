@@ -1,3 +1,5 @@
+// Login Validation Script
+
 // Delay the hiding of preloader and showing login content after 5 seconds
 setTimeout(function () {
     document.querySelector(".preloader-container").classList.add("hide");
@@ -34,3 +36,38 @@ setTimeout(function () {
         // If no match found in the loop
         alert("Invalid login credentials. Please try again.");
     }
+
+    // Caps Lock Indicator Script
+
+    document.getElementById('password').addEventListener('keyup', function(event) {
+        var capsLockEnabled = event.getModifierState && event.getModifierState('CapsLock');
+        var warningElement = document.querySelector('.caps-lock-warning');
+        if (capsLockEnabled) {
+          warningElement.style.display = 'block';
+        } else {
+          warningElement.style.display = 'none';
+        }
+      });
+
+    // Password Visibility Script
+
+    document.getElementById('togglePasswordVisibility').addEventListener('click', function() {
+        var passwordInput = document.getElementById('password');
+        if (passwordInput.type === 'password') {
+          passwordInput.type = 'text';
+          document.querySelector('#togglePasswordVisibility i').className = 'fas fa-eye';
+        } else {
+          passwordInput.type = 'password';
+          document.querySelector('#togglePasswordVisibility i').className = 'fas fa-eye-slash';
+        }
+      });
+    
+      document.getElementById('password').addEventListener('keyup', function(event) {
+        var capsLockEnabled = event.getModifierState && event.getModifierState('CapsLock');
+        var warningElement = document.querySelector('.caps-lock-warning');
+        if (capsLockEnabled) {
+          warningElement.classList.add('show');
+        } else {
+          warningElement.classList.remove('show');
+        }
+      });
