@@ -58,6 +58,6 @@ header {
 }
 
 .rounded-button:hover::before {
-    width: 200%; /* Expand the width of the underline to extend equally to both sides */
-    left: -50%; /* Move the underline to start from the left */
+    width: 100%; /* Expand the width of the underline to fill the entire button */
+    left: 0; /* Move the underline to start from the left */
 }
