@@ -42,7 +42,8 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
+    vertical-align: middle;
     padding-top: 4.25rem;
 }
 
@@ -63,7 +64,7 @@ main {
     width: 37.5rem;
     height: 37.5rem;
     box-sizing: border-box;
-    transition: background-color 0.5s;
+    transition: var(--background-color) 0.5s;
     opacity: 0;
     animation: fadeIn 2s forwards;
     position: relative;
