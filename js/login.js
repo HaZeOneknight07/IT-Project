@@ -1,3 +1,5 @@
+// Login Validation Script
+
 // Delay the hiding of preloader and showing login content after 5 seconds
 setTimeout(function () {
   document.querySelector(".preloader-container").classList.add("hide");
@@ -11,59 +13,42 @@ var credentials = [
   // Add more username/password pairs as needed using same format
 ];
 
-// Check if the current page is admin.html
-if (window.location.pathname.includes("admin.html")) {
-  // Check if the user is already authenticated
-  var loggedInUsername = localStorage.getItem("loggedInUsername");
-  var loggedInPassword = localStorage.getItem("loggedInPassword");
-
-  var isAuthenticated = false;
-
-  // Verify if the stored credentials match any in the credentials array
-  if (loggedInUsername && loggedInPassword) {
+function redirectToHome() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+  
     for (var i = 0; i < credentials.length; i++) {
-      if (loggedInUsername === credentials[i].username && loggedInPassword === credentials[i].password) {
-        isAuthenticated = true;
-        break;
+      if (
+        username === credentials[i].username &&
+        password === credentials[i].password
+      ) {
+        // Store data in local storage
+        localStorage.setItem("loggedInUsername", username);
+        localStorage.setItem("loggedInPassword", password);
+  
+        // Redirect to Managers Version
+        if (username === "managers@gelder.co.uk") {
+          window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
+        }
+        // Redirect to Surveyors Version
+        else if (username === "surveyors@gelder.co.uk") {
+          window.location.href = "hub.html"; // Redirect to Hub Page
+        }
+        // Redirect to Admin Panel
+        else if (username === "admin@gelder.co.uk") {
+          window.location.href = "admin.html"; // Redirect to Admin Panel
+        }
+        return;
       }
     }
+    
+    // If no match found in the loop
+    alert("Invalid login credentials. Please try again.");
   }
-
-  // If not authenticated, redirect to login page
-  if (!isAuthenticated) {
-    window.location.href = "/login.html";
-  }
-}
-
-// Redirect based on email address and password for other pages
-document.querySelector("form").addEventListener("submit", function(event) {
-  event.preventDefault(); // Prevent default form submission
-
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-
-  // Check if the entered credentials match any in the credentials array
-  for (var i = 0; i < credentials.length; i++) {
-    if (username === credentials[i].username && password === credentials[i].password) {
-      // Store data in local storage
-      localStorage.setItem("loggedInUsername", username);
-      localStorage.setItem("loggedInPassword", password);
-
-      // Redirect to respective pages
-      if (username === "managers@gelder.co.uk") {
-        window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
-      } else if (username === "surveyors@gelder.co.uk") {
-        window.location.href = "hub.html"; // Redirect to Hub Page
-      }
-      return;
-    }
-  }
-
-  // If no match found in the loop
-  alert("Invalid login credentials. Please try again.");
-});
+  
 
 // Caps Lock Indicator Script
+
 document.getElementById("password").addEventListener("keyup", function (event) {
   var capsLockEnabled =
     event.getModifierState && event.getModifierState("CapsLock");
