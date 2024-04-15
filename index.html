@@ -70,23 +70,29 @@
     </header>
 
      <!-- Login Form -->
-  <main id="main-content" class="hide">
-    <div class="login-box">
-      <h2>Login Form</h2>
-      <form onsubmit="event.preventDefault(); redirectToHome();">
-        <div class="user-box">
-          <input type="text" id="username" name="username" required />
+      <main id="main-content" class="hide">
+        <div class="login-box">
+          <h2>Login Form</h2>
+          <form onsubmit="event.preventDefault(); redirectToHome();">
+            <div class="user-box">
+              <input type="text" id="username" name="username" required />
           <label>Username</label>
-        </div>
-        <div class="user-box">
+      </div>
+      <div class="user-box">
+        <div class="password-container">
           <input type="password" id="password" name="password" required />
           <label>Password</label>
-          <div class="caps-lock-warning" style="display: none;">Caps Lock is on</div> <!-- Caps Lock warning -->
+          <!-- Show/Hide Password button -->
+          <button id="togglePasswordVisibility" type="button">
+            <i class="fas fa-eye-slash"></i>
+          </button>
         </div>
-        <button type="submit">Submit</button>
-      </form>
-    </div>
-  </main>
+        <div class="caps-lock-warning">Caps Lock is on</div> <!-- Caps Lock warning -->
+      </div>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</main>
 
     <!-- Footer Content -->
     <footer>2024 &copy; Gelder Group.</footer>
