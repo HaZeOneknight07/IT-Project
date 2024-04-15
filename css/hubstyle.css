@@ -41,23 +41,23 @@ header {
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    position: relative; 
-    overflow: hidden; 
+    position: relative; /* Required for pseudo-element positioning */
+    overflow: hidden; /* Hide overflow to ensure the pseudo-element does not leak */
 }
 
 .rounded-button::before {
-    content: ''; 
+    content: ''; /* Required for pseudo-element */
     position: absolute;
     bottom: 0;
-    left: 50%; 
+    left: 50%; /* Position the underline in the middle */
     width: 0;
-    height: 2px; 
-    background-color: #D22A3A; 
-    transition: width 0.5s ease, left 0.5s ease; 
-    transform: translateX(-50%); 
+    height: 2px; /* Thickness of the underline */
+    background-color: var(--button-hover-colour); /* Color of the underline */
+    transition: width 0.5s ease, left 0.5s ease; /* Transition for width and left position */
+    transform: translateX(-50%); /* Center the underline */
 }
 
 .rounded-button:hover::before {
-    width: 100%; 
-    left: 0;
+    width: 200%; /* Expand the width of the underline to extend equally to both sides */
+    left: -50%; /* Move the underline to start from the left */
 }
