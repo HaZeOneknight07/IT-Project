@@ -25,9 +25,9 @@ html, body {
 
 .button-container {
     display: flex;
-    flex-wrap: wrap; /* Allow the buttons to wrap if the container width is not enough */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
+    flex-wrap: wrap; 
+    justify-content: center; 
+    align-items: center; 
 }
 
 .nav-btn {

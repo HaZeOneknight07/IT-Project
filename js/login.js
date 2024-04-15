@@ -1,51 +1,48 @@
-// Login Validation Script
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-// Delay the hiding of preloader and showing login content after 5 seconds
-setTimeout(function () {
-  document.querySelector(".preloader-container").classList.add("hide");
-  document.getElementById("main-content").classList.remove("hide");
-}, 5000);
+// Get a reference to the Firebase Authentication service
+var auth = firebase.auth();
 
-var credentials = [
-  { username: "admin@gelder.co.uk", password: "ADMIN!Gelder18#" },
-  { username: "surveys@gelder.co.uk", password: "GelderSurveyors1" },
-  { username: "managers@gelder.co.uk", password: "GelderManagers1" },
-  // Add more username/password pairs as needed using same format
-];
+// Login form submission handler
+document.getElementById('loginForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent form submission
 
-function redirectToHome() {
-    var username = document.getElementById("username").value;
-    var password = document.getElementById("password").value;
-  
-    for (var i = 0; i < credentials.length; i++) {
-      if (
-        username === credentials[i].username &&
-        password === credentials[i].password
-      ) {
-        // Store data in local storage
-        localStorage.setItem("loggedInUsername", username);
-        localStorage.setItem("loggedInPassword", password);
-  
-        // Redirect to Managers Version
-        if (username === "managers@gelder.co.uk") {
-          window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
-        }
-        // Redirect to Surveyors Version
-        else if (username === "surveyors@gelder.co.uk") {
-          window.location.href = "hub.html"; // Redirect to Hub Page
-        }
-        // Redirect to Admin Panel
-        else if (username === "admin@gelder.co.uk") {
-          window.location.href = "admin.html"; // Redirect to Admin Panel
-        }
-        return;
-      }
+    var email = document.getElementById('username').value;
+    var password = document.getElementById('password').value;
+
+    // Sign in with email and password
+    auth.signInWithEmailAndPassword(email, password)
+    .then(function(userCredential) {
+        // User successfully logged in
+        var user = userCredential.user;
+        // Redirect user to the appropriate page based on their role
+        redirectUser(user.email);
+    })
+    .catch(function(error) {
+        // Handle login errors
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.error("Login error:", errorMessage);
+        // Display error message to the user
+        alert(errorMessage);
+    });
+});
+
+// Function to redirect user based on their role
+function redirectUser(email) {
+    // Redirect based on email or any other criteria
+    if (email === "managers@gelder.co.uk") {
+        window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
+    } else if (email === "surveyors@gelder.co.uk") {
+        window.location.href = "hub.html"; // Redirect to Hub Page
+    } else if (email === "admin@gelder.co.uk") {
+        window.location.href = "admin.html"; // Redirect to Admin Panel
+    } else {
+        // Redirect to a default page if no specific role is matched
+        window.location.href = "default.html";
     }
-    
-    // If no match found in the loop
-    alert("Invalid login credentials. Please try again.");
-  }
-  
+}
 
 // Caps Lock Indicator Script
 
