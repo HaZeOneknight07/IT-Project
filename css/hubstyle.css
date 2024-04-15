@@ -41,9 +41,9 @@ header {
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    transition: background-color 0.5s; 
+    transition: var(--background-colour) 0.5s; 
 }
 
 .rounded-button:hover {
-    background-color: var(--button-hover-colour); /* Darker shade when hovered over */
+    background-color: var(--button-hover-colour);
 }

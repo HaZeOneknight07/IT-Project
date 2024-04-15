@@ -6,8 +6,7 @@
     background-color: var(--button-colour);
     box-sizing: border-box;
     width: 175px;
-    height: vh;
-    position: relative; /* Make the container a positioning context */
+    position: relative; 
 }
 
 .button-container::after {
@@ -23,6 +22,7 @@
     z-index: -1;
 }
 
+/* Navigation Button Styles */
 .rounded-button {
     display: block;
     padding: 10px; 
@@ -37,9 +37,10 @@
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    transition: background-color 0.5s; 
+    transition: var(--background-colour) 0.5s; 
 }
 
+/* Button Hover Styles */
 .rounded-button:hover {
     background-color: var(--button-hover-colour);
 }

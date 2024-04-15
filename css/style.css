@@ -1,3 +1,9 @@
+/* 
+
+MASTER STYLESHEET 
+
+
+*/
 :root {
 
     /*General Colours*/
@@ -26,7 +32,6 @@
     /*Search Styles*/
     --search-box-colour: #DDD;
     --rate-container-colour: #888;
-
 }
 
 /* Universal Scrollbar Styles */
@@ -88,6 +93,7 @@ header h1 {
     }
 }
 
+/* Navigation Styles */
 nav {
     background-color: var(--navigation-colour);
     color: var(--text-colour);
@@ -101,25 +107,31 @@ nav {
     border-radius: 0 0 1rem 0;
 }
 
+/* Navigation Links Styles */
 nav a {
     color: var(--text-colour);
     text-decoration: none;
     padding: 1em;
     margin: 0 1.5em;
-    transition: background-color 0.5s;
+    transition: var(--background-colour) 0.5s;
     border-radius: 20px;
 }
 
+/* Navigation Hover Styles */
 nav a:hover {
     background-color: var(--button-colour);
+    text-decoration: underline 0.5s;
 }
 
+/* Main Content Styles */
 main {
     display: flex;
     flex: 1; /* Grow to fill available space */
     align-items: stretch; /* Make the container stretch vertically */
 }
 
+
+/* Footer Styles */
 footer {
     background-color: var(--footer-header-colour);
     color: var(--text-colour);
@@ -130,6 +142,7 @@ footer {
     font-family: 'Poppins', sans-serif;
 }
 
+/* Dark Mode Toggle Styles */
 .darkmode {
     display: inline-block;
     font-size: 2rem;
