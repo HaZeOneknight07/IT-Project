@@ -48,26 +48,3 @@ setTimeout(function () {
           warningElement.style.display = 'none';
         }
       });
-
-    // Password Visibility Script
-
-    document.getElementById('togglePasswordVisibility').addEventListener('click', function() {
-        var passwordInput = document.getElementById('password');
-        if (passwordInput.type === 'password') {
-          passwordInput.type = 'text';
-          document.querySelector('#togglePasswordVisibility i').className = 'fas fa-eye';
-        } else {
-          passwordInput.type = 'password';
-          document.querySelector('#togglePasswordVisibility i').className = 'fas fa-eye-slash';
-        }
-      });
-    
-      document.getElementById('password').addEventListener('keyup', function(event) {
-        var capsLockEnabled = event.getModifierState && event.getModifierState('CapsLock');
-        var warningElement = document.querySelector('.caps-lock-warning');
-        if (capsLockEnabled) {
-          warningElement.classList.add('show');
-        } else {
-          warningElement.classList.remove('show');
-        }
-      });
