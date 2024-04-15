@@ -27,20 +27,39 @@ function createUser(email, password) {
       });
 }
 
-// Form submission handler
-document.getElementById('createUserForm').addEventListener('submit', function(event) {
+// Form submission handler for login form
+document.querySelector('form').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
   
   // Get email and password from form
-  var email = document.getElementById('newUserEmail').value;
-  var password = document.getElementById('newUserPassword').value;
+  var email = document.getElementById('username').value;
+  var password = document.getElementById('password').value;
   
-  // Create new user
-  createUser(email, password);
+  // Authenticate user
+  authenticateUser(email, password);
 });
 
-// Caps Lock Indicator Script
+// Function to authenticate user
+function authenticateUser(email, password) {
+  // Add your Firebase authentication logic here
+  // For example:
+  firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential) => {
+      // User signed in successfully
+      var user = userCredential.user;
+      console.log('User signed in:', user);
+      // Redirect user or perform other actions
+    })
+    .catch((error) => {
+      // Handle authentication errors
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      alert(errorMessage);
+      console.error('Error authenticating user:', errorMessage);
+    });
+}
 
+// Caps Lock Indicator Script
 document.getElementById("password").addEventListener("keyup", function (event) {
   var capsLockEnabled =
     event.getModifierState && event.getModifierState("CapsLock");
