@@ -92,19 +92,48 @@
     <div class="text">Dashboard</div>
   </section>
 
+  <!-- Form for adding users -->
+  <div id="addUserForm" style="display: none;">
+    <h2>Add User</h2>
+    <form id="userForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required><br><br>
+      <label for="job">Job:</label>
+      <input type="text" id="job" name="job" required><br><br>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+
   <!-- Admin Script -->
   <script>
+    // Predefined users array
+    var predefinedUsers = [
+      { name: "Test Name", job: "Web designer", imageUrl: "img/default_image1.jpg" },
+      { name: "John Doe", job: "Developer", imageUrl: "img/default_image2.jpg" },
+      // Add more predefined users as needed
+    ];
+
     // Function to prompt user for details
     function promptUserDetails() {
+      // Check if there are any predefined users
+      if (predefinedUsers.length === 0) {
+        alert("No predefined users found. Please add some predefined users.");
+        return;
+      }
+
       var name = prompt("Please enter your name:", "");
       var job = prompt("Please enter your job title:", "");
 
-      // Predefined field to trigger image auto-population
-      if (name.toLowerCase() === "test name" && job.toLowerCase() === "web designer") {
-        // Auto-populate image URL
-        var imageUrl = "img/logo.svg"; 
-      } else {
-        var imageUrl = ""; // Default image URL
+      var imageUrl = ""; // Default image URL
+
+      // Check if the input matches any predefined user
+      for (var i = 0; i < predefinedUsers.length; i++) {
+        if (name.toLowerCase() === predefinedUsers[i].name.toLowerCase() && 
+            job.toLowerCase() === predefinedUsers[i].job.toLowerCase()) {
+          // If matched, populate the image URL
+          imageUrl = predefinedUsers[i].imageUrl;
+          break; // Exit loop once a match is found
+        }
       }
 
       // Update profile information with user details
@@ -115,6 +144,21 @@
 
     // Call the function when the page loads
     window.onload = promptUserDetails;
+
+    // Function to show the form for adding users
+    function showAddUserForm() {
+      document.getElementById("addUserForm").style.display = "block";
+    }
+
+    // Function to handle form submission
+    document.getElementById("userForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var name = document.getElementById("name").value;
+      var job = document.getElementById("job").value;
+      var imageUrl = prompt("Please enter the image URL for the user:", "");
+      predefinedUsers.push({ name: name, job: job, imageUrl: imageUrl });
+      document.getElementById("addUserForm").style.display = "none";
+    });
   </script>
 
   <!-- Your other JavaScript files can be included here -->
