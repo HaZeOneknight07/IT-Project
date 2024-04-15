@@ -104,7 +104,7 @@
     </form>
   </div>
 
- <!-- Admin Script -->
+<!-- Admin Script -->
 <script>
   // Predefined users array
   var predefinedUsers = [
@@ -131,6 +131,7 @@
     if (!name || !job) return;
 
     var imageUrl = ""; // Default image URL
+    var found = false;
 
     // Check if the input matches any predefined user
     for (var i = 0; i < predefinedUsers.length; i++) {
@@ -146,8 +147,14 @@
         }
         // Populate the image URL
         imageUrl = predefinedUsers[i].imageUrl;
+        found = true;
         break; // Exit loop once a match is found
       }
+    }
+
+    if (!found) {
+      alert("You are not a predefined user. Access denied.");
+      return;
     }
 
     // Update profile information with user details
@@ -193,7 +200,6 @@
     document.getElementById("addUserForm").style.display = "none";
   });
 </script>
-
 
   <!-- Your other JavaScript files can be included here -->
   <script src="js/admin.js"></script>
