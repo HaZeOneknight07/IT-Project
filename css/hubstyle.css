@@ -41,9 +41,23 @@ header {
     text-align: center;
     width: 100%;
     box-sizing: border-box;
-    transition: var(--background-colour) 0.5s; 
+    position: relative; 
+    overflow: hidden; 
 }
 
-.rounded-button:hover {
-    background-color: var(--button-hover-colour);
+.rounded-button::before {
+    content: ''; 
+    position: absolute;
+    bottom: 0;
+    left: 50%; 
+    width: 0;
+    height: 2px; 
+    background-color: #D22A3A; 
+    transition: width 0.5s ease, left 0.5s ease; 
+    transform: translateX(-50%); 
+}
+
+.rounded-button:hover::before {
+    width: 100%; 
+    left: 0;
 }
