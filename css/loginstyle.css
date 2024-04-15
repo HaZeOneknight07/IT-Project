@@ -79,50 +79,8 @@ header {
     box-shadow: 0 0 15px var(--button-colour-submit);
 }
 
-/* Caps Lock Indicator Styles */
-
 .caps-lock-warning {
     font-size: 12px;
     color: #D22A3A;
     margin-top: 5px;
-  }
-
-/* Password Visibility Icon Styles */
-  .user-box {
-    position: relative;
-  }
-  
-  .password-container {
-    display: flex; 
-    align-items: center; 
-  }
-  
-  .password-container input {
-    width: calc(100% - 30px); 
-    padding: 10px 0;
-    font-size: 16px;
-    color: var(--text-colour);
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid var(--text-colour);
-    outline: none;
-    background: transparent;
-  }
-  
-  .password-container button {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    transform: translateY(50%);
-    background-color: transparent;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    margin-bottom: -1px; /* Adjust to align exactly with the input line */
-}
-  
-  /* Adjust the position of the Caps Lock warning */
-  .caps-lock-warning {
-    position: absolute;
-    bottom: -20px;
   }
