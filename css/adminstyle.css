@@ -12,7 +12,7 @@
   top: 0;
   height: 100%;
   width: 78px;
-  background: #405C59;
+  background: #e1cbb1;
   padding: 6px 14px;
   z-index: 99;
   transition: all 0.5s ease;
@@ -110,7 +110,7 @@
   border: none;
   border-radius: 12px;
   transition: all 0.5s ease;
-  background: #2c3f3d;
+  background: #d4e5d3;
 }
 .sidebar.open input{
   padding: 0 20px 0 50px;
@@ -122,16 +122,16 @@
   left: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  background: #2c3f3d;
+  background: #d4e5d3;
   color: #FFF;
 }
 .sidebar.open .bx-search:hover{
-  background: #2c3f3d;
+  background: #d4e5d3;
   color: #FFF;
 }
 .sidebar .bx-search:hover{
   background: #FFF;
-  color: #405C59;
+  color: #d4e5d3;
 }
 .sidebar li a{
   display: flex;
@@ -141,7 +141,7 @@
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: #405C59;
+  background: #d4e5d3;
 }
 .sidebar li a:hover{
   background: #FFF;
@@ -162,7 +162,7 @@
 .sidebar li a:hover .links_name,
 .sidebar li a:hover i{
   transition: all 0.5s ease;
-  color: #405C59;
+  color: #d4e5d3;
 }
 .sidebar li i{
   height: 50px;
@@ -177,7 +177,7 @@
   left: 0;
   bottom: -8px;
   padding: 10px 14px;
-  background: #2c3f3d;
+  background: #d4e5d3;
   transition: all 0.5s ease;
   overflow: hidden;
 }
@@ -211,7 +211,7 @@
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  background: #2c3f3d;
+  background: #d4e5d3;
   width: 100%;
   height: 60px;
   line-height: 60px;
@@ -224,7 +224,7 @@
 }
 .home-section{
   position: relative;
-  background: #262626;
+  background: #d4e5d3;
   min-height: 100vh;
   top: 0;
   left: 78px;
