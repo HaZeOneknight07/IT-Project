@@ -3,7 +3,7 @@ header {
 } 
 
 .login-box {
-    position: absolute;
+    position: relative;
     top: 50%;
     left: 50%;
     width: 400px;
@@ -87,18 +87,18 @@ header {
     margin-top: 5px;
   }
 
-  /* Password Visibility Icon Styles */
+/* Password Visibility Icon Styles */
   .user-box {
     position: relative;
   }
   
   .password-container {
-    display: flex; /* Use flexbox */
-    align-items: center; /* Align items vertically */
+    display: relative; 
+    align-items: center; 
   }
   
   .password-container input {
-    width: calc(100% - 30px); /* Adjust for button width and margin */
+    width: calc(100% - 30px); 
     padding: 10px 0;
     font-size: 16px;
     color: var(--text-colour);
@@ -110,16 +110,15 @@ header {
   }
   
   .password-container button {
-    width: 30px; /* Adjust button width */
-    height: 30px; /* Adjust button height */
+    position: absolute;
+    right: 0;
+    bottom: 50%; /* adjust as needed for vertical alignment */
+    transform: translateY(50%);
     background: transparent;
     border: none;
     outline: none;
     cursor: pointer;
-    position: absolute;
-    right: 0;
-    bottom: 10px; /* Adjust vertical position */
-  }
+}
   
   /* Adjust the position of the Caps Lock warning */
   .caps-lock-warning {
