@@ -3,7 +3,7 @@ header {
 } 
 
 .login-box {
-    position: relative;
+    position: absolute;
     top: 50%;
     left: 50%;
     width: 400px;
@@ -93,7 +93,7 @@ header {
   }
   
   .password-container {
-    display: relative; 
+    display: flex; 
     align-items: center; 
   }
   
@@ -109,7 +109,7 @@ header {
     background: transparent;
   }
   
-  .password-container button {
+ .password-container button {
     position: absolute;
     right: 0;
     bottom: 50%; /* adjust as needed for vertical alignment */
