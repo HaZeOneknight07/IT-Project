@@ -78,3 +78,9 @@ header {
 .login-box form button:hover {
     box-shadow: 0 0 15px var(--button-colour-submit);
 }
+
+.caps-lock-warning {
+    font-size: 12px;
+    color: #D22A3A;
+    margin-top: 5px;
+  }
