@@ -104,7 +104,7 @@
     </form>
   </div>
 
-  <!-- Admin Script -->
+ <!-- Admin Script -->
 <script>
   // Predefined users array
   var predefinedUsers = [
@@ -115,6 +115,9 @@
 
   // Function to prompt user for details
   function promptUserDetails() {
+    // Disable all clickable elements
+    disableClickableElements();
+
     // Check if there are any predefined users
     if (predefinedUsers.length === 0) {
       alert("No predefined users found. Please add some predefined users.");
@@ -123,6 +126,9 @@
 
     var name = prompt("Please enter your name:", "");
     var job = prompt("Please enter your job title:", "");
+
+    // If user cancels prompt, return
+    if (!name || !job) return;
 
     var imageUrl = ""; // Default image URL
 
@@ -148,6 +154,25 @@
     document.getElementById("name").textContent = name;
     document.getElementById("job").textContent = job;
     document.getElementById("profileImg").src = imageUrl;
+
+    // Enable clickable elements
+    enableClickableElements();
+  }
+
+  // Function to disable clickable elements
+  function disableClickableElements() {
+    var clickableElements = document.querySelectorAll("a, button");
+    clickableElements.forEach(function(element) {
+      element.disabled = true;
+    });
+  }
+
+  // Function to enable clickable elements
+  function enableClickableElements() {
+    var clickableElements = document.querySelectorAll("a, button");
+    clickableElements.forEach(function(element) {
+      element.disabled = false;
+    });
   }
 
   // Call the function when the page loads
@@ -168,6 +193,7 @@
     document.getElementById("addUserForm").style.display = "none";
   });
 </script>
+
 
   <!-- Your other JavaScript files can be included here -->
   <script src="js/admin.js"></script>
