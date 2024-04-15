@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Admin Panel - Gelder Group Surveyors</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script 
+     src="https://code.jquery.com/jquery-3.6.3.min.js"
+     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" 
+     crossorigin="anonymous">
+    </script>
+
+    <!-- Admin Stylesheet -->
+    <link 
+     rel='stylesheet' 
+     type='text/css' 
+     media='screen' 
+     href='css/adminstyle.css'
+    >
+</head>
+
+<body>
+    <header>
+
+        <h1>Admin Panel</h1>
+
+    </header>
+    <nav class="open">
+        <span class="close"></span>
+        <span>
+            <ul class="menu__list">
+                <li>
+                    <a href="scheduleoption.html" title="ScheduleOption">Schedule Option</a>
+                </li>
+                <li>
+                    <a href="siteinformation.html" title="SiteInformation">Site Information</a>
+                </li>
+                <li>
+                    <a href="login.html" title="Login">Login</a>
+                </li>
+                <li>
+                    <a href="hub.html" title="Hub">Hub</a>
+                </li>
+            </ul>
+        </span>
+        <span class="close"></span>
+    </nav>
+
+    <main>
+        <div class="button-container">
+            <a href="scheduleestimateX.html" class="nav-btn">Rates Option - X</a>
+            <a href="scheduleestimateS.html" class="nav-btn">Rates Option - S</a>
+            <a href="report.html" class="nav-btn">Report</a>
+            <a href="reportinfo.html" class="nav-btn">Report Info</a>
+            <a href="insuredinfo.html" class="nav-btn">Insured Info</a>
+        </div>
+    </main>
+
+    <!-- Footer Content -->
+    <footer>2024 &copy; Gelder Group.</footer>
+    
+    <script>
+        $(document).ready(function () {
+            $(document).delegate(".open", "click", function (event) {
+                $(this).addClass("opened");
+                event.stopPropagation();
+            });
+            $(document).delegate("body", "click", function (event) {
+                $(".open").removeClass("opened");
+            });
+            $(document).delegate(".close", "click", function (event) {
+                $(".open").removeClass("opened");
+                event.stopPropagation();
+            });
+        });
+    </script>
+
+</body>
+
+</html>
