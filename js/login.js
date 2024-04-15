@@ -6,63 +6,52 @@ setTimeout(function () {
   document.getElementById("main-content").classList.remove("hide");
 }, 5000);
 
-// Function to create new user
-function createUser(email, password) {
-  firebase.auth().createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-          // New user created successfully
-          var user = userCredential.user;
-          alert('New user created successfully');
-          console.log('New user:', user);
-          // Clear form fields
-          document.getElementById('newUserEmail').value = '';
-          document.getElementById('newUserPassword').value = '';
-      })
-      .catch((error) => {
-          // Handle errors
-          var errorCode = error.code;
-          var errorMessage = error.message;
-          alert(errorMessage);
-          console.error('Error creating user:', errorMessage);
-      });
-}
+var credentials = [
+  { username: "admin@gelder.co.uk", password: "ADMIN!Gelder18#" },
+  { username: "surveys@gelder.co.uk", password: "GelderSurveyors1" },
+  { username: "managers@gelder.co.uk", password: "GelderManagers1" },
+  // Add more username/password pairs as needed using same format
+];
 
-// Form submission handler for login form
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Prevent form submission
-  console.log('Form submitted'); // Debugging statement
+function redirectToHome() {
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
   
-  // Get email and password from form
-  var email = document.getElementById('username').value;
-  var password = document.getElementById('password').value;
-  console.log('Email:', email, 'Password:', password); // Debugging statement
+    for (var i = 0; i < credentials.length; i++) {
+      if (
+        username === credentials[i].username &&
+        password === credentials[i].password
+      ) {
+        // Store data in local storage
+        localStorage.setItem("loggedInUsername", username);
+        localStorage.setItem("loggedInPassword", password);
   
-  // Authenticate user
-  authenticateUser(email, password);
-});
-
-// Function to authenticate user
-function authenticateUser(email, password) {
-  // Authenticate user using Firebase
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // User signed in successfully
-      var user = userCredential.user;
-      console.log('User signed in:', user);
-      // Redirect user or perform other actions
-    })
-    .catch((error) => {
-      // Handle authentication errors
-      var errorCode = error.code;
-      var errorMessage = error.message;
-      alert(errorMessage);
-      console.error('Error authenticating user:', errorMessage);
-    });
-}
+        // Redirect to Managers Version
+        if (username === "managers@gelder.co.uk") {
+          window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
+        }
+        // Redirect to Surveyors Version
+        else if (username === "surveyors@gelder.co.uk") {
+          window.location.href = "hub.html"; // Redirect to Hub Page
+        }
+        // Redirect to Admin Panel
+        else if (username === "admin@gelder.co.uk") {
+          window.location.href = "admin.html"; // Redirect to Admin Panel
+        }
+        return;
+      }
+    }
+    
+    // If no match found in the loop
+    alert("Invalid login credentials. Please try again.");
+  }
+  
 
 // Caps Lock Indicator Script
+
 document.getElementById("password").addEventListener("keyup", function (event) {
-  var capsLockEnabled = event.getModifierState && event.getModifierState("CapsLock");
+  var capsLockEnabled =
+    event.getModifierState && event.getModifierState("CapsLock");
   var warningElement = document.querySelector(".caps-lock-warning");
   if (capsLockEnabled) {
     warningElement.style.display = "block";
