@@ -6,6 +6,7 @@
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <title>Admin Panel - Gelder Group Surveyors</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+
     <script 
      src="https://code.jquery.com/jquery-3.6.3.min.js"
      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" 
@@ -22,11 +23,15 @@
 </head>
 
 <body>
+
+    <!-- Header Content -->
     <header>
 
         <h1>Admin Panel</h1>
 
     </header>
+
+    <!-- Admin Navigation HTML -->
     <nav class="open">
         <span class="close"></span>
         <span>
@@ -38,7 +43,7 @@
                     <a href="siteinformation.html" title="SiteInformation">Site Information</a>
                 </li>
                 <li>
-                    <a href="login.html" title="Login">Login</a>
+                    <a href="index.html" title="Login">Login</a>
                 </li>
                 <li>
                     <a href="hub.html" title="Hub">Hub</a>
@@ -48,6 +53,7 @@
         <span class="close"></span>
     </nav>
 
+    <!-- Navigation Buttons HTML -->
     <main>
         <div class="button-container">
             <a href="scheduleestimateX.html" class="nav-btn">Rates Option - X</a>
@@ -61,21 +67,8 @@
     <!-- Footer Content -->
     <footer>2024 &copy; Gelder Group.</footer>
     
-    <script>
-        $(document).ready(function () {
-            $(document).delegate(".open", "click", function (event) {
-                $(this).addClass("opened");
-                event.stopPropagation();
-            });
-            $(document).delegate("body", "click", function (event) {
-                $(".open").removeClass("opened");
-            });
-            $(document).delegate(".close", "click", function (event) {
-                $(".open").removeClass("opened");
-                event.stopPropagation();
-            });
-        });
-    </script>
+    <!-- Admin Navigation Script -->
+    <script src="js/adminnav.js"></script>
 
 </body>
 
