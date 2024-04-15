@@ -1,48 +1,43 @@
-// Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+// Login Validation Script
 
-// Get a reference to the Firebase Authentication service
-var auth = firebase.auth();
+// Delay the hiding of preloader and showing login content after 5 seconds
+setTimeout(function () {
+  document.querySelector(".preloader-container").classList.add("hide");
+  document.getElementById("main-content").classList.remove("hide");
+}, 5000);
 
-// Login form submission handler
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission
-
-    var email = document.getElementById('username').value;
-    var password = document.getElementById('password').value;
-
-    // Sign in with email and password
-    auth.signInWithEmailAndPassword(email, password)
-    .then(function(userCredential) {
-        // User successfully logged in
-        var user = userCredential.user;
-        // Redirect user to the appropriate page based on their role
-        redirectUser(user.email);
-    })
-    .catch(function(error) {
-        // Handle login errors
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        console.error("Login error:", errorMessage);
-        // Display error message to the user
-        alert(errorMessage);
-    });
-});
-
-// Function to redirect user based on their role
-function redirectUser(email) {
-    // Redirect based on email or any other criteria
-    if (email === "managers@gelder.co.uk") {
-        window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
-    } else if (email === "surveyors@gelder.co.uk") {
-        window.location.href = "hub.html"; // Redirect to Hub Page
-    } else if (email === "admin@gelder.co.uk") {
-        window.location.href = "admin.html"; // Redirect to Admin Panel
-    } else {
-        // Redirect to a default page if no specific role is matched
-        window.location.href = "default.html";
-    }
+// Function to create new user
+function createUser(email, password) {
+  firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+          // New user created successfully
+          var user = userCredential.user;
+          alert('New user created successfully');
+          console.log('New user:', user);
+          // Clear form fields
+          document.getElementById('newUserEmail').value = '';
+          document.getElementById('newUserPassword').value = '';
+      })
+      .catch((error) => {
+          // Handle errors
+          var errorCode = error.code;
+          var errorMessage = error.message;
+          alert(errorMessage);
+          console.error('Error creating user:', errorMessage);
+      });
 }
+
+// Form submission handler
+document.getElementById('createUserForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent form submission
+  
+  // Get email and password from form
+  var email = document.getElementById('newUserEmail').value;
+  var password = document.getElementById('newUserPassword').value;
+  
+  // Create new user
+  createUser(email, password);
+});
 
 // Caps Lock Indicator Script
 
