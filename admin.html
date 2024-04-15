@@ -1,92 +1,99 @@
 <!DOCTYPE html>
-<html>
+<!-- Website - www.codingnepalweb.com -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Responsive Sidebar Menu HTML CSS | CodingNepal</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Boxicons CDN Link -->
+    <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bxl-c-plus-plus icon"></i>
+        <div class="logo_name">Gelder Group</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search..." />
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-user"></i>
+            <span class="links_name">User</span>
+          </a>
+          <span class="tooltip">User</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-chat"></i>
+            <span class="links_name">Messages</span>
+          </a>
+          <span class="tooltip">Messages</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">Analytics</span>
+          </a>
+          <span class="tooltip">Analytics</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-folder"></i>
+            <span class="links_name">File Manager</span>
+          </a>
+          <span class="tooltip">Files</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cart-alt"></i>
+            <span class="links_name">Order</span>
+          </a>
+          <span class="tooltip">Order</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-heart"></i>
+            <span class="links_name">Saved</span>
+          </a>
+          <span class="tooltip">Saved</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Setting</span>
+          </a>
+          <span class="tooltip">Setting</span>
+        </li>
+        <li class="profile">
+          <div class="profile-details">
+            <img src="profile.jpg" alt="profileImg" />
+            <div class="name_job">
+              <div class="name">Prem Shahi</div>
+              <div class="job">Web designer</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+      </ul>
+    </div>
+    <section class="home-section">
+      <div class="text">Dashboard</div>
+    </section>
 
-<head>
-    <meta charset='utf-8'>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Admin Panel - Gelder Group Surveyors</title>
-    <meta name='viewport' content='width=device-width, initial-scale=1'>
-
-    <script 
-     src="https://code.jquery.com/jquery-3.6.3.min.js"
-     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" 
-     crossorigin="anonymous">
-    </script>
-
-    <!-- Admin Stylesheet -->
-    <link 
-     rel='stylesheet' 
-     type='text/css' 
-     media='screen' 
-     href='css/adminstyle.css'
-    >
-    <!-- Font Awesome Icons -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
-    <!-- Google Poppins Font -->
-    <link
-      rel="stylesheet"
-      type="text/css"
-      href="https://fonts.googleapis.com/css?family=Poppins"
-    />
-    <!-- Favicon -->
-    <link 
-     rel="icon" 
-     type="image/x-icon" 
-     href="img/favicon.png" 
-    />
-
-</head>
-
-<body>
-
-    <!-- Header Content -->
-    <header>
-
-        <h1>Admin Panel</h1>
-
-    </header>
-
-    <!-- Admin Navigation HTML -->
-    <nav class="open">
-        <span class="close"></span>
-        <span>
-            <ul class="menu__list">
-                <li>
-                    <a href="scheduleoption.html" title="ScheduleOption">Schedule Option</a>
-                </li>
-                <li>
-                    <a href="siteinformation.html" title="SiteInformation">Site Information</a>
-                </li>
-                <li>
-                    <a href="index.html" title="Login">Login</a>
-                </li>
-                <li>
-                    <a href="hub.html" title="Hub">Hub</a>
-                </li>
-            </ul>
-        </span>
-        <span class="close"></span>
-    </nav>
-
-    <!-- Navigation Buttons HTML -->
-    <main>
-        <div class="button-container">
-            <a href="scheduleestimateX.html" class="nav-btn">Rates Option - X</a>
-            <a href="scheduleestimateS.html" class="nav-btn">Rates Option - S</a>
-            <a href="report.html" class="nav-btn">Report</a>
-            <a href="reportinfo.html" class="nav-btn">Report Info</a>
-            <a href="insuredinfo.html" class="nav-btn">Insured Info</a>
-        </div>
-
-    <!-- Footer Content -->
-    <footer>2024 &copy; Gelder Group.</footer>
-    
-    <!-- Admin Navigation Script -->
-    <script src="js/adminnav.js"></script>
-
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
