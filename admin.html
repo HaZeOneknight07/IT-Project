@@ -16,7 +16,7 @@
     />
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
+
     <!-- Google Poppins Font -->
     <link
       rel="stylesheet"
@@ -92,10 +92,10 @@
         </li>
         <li class="profile">
           <div class="profile-details">
-            <img src="img/logo.svg" alt="profileImg" />
+            <img id="profileImg" src="" alt="profileImg" />
             <div class="name_job">
-              <div class="name">Test Name</div>
-              <div class="job">Web designer</div>
+              <div id="name">Test Name</div>
+              <div id="job">Web designer</div>
             </div>
           </div>
           <i class="bx bx-log-out" id="log_out"></i>
@@ -107,10 +107,21 @@
     </section>
 
     <!-- Admin Script -->
+    <script>
+      // Define user details
+      var user = {
+        name: "Test Name",
+        job: "Web designer",
+        image: "img/logo.svg" // Assuming this is the default image
+      };
+
+      // Update profile information with user details
+      document.getElementById("profileImg").src = user.image;
+      document.getElementById("name").textContent = user.name;
+      document.getElementById("job").textContent = user.job;
+    </script>
+
+    <!-- Your other JavaScript files can be included here -->
     <script src="js/admin.js"></script>
-
-    <!-- Theme Toggle Script -->
-    <script src="js/darkmode.js"></script>
-
   </body>
 </html>
