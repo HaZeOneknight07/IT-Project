@@ -7,7 +7,7 @@ setTimeout(function () {
 }, 5000);
 
 var credentials = [
-  { username: "admin@gelder.co.uk", password: "Admin1" },
+  { username: "admin@gelder.co.uk", password: "ADMIN!Gelder18#" },
   { username: "surveys@gelder.co.uk", password: "GelderSurveyors1" },
   { username: "managers@gelder.co.uk", password: "GelderManagers1" },
   // Add more username/password pairs as needed using same format
@@ -34,7 +34,7 @@ function redirectToHome() {
         else if (username === "surveyors@gelder.co.uk") {
           window.location.href = "hub.html"; // Redirect to Hub Page
         }
-        // Redirect to Third Location for "adhim@gelder.co.uk"
+        // Redirect to Admin Panel
         else if (username === "admin@gelder.co.uk") {
           window.location.href = "admin.html"; // Redirect to Admin Panel
         }
