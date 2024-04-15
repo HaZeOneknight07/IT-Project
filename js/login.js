@@ -34,7 +34,7 @@ function redirectToHome() {
         else if (username === "surveyors@gelder.co.uk") {
           window.location.href = "hub.html"; // Redirect to Hub Page
         }
-        // Redirect to Third Location for "adhim@gelder.co.uk"
+        // Redirect to Admin Panel
         else if (username === "admin@gelder.co.uk") {
           window.location.href = "admin.html"; // Redirect to Admin Panel
         }
