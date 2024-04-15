@@ -28,12 +28,14 @@ function createUser(email, password) {
 }
 
 // Form submission handler for login form
-document.querySelector('form').addEventListener('submit', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission
+  console.log('Form submitted'); // Debugging statement
   
   // Get email and password from form
   var email = document.getElementById('username').value;
   var password = document.getElementById('password').value;
+  console.log('Email:', email, 'Password:', password); // Debugging statement
   
   // Authenticate user
   authenticateUser(email, password);
@@ -41,8 +43,7 @@ document.querySelector('form').addEventListener('submit', function(event) {
 
 // Function to authenticate user
 function authenticateUser(email, password) {
-  // Add your Firebase authentication logic here
-  // For example:
+  // Authenticate user using Firebase
   firebase.auth().signInWithEmailAndPassword(email, password)
     .then((userCredential) => {
       // User signed in successfully
@@ -61,8 +62,7 @@ function authenticateUser(email, password) {
 
 // Caps Lock Indicator Script
 document.getElementById("password").addEventListener("keyup", function (event) {
-  var capsLockEnabled =
-    event.getModifierState && event.getModifierState("CapsLock");
+  var capsLockEnabled = event.getModifierState && event.getModifierState("CapsLock");
   var warningElement = document.querySelector(".caps-lock-warning");
   if (capsLockEnabled) {
     warningElement.style.display = "block";
