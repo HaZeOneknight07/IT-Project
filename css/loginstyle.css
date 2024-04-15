@@ -109,11 +109,11 @@ header {
     background: transparent;
   }
   
- .password-container button {
+  .password-container button {
     position: absolute;
     right: 0;
-    bottom: 50%; /* adjust as needed for vertical alignment */
-    transform: translateY(50%);
+    bottom: 0; /* Adjusted to be on the line */
+    padding: 0; /* Remove padding to make it closer to the line */
     background: transparent;
     border: none;
     outline: none;
