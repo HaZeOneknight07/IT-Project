@@ -115,12 +115,24 @@ nav a {
     margin: 0 1.5em;
     transition: var(--background-colour) 0.5s;
     border-radius: 20px;
+    text-decoration: none; 
+    position: relative; 
 }
 
-/* Navigation Hover Styles */
-nav a:hover {
-    background-color: var(--button-colour);
-    text-decoration: underline 0.5s;
+nav a::before {
+    content: ''; 
+    position: absolute;
+    bottom: -2px; 
+    left: 50%; 
+    width: 0;
+    height: 2px; 
+    background-color: var(--button-colour); 
+    transition: width 0.5s ease, left 0.5s ease; 
+}
+
+nav a:hover::before {
+    width: 100%; 
+    left: 0; 
 }
 
 /* Main Content Styles */
