@@ -113,11 +113,15 @@
     // Add more predefined users as needed.
   ];
 
+  // Function to check if the user is predefined
+  function isUserPredefined(name, job) {
+    return predefinedUsers.some(function(user) {
+      return user.name.toLowerCase() === name.toLowerCase() && user.job.toLowerCase() === job.toLowerCase();
+    });
+  }
+
   // Function to prompt user for details
   function promptUserDetails() {
-    // Disable all clickable elements
-    disableClickableElements();
-
     // Check if there are any predefined users
     if (predefinedUsers.length === 0) {
       alert("No predefined users found. Please add some predefined users.");
@@ -129,6 +133,13 @@
 
     // If user cancels prompt, return
     if (!name || !job) return;
+
+    // If the user is not predefined, redirect to login page
+    if (!isUserPredefined(name, job)) {
+      alert("You are not a predefined user. Redirecting to login page...");
+      window.location.href = "login.html"; // Change the URL to your login page
+      return;
+    }
 
     var imageUrl = ""; // Default image URL
     var found = false;
@@ -150,11 +161,6 @@
         found = true;
         break; // Exit loop once a match is found
       }
-    }
-
-    if (!found) {
-      alert("You are not a predefined user. Access denied.");
-      return;
     }
 
     // Update profile information with user details
