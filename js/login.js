@@ -7,38 +7,45 @@ setTimeout(function () {
 }, 5000);
 
 var credentials = [
+  { username: "admin@gelder.co.uk", password: "Admin1" },
   { username: "surveys@gelder.co.uk", password: "GelderSurveyors1" },
   { username: "managers@gelder.co.uk", password: "GelderManagers1" },
   // Add more username/password pairs as needed using same format
 ];
 
 function redirectToHome() {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-
-  for (var i = 0; i < credentials.length; i++) {
-    if (
-      username === credentials[i].username &&
-      password === credentials[i].password
-    ) {
-      // Store data in local storage
-      localStorage.setItem("loggedInUsername", username);
-      localStorage.setItem("loggedInPassword", password);
-
-      // Redirect to Managers Version
-      if (username === "managers@gelder.co.uk") {
-        window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+  
+    for (var i = 0; i < credentials.length; i++) {
+      if (
+        username === credentials[i].username &&
+        password === credentials[i].password
+      ) {
+        // Store data in local storage
+        localStorage.setItem("loggedInUsername", username);
+        localStorage.setItem("loggedInPassword", password);
+  
+        // Redirect to Managers Version
+        if (username === "managers@gelder.co.uk") {
+          window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
+        }
         // Redirect to Surveyors Version
-      } else {
-        window.location.href = "hub.html"; // Redirect to Hub Page
+        else if (username === "surveyors@gelder.co.uk") {
+          window.location.href = "hub.html"; // Redirect to Hub Page
+        }
+        // Redirect to Third Location for "adhim@gelder.co.uk"
+        else if (username === "admin@gelder.co.uk") {
+          window.location.href = "admin.html"; // Redirect to Admin Panel
+        }
+        return;
       }
-      return;
     }
+    
+    // If no match found in the loop
+    alert("Invalid login credentials. Please try again.");
   }
-
-  // If no match found in the loop
-  alert("Invalid login credentials. Please try again.");
-}
+  
 
 // Caps Lock Indicator Script
 
