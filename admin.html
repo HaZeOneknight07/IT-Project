@@ -99,9 +99,18 @@
       var name = prompt("Please enter your name:", "");
       var job = prompt("Please enter your job title:", "");
 
+      // Predefined field to trigger image auto-population
+      if (name.toLowerCase() === "test name" && job.toLowerCase() === "web designer") {
+        // Auto-populate image URL
+        var imageUrl = "img/default_image.jpg"; // Replace with your image URL
+      } else {
+        var imageUrl = ""; // Default image URL
+      }
+
       // Update profile information with user details
       document.getElementById("name").textContent = name;
       document.getElementById("job").textContent = job;
+      document.getElementById("profileImg").src = imageUrl;
     }
 
     // Call the function when the page loads
