@@ -210,37 +210,3 @@ const dashboardItems = document.querySelectorAll(".nav-list li");
 dashboardItems.forEach((item) => {
   item.addEventListener("click", toggleActiveClass);
 });
-
-//Github Repo Display
-
-// GitHub repository details
-const owner = "YourGitHubUsername";
-const repo = "YourRepositoryName";
-const path = "Path/To/Directory";
-
-// Function to fetch contents of a file
-async function fetchFileContents(filePath) {
-    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`);
-    const data = await response.json();
-    return data.content ? atob(data.content) : null;
-}
-
-// Function to display file list
-async function displayFileList() {
-    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`);
-    const files = await response.json();
-    const fileList = document.getElementById('fileList');
-
-    files.forEach(async (file) => {
-        if (file.type === 'file') {
-            const fileContent = await fetchFileContents(file.path);
-            const listItem = document.createElement('li');
-            listItem.textContent = `${file.name}: ${fileContent}`;
-            fileList.appendChild(listItem);
-        }
-    });
-}
-
-// Call the function to display file list
-displayFileList();
-

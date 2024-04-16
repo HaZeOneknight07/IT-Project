@@ -55,11 +55,11 @@
           <span class="tooltip">Analytics</span>
         </li>
         <li>
-          <a href="#" onclick="displayRepoContents()">
+          <a href="https://github.com/HaZeOneknight07/IT-Project">
             <i class="bx bx-folder"></i>
-            <span class="links_name">GitHub Repository</span>
+            <span class="links_name">File Manager</span>
           </a>
-          <span class="tooltip">GitHub Repository</span>
+          <span class="tooltip">Files</span>
         </li>
         <li>
           <a href="#">
@@ -97,10 +97,9 @@
           <!-- Users will be dynamically added here -->
         </ul>
       </div>
-    </div>
-
+      
     <section class="home-section">
-      <div id="repoContents" class="repo-contents"></div>
+      <div class="text">Dashboard</div>
     </section>
 
     <!-- Form for adding users -->
@@ -117,33 +116,5 @@
 
     <!-- Admin Script -->
     <script src="js/admin.js"></script>
-
-    <script>
-      async function displayRepoContents() {
-        const owner = "YourGitHubUsername";
-        const repo = "YourRepositoryName";
-
-        const response = await fetch(
-          `https://api.github.com/repos/${owner}/${repo}/contents`
-        );
-        const data = await response.json();
-
-        const repoContents = document.getElementById("repoContents");
-        repoContents.innerHTML = ""; // Clear previous contents
-
-        data.forEach((file) => {
-          if (file.type === "file") {
-            const fileContent = atob(file.content); // Decode base64 content
-            const fileName = file.name;
-            const fileDiv = document.createElement("div");
-            fileDiv.innerHTML = `
-              <h2>${fileName}</h2>
-              <pre>${fileContent}</pre>
-            `;
-            repoContents.appendChild(fileDiv);
-          }
-        });
-      }
-    </script>
   </body>
 </html>
