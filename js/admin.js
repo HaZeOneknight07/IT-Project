@@ -76,8 +76,11 @@ function promptUserDetails() {
   var name = prompt("Please enter your name:", "");
   var job = prompt("Please enter your job title:", "");
 
-  // If user cancels prompt, return
-  if (!name || !job) return;
+  // If user cancels prompt or leaves fields empty, return
+  if (!name || !job) {
+    alert("Name and job title are required.");
+    return;
+  }
 
   // If the user is not predefined, redirect to login page
   if (!isUserPredefined(name, job)) {
