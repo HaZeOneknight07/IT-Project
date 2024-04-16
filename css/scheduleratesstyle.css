@@ -28,7 +28,6 @@ h3 {
     border: 1px solid #000000;
     border-radius: 5px;
     outline: none;
-    transition: border-color 0.3s;
 }
 
 #searchInput:focus {
@@ -40,11 +39,11 @@ h3 {
     padding: 10rem;
     border-radius: 10px;
     text-align: center;
-    margin: 2.5rem auto; /* Center horizontally and add space at top and bottom */
+    margin: 2.5rem auto; 
     font-weight: 700;
     font-size: 3rem;
-    max-width: 1500px; /* Set a maximum width */
-    width: 90%; /* Adjust as needed */
+    max-width: 1500px; 
+    width: 90%; 
 }
 
 /* Style for the item name */
@@ -135,6 +134,7 @@ button:hover {
     transition: background-color 0.3s;
     background-color: var(--footer-header-colour);
     color: var(--text-colour);
+    transition: all ease-in-out .5s;
 }
 
 .button:hover {
