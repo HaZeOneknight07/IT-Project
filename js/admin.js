@@ -24,7 +24,8 @@ function menuBtnChange() {
 // Predefined users array
 var predefinedUsers = [
   { name: "Ty Ashmore", job: "Web Developer", imageUrl: "img/logo.svg", password: "secret" },
-  { name: "John Doe", job: "Developer", imageUrl: "img/logo.svg" },
+  { name: "Guest", job: "Developer", imageUrl: "img/logo.svg" },
+  { name: "Guest1", job: "Developer", imageUrl: "img/logo.svg" },
   // Add more predefined users as needed.
 ];
 
