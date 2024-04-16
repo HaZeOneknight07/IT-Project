@@ -211,22 +211,20 @@ function fadeIn(element) {
   }, 100); // Delay the transition to ensure element is visible before fading in
 }
 
-// Function to handle page navigation
-function handlePageNavigation(selectedValue) {
-  var currentPage = document.querySelector(".home-section.show");
-  var nextPage = document.querySelector(selectedValue);
+// Function to toggle the visibility of the page navigation
+function togglePageNavigation() {
+  var pageNavigationContainer = document.getElementById(
+    "pageNavigationContainer"
+  );
+  var dashboardSection = document.querySelector(".home-section");
+  var userMenuContainer = document.getElementById("userMenuContainer");
 
-  if (currentPage && currentPage !== nextPage) {
-    fadeOut(currentPage);
-    setTimeout(() => {
-      currentPage.classList.remove("show");
-      fadeIn(nextPage);
-      nextPage.classList.add("show");
-    }, 500); // Wait for the fade out transition to complete before fading in the new content
-  } else if (!currentPage && nextPage) {
-    fadeIn(nextPage);
-    nextPage.classList.add("show");
-  }
+  // Hide other sections if they are visible
+  dashboardSection.classList.remove("show");
+  userMenuContainer.classList.remove("show");
+
+  // Toggle the visibility of the page navigation
+  pageNavigationContainer.classList.toggle("show");
 }
 
 // Function to toggle active class on sidebar items and handle page navigation
@@ -257,9 +255,34 @@ sidebarItems.forEach((item) => {
   });
 });
 
-function togglePageNavigation() {
+// Function to toggle the visibility of the dashboard section
+function toggleDashboard() {
+  var dashboardSection = document.querySelector(".home-section");
   var pageNavigationContainer = document.getElementById(
     "pageNavigationContainer"
   );
-  pageNavigationContainer.classList.toggle("show");
-};
+  var userMenuContainer = document.getElementById("userMenuContainer");
+
+  // Hide other sections if they are visible
+  pageNavigationContainer.classList.remove("show");
+  userMenuContainer.classList.remove("show");
+
+  // Toggle the visibility of the dashboard section
+  dashboardSection.classList.toggle("show");
+}
+
+// Function to toggle the visibility of the user menu
+function toggleUserMenu() {
+  var userMenuContainer = document.getElementById("userMenuContainer");
+  var dashboardSection = document.querySelector(".home-section");
+  var pageNavigationContainer = document.getElementById(
+    "pageNavigationContainer"
+  );
+
+  // Hide other sections if they are visible
+  dashboardSection.classList.remove("show");
+  pageNavigationContainer.classList.remove("show");
+
+  // Toggle the visibility of the user menu
+  userMenuContainer.classList.toggle("show");
+}
