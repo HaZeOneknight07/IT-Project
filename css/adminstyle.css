@@ -401,7 +401,7 @@ html {
   background-color: #643b9f;
 }
 
-.dropdown-content a:hover {
+.page-navigation-container a:hover {
   background-color: #643b9f; 
   color: #f9f9f9; 
 }
