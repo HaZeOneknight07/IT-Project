@@ -401,41 +401,10 @@ html {
   background-color: #643b9f;
 }
 
-/* Custom dropdown styles */
-.custom-dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.custom-dropdown select {
-  appearance: none; /* Hide default dropdown arrow in modern browsers */
-  -webkit-appearance: none; /* Hide default dropdown arrow in older versions of Safari */
-  -moz-appearance: none; /* Hide default dropdown arrow in older versions of Firefox */
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-  background-color: #fff;
-  cursor: pointer;
-}
-
-.custom-dropdown .arrow {
-  position: absolute;
-  top: 50%;
-  right: 10px;
-  transform: translateY(-50%);
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid #000; /* Adjust color as needed */
-  cursor: pointer;
-}
-
-/* Custom dropdown hover styles */
-.custom-dropdown:hover .arrow {
-  border-top-color: #643b9f; /* Adjust color to purple */
+/* Override default hover color for dropdown list */
+.page-navigation-container select option.hovered:hover {
+  background-color: #643b9f; 
+  color: #f9f9f9; 
 }
 
 /* Media Queries */
