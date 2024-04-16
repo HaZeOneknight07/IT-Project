@@ -210,3 +210,21 @@ const dashboardItems = document.querySelectorAll(".nav-list li");
 dashboardItems.forEach((item) => {
   item.addEventListener("click", toggleActiveClass);
 });
+
+
+// Dashboard Visability Toggle Script
+
+function navigateToPage() {
+  var selectBox = document.getElementById("pageSelector");
+  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+  if (selectedValue) {
+    window.location.href = selectedValue;
+  }
+}
+
+//Dashboard Dropdown Toggle Script
+
+function toggleUserMenu() {
+  var userMenuContainer = document.getElementById("userMenuContainer");
+  userMenuContainer.classList.toggle("show");
+}
