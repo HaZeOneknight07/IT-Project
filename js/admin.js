@@ -211,7 +211,7 @@ dashboardItems.forEach((item) => {
   item.addEventListener("click", toggleActiveClass);
 });
 
-//Dashboard Scripts
+//Dashboard Scripts.
 
 function togglePageNavigation() {
   var pageNavigationContainer = document.getElementById(
