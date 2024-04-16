@@ -402,8 +402,8 @@ html {
 }
 
 /* Override default hover color for dropdown list */
-.page-navigation-container select option:hover {
-  background-color: #643b9f !important; 
+.page-navigation-container select option.hovered:hover {
+  background-color: #643b9f; 
   color: #f9f9f9; 
 }
 

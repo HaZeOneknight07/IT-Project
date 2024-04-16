@@ -108,7 +108,11 @@
     <!-- Page Navigation Container -->
     <div class="page-navigation-container" id="pageNavigationContainer">
       <h2>Page Navigation</h2>
-      <select id="pageSelector">
+      <select
+        id="pageSelector"
+        onmouseover="changeHoverColor(true)"
+        onmouseout="changeHoverColor(false)"
+      >
         <option value="">Select a page...</option>
         <option value="page1.html">Page 1</option>
         <option value="page2.html">Page 2</option>
