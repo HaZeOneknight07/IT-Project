@@ -141,3 +141,23 @@ button:hover {
 .button:hover {
     background-color: var(--button-colour);
 }
+
+.back-button {
+        text-align: center;
+        margin: 1rem auto;
+        display: block;
+        border-radius: 0.5rem;
+        padding: 10px;
+        width: 350px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        transition: var(--background-colour) 0.3s;
+        background-color: var(--footer-header-colour);
+        color: var(--text-colour);
+        transition: all ease-in-out .5s;
+}
+
+.back-button:hover {
+    background-color: var(--button-colour);
+}
