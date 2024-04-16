@@ -81,12 +81,6 @@ header h1 {
     padding-right: 5rem;
 }
 
-/* @media screen and (max-width: 1600px) {
-    h1 {
-        padding-left: 2rem;
-    }
-} */
-
 /* Navigation Styles */
 nav {
     background-color: var(--navigation-colour);
