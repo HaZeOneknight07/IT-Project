@@ -315,6 +315,39 @@
   font-size: 36px;
 }
 
+/* Iframe Container */
+.iframe-container {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%; /* Adjust width as needed */
+  max-width: 1200px; /* Adjust max-width as needed */
+  height: 70%;
+  background-color: #181A1B;
+  color: #f9f9f9;
+  border: 1px solid #643b9f;
+  border-radius: 8px;
+  padding: 20px; /* Adjust padding as needed */
+  font-size: 16px; /* Adjust font size as needed */
+  line-height: 1.5;
+  z-index: 10;
+  transition: all .5s;
+}
+
+/* Show the container when iframe is toggled */
+.iframe-container.show {
+  display: block;
+}
+
+/* Iframe Styles */
+.iframe-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
 /* Media Queries */
 
 /* Adjust text size based on screen size */
@@ -327,6 +360,11 @@
   .menu-header {
     font-size: 26px;
   }
+
+  .iframe-container {
+    font-size: 14px; 
+    padding: 10px; 
+  }
 }
 
 @media screen and (max-width: 480px) {
@@ -337,6 +375,11 @@
 
   .menu-header {
     font-size: 16px;
+  }
+
+  .iframe-container {
+    font-size: 12px; 
+    padding: 5px; 
   }
 }
 

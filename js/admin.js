@@ -210,3 +210,33 @@ const dashboardItems = document.querySelectorAll(".nav-list li");
 dashboardItems.forEach((item) => {
   item.addEventListener("click", toggleActiveClass);
 });
+
+// Iframe toggle visability 
+
+// Get references to the link and the iframe
+var fileManagerLink = document.getElementById('fileManagerLink');
+var iframeContainer = document.getElementById('iframeContainer');
+var fileManagerIframe = document.getElementById('fileManagerIframe');
+
+// Function to toggle iframe visibility
+function toggleIframe() {
+    if (iframeContainer.style.display === 'none') {
+        // If iframe is hidden, show it
+        iframeContainer.style.display = 'block';
+        // Set the iframe source
+        fileManagerIframe.src = "https://github.com/HaZeOneknight07/IT-Project";
+    } else {
+        // If iframe is visible, hide it
+        iframeContainer.style.display = 'none';
+        // Reset the iframe source
+        fileManagerIframe.src = "";
+    }
+}
+
+// Add click event listener to the link
+fileManagerLink.addEventListener('click', function(event) {
+    // Prevent the default action of the link (i.e., navigating to another page)
+    event.preventDefault();
+    // Call the toggleIframe function
+    toggleIframe();
+});
