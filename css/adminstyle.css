@@ -246,33 +246,22 @@
 
 /* User Menu Container */
 .user-menu-container {
+  display: none; 
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1000px; /* Set the width to 1000px */
-  max-width: 90%; /* Limit the maximum width to 90% of the viewport width */
+  width: 1200px; 
+  max-width: 90%; 
+  height: 1000px;
+  height: 70%;
   background-color: #fff;
-  border: 1px solid #ccc;
+  border: 1px solid #643b9f;
   border-radius: 8px;
-  padding: 40px; /* Increase padding for more space */
-  font-size: 20px; /* Default font size */
-  line-height: 1.5; /* Add line height for better readability */
-  z-index: 10; /* Ensure it's on top of other elements */
-  position: relative; /* Ensure positioning context for pseudo-element */
-}
-
-/* Decorative Box Behind User Menu Container */
-.user-menu-container::before {
-  content: '';
-  position: absolute;
-  top: -10px;
-  left: -10px;
-  width: calc(100% + 20px);
-  height: calc(100% + 20px);
-  background-color: rgba(100, 59, 159, 0.8); /* Same shade of purple as the dashboard with some transparency */
-  border-radius: 8px;
-  z-index: -1; /* Ensure it's behind the container */
+  padding: 40px; 
+  font-size: 20px; 
+  line-height: 1.5; 
+  z-index: 10; 
 }
 
 /* Show the container when user menu is toggled */
@@ -289,8 +278,8 @@
 /* Adjust text size based on screen size */
 @media screen and (max-width: 768px) {
   .user-menu-container {
-    font-size: 14px; /* Adjust font size for smaller screens */
-    padding: 20px; /* Adjust padding for smaller screens */
+    font-size: 14px; 
+    padding: 20px;
   }
 
   .menu-header {
@@ -300,8 +289,8 @@
 
 @media screen and (max-width: 480px) {
   .user-menu-container {
-    font-size: 12px; /* Adjust font size for even smaller screens */
-    padding: 10px; /* Adjust padding for even smaller screens */
+    font-size: 12px; 
+    padding: 10px; 
   }
 
   .menu-header {
