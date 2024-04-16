@@ -107,9 +107,15 @@
 
     <section class="home-section">
       <div class="text">Dashboard</div>
-    </section>
+      <!-- Dashboard icon to toggle page navigation container -->
+      <div class="dropdown">
+          <a class="dropbtn" onclick="togglePageNavigation()">
+              <i class="bx bx-grid-alt"></i>
+              <span class="links_name">Dashboard</span>
+          </a>
+      </div>
 
-    <!-- Dropdown for Page Navigation -->
+    <!-- Page Navigation Container -->
     <div class="page-navigation-container" id="pageNavigationContainer">
       <h2>Page Navigation</h2>
       <select id="pageSelector">
