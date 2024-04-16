@@ -407,57 +407,6 @@ html {
   color: #f9f9f9; 
 }
 
-/* Dashboard Container */
-.dashboard-container {
-  background-color: red; /* Change to your desired color */
-  height: 90%; /* Adjust height as needed */
-  display: flex;
-  align-items: center; /* Center vertically */
-  justify-content: flex-start; /* Align to the flex start on the horizontal axis */
-}
-
-/* Page Navigation Container */
-.page-navigation-container {
-  display: block;
-  margin: auto; /* Center horizontally */
-  background-color: #262626;
-  width: 300px;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  z-index: 100;
-}
-.page-navigation-container h2 {
-  margin-bottom: 20px;
-}
-.page-navigation-container select {
-  width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  outline: none;
-}
-.page-navigation-container button {
-  display: block;
-  width: 100%;
-  padding: 10px;
-  background-color: #643b9f;
-  color: #ffffff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.page-navigation-container button:hover {
-  background-color: #643b9f;
-}
-
-/* Override default hover color for dropdown list */
-.page-navigation-container select option.hovered:hover {
-  background-color: #643b9f; 
-  color: #f9f9f9; 
-}
-
 /* Media Queries */
 
 /* Adjust text size based on screen size */
