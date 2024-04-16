@@ -243,11 +243,6 @@
   font-weight: 500;
   margin: 18px
 }
-@media (max-width: 420px) {
-  .sidebar li .tooltip{
-    display: none;
-  }
-}
 
 /* User Menu Container */
 .user-menu-container {
@@ -256,6 +251,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  width: 1000px; /* Set the width to 1000px */
+  max-width: 90%; /* Limit the maximum width to 90% of the viewport width */
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
@@ -266,4 +263,25 @@
 /* Show the container when user menu is toggled */
 .user-menu-container.show {
   display: block;
+}
+
+/* Media Queries */
+
+/* Adjust text size based on screen size */
+@media screen and (max-width: 768px) {
+  .user-menu-container {
+    font-size: 14px; /* Adjust font size for smaller screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .user-menu-container {
+    font-size: 12px; /* Adjust font size for even smaller screens */
+  }
+}
+
+@media (max-width: 420px) {
+  .sidebar li .tooltip{
+    display: none;
+  }
 }
