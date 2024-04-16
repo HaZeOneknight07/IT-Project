@@ -5,6 +5,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  background-color: #262626;
 }
 
 .sidebar {
@@ -36,7 +37,7 @@
 }
 
 .sidebar .logo-details .logo_name {
-  color: #fff;
+  color: #f9f9f9;
   font-size: 20px;
   font-weight: 600;
   opacity: 0;
@@ -66,7 +67,7 @@
 }
 
 .sidebar i {
-  color: #fff;
+  color: #f9f9f9;
   height: 60px;
   min-width: 50px;
   font-size: 28px;
@@ -94,7 +95,7 @@
   top: -20px;
   left: calc(100% + 15px);
   z-index: 3;
-  background: #fff;
+  background: #f9f9f9;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   padding: 6px 12px;
   border-radius: 4px;
@@ -120,7 +121,7 @@
 
 .sidebar input {
   font-size: 15px;
-  color: #fff;
+  color: #f9f9f9;
   font-weight: 400;
   outline: none;
   height: 50px;
@@ -144,12 +145,12 @@
   transform: translateY(-50%);
   font-size: 22px;
   background: #643b9f;
-  color: #fff;
+  color: #f9f9f9;
 }
 
 .sidebar.open .bx-search:hover {
   background: #643b9f;
-  color: #fff;
+  color: #f9f9f9;
 }
 
 .sidebar .bx-search:hover {
@@ -173,7 +174,7 @@
 }
 
 .sidebar li a .links_name {
-  color: #fff;
+  color: #f9f9f9;
   font-size: 15px;
   font-weight: 400;
   white-space: nowrap;
@@ -234,7 +235,7 @@
 .sidebar li.profile .job {
   font-size: 15px;
   font-weight: 400;
-  color: #fff;
+  color: #f9f9f9;
   white-space: nowrap;
 }
 
@@ -395,6 +396,11 @@
 
 .page-navigation-container button:hover {
   background-color: #643b9f;
+}
+
+#pageSelector {
+  background-color: #643b9f;
+  transition: all .5s ease;
 }
 
 /* Media Queries */
