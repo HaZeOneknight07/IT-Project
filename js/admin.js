@@ -256,3 +256,10 @@ sidebarItems.forEach((item) => {
     toggleActiveClassAndNavigate(event);
   });
 });
+
+function togglePageNavigation() {
+  var pageNavigationContainer = document.getElementById(
+    "pageNavigationContainer"
+  );
+  pageNavigationContainer.classList.toggle("show");
+};
