@@ -357,7 +357,7 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #ffffff;
+  background-color: #262626;
   width: 300px;
   padding: 20px;
   border-radius: 10px;
@@ -386,7 +386,7 @@
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #643b9f;
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -394,7 +394,7 @@
 }
 
 .page-navigation-container button:hover {
-  background-color: #45a049;
+  background-color: #643b9f;
 }
 
 /* Media Queries */
