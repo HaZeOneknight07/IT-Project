@@ -85,6 +85,10 @@
   list-style: none;
 }
 
+.sidebar li.active a {
+  background: #643b9f;
+}
+
 .sidebar li .tooltip {
   position: absolute;
   top: -20px;
@@ -162,11 +166,6 @@
   text-decoration: none;
   transition: all 0.4s ease;
   background: #11101d;
-}
-
-.sidebar li.active a,
-.sidebar li.active a:hover {
-  background: #643b9f;
 }
 
 .sidebar li a:hover {
@@ -282,7 +281,7 @@
   color: #11101d;
   font-size: 25px;
   font-weight: 500;
-  margin: 18px
+  margin: 18px;
 }
 
 /* User Menu Container */
@@ -303,13 +302,12 @@
   font-size: 20px;
   line-height: 1.5;
   z-index: 10;
-  transition: all .5s ease;
+  transition: all .5s;
 }
 
 /* Show the container when user menu is toggled */
 .user-menu-container.show {
   display: block;
-  transition: all .5s ease;
 }
 
 .menu-header {

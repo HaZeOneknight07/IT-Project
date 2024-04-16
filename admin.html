@@ -17,35 +17,100 @@
 
   <div class="sidebar">
     <div class="logo-details">
-      <i class="bx bx-menu"></i>
-      <span class="logo_name">Dashboard</span>
-      <i class='bx bx-exit' id="btn"></i>
+      <i class="bx bxl-c-plus-plus icon"></i>
+      <div class="logo_name">Gelder Group</div>
+      <i class="bx bx-menu" id="btn"></i>
     </div>
     <ul class="nav-list">
-      <li class="active"><a href="#"><i class="bx bx-home"></i><span class="links_name">Home</span></a></li>
-      <li><a href="#"><i class="bx bx-user"></i><span class="links_name">Profile</span></a></li>
-      <li><a href="#"><i class="bx bx-chat"></i><span class="links_name">Messages</span></a></li>
-      <li><a href="#"><i class="bx bx-heart"></i><span class="links_name">Favorites</span></a></li>
-      <li><a href="#"><i class="bx bx-bookmark"></i><span class="links_name">Saved</span></a></li>
-      <li><a href="#"><i class="bx bx-cog"></i><span class="links_name">Settings</span></a></li>
-    </ul>
-    <div class="profile-content">
-      <div class="profile">
+      <li>
+        <i class="bx bx-search"></i>
+        <input type="text" placeholder="Search..." />
+        <span class="tooltip">Search</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-grid-alt"></i>
+          <span class="links_name">Dashboard</span>
+        </a>
+        <span class="tooltip">Dashboard</span>
+      </li>
+      <li>
+        <a href="#" onclick="toggleUserMenu()">
+          <i class="bx bx-user"></i>
+          <span class="links_name">User</span>
+        </a>
+        <span class="tooltip">User</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-pie-chart-alt-2"></i>
+          <span class="links_name">Analytics</span>
+        </a>
+        <span class="tooltip">Analytics</span>
+      </li>
+      <li>
+        <a href="https://github.com/HaZeOneknight07/IT-Project">
+          <i class="bx bx-folder"></i>
+          <span class="links_name">File Manager</span>
+        </a>
+        <span class="tooltip">Files</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-heart"></i>
+          <span class="links_name">Saved</span>
+        </a>
+        <span class="tooltip">Saved</span>
+      </li>
+      <li>
+        <a href="#">
+          <i class="bx bx-cog"></i>
+          <span class="links_name">Setting</span>
+        </a>
+        <span class="tooltip">Setting</span>
+      </li>
+      <li class="profile">
         <div class="profile-details">
-          <img src="profile.jpg" alt="profileImg">
-          <div class="name-job">
-            <div class="name">John Doe</div>
-            <div class="job">Web Developer</div>
+          <img id="profileImg" src="" alt="profileImg" />
+          <div class="name_job">
+            <div id="name">Test Name</div>
+            <div id="job">Web designer</div>
           </div>
         </div>
-        <i class='bx bx-log-out' id="log_out"></i>
-      </div>
-    </div>
+        <i class="bx bx-log-out" id="log_out"></i>
+      </li>
+    </ul>
   </div>
 
-  <div class="home-section">
-    <div class="text">Home Section</div>
+  <!-- Container for user menu -->
+<div id="userMenuContainer" class="user-menu-container">
+  <!-- User Menu -->
+  <div id="userMenu" class="user-menu">
+    <div class="menu-header">Current Users</div>
+    <ul>
+      <!-- Display current users -->
+      <li>
+        <strong>Name:</strong> Ty Ashmore<br>
+        <strong>Job:</strong> Web Developer
+      </li>
+      <li>
+        <strong>Name:</strong> John Doe<br>
+        <strong>Job:</strong> Developer
+      </li>
+      <!-- Add more users as needed -->
+    </ul>
+    <div class="menu-header">Inactive Users</div>
+    <ul>
+      <li>Test 1</li>
+      <li>Test 2</li>
+      <!-- Add more inactive users as needed. -->
+    </ul>
   </div>
+</div>
+
+  <section class="home-section">
+    <div class="text">Dashboard</div>
+  </section>
 
   <!-- Form for adding users -->
   <div id="addUserForm" style="display: none;">
