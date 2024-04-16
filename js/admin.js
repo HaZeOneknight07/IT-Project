@@ -211,32 +211,36 @@ dashboardItems.forEach((item) => {
   item.addEventListener("click", toggleActiveClass);
 });
 
-// Iframe toggle visability 
+//Github Repo Display
 
-// Get references to the link and the iframe
-var fileManagerLink = document.getElementById('fileManagerLink');
-var iframeContainer = document.getElementById('iframeContainer');
-var fileManagerIframe = document.getElementById('fileManagerIframe');
+// GitHub repository details
+const owner = "YourGitHubUsername";
+const repo = "YourRepositoryName";
+const path = "Path/To/Directory";
 
-// Function to toggle iframe visibility
-function toggleIframe() {
-    if (iframeContainer.style.display === 'none') {
-        // If iframe is hidden, show it
-        iframeContainer.style.display = 'block';
-        // Set the iframe source
-        fileManagerIframe.src = "https://github.com/HaZeOneknight07/IT-Project";
-    } else {
-        // If iframe is visible, hide it
-        iframeContainer.style.display = 'none';
-        // Reset the iframe source
-        fileManagerIframe.src = "";
-    }
+// Function to fetch contents of a file
+async function fetchFileContents(filePath) {
+    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${filePath}`);
+    const data = await response.json();
+    return data.content ? atob(data.content) : null;
 }
 
-// Add click event listener to the link
-fileManagerLink.addEventListener('click', function(event) {
-    // Prevent the default action of the link (i.e., navigating to another page)
-    event.preventDefault();
-    // Call the toggleIframe function
-    toggleIframe();
-});
+// Function to display file list
+async function displayFileList() {
+    const response = await fetch(`https://api.github.com/repos/${owner}/${repo}/contents/${path}`);
+    const files = await response.json();
+    const fileList = document.getElementById('fileList');
+
+    files.forEach(async (file) => {
+        if (file.type === 'file') {
+            const fileContent = await fetchFileContents(file.path);
+            const listItem = document.createElement('li');
+            listItem.textContent = `${file.name}: ${fileContent}`;
+            fileList.appendChild(listItem);
+        }
+    });
+}
+
+// Call the function to display file list
+displayFileList();
+
