@@ -263,6 +263,7 @@
 
 /* User Menu Container */
 .user-menu-container {
+  display: none;
   position: fixed;
   top: 50%;
   left: 50%;
