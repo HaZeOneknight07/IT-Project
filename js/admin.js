@@ -228,12 +228,3 @@ function navigateToPage() {
   }
 }
 
-//Function to force select hover colour
-function changeHoverColor(activate) {
-  var selectElement = document.getElementById("pageSelector");
-  if (activate) {
-    selectElement.classList.add("hovered");
-  } else {
-    selectElement.classList.remove("hovered");
-  }
-}
