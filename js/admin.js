@@ -24,9 +24,24 @@ function menuBtnChange() {
 // Predefined users array
 var predefinedUsers = [
   { name: "Ty Ashmore", job: "Web Developer", imageUrl: "img/logo.svg", password: "secret" },
-  { name: "Guest", job: "Developer", imageUrl: "img/logo.svg" },
+  { name: "John Doe", job: "Developer", imageUrl: "img/logo.svg" },
   // Add more predefined users as needed.
 ];
+
+// Function to dynamically generate user list HTML
+function generateUserList(users) {
+    var userListHTML = '';
+    users.forEach(function(user) {
+        userListHTML += '<li>' +
+                            '<strong>Name:</strong> ' + user.name + '<br>' +
+                            '<strong>Job:</strong> ' + user.job +
+                        '</li>';
+    });
+    return userListHTML;
+}
+
+// Update the user list
+document.getElementById('userList').innerHTML = generateUserList(predefinedUsers);
 
 // Function to check if the user is predefined
 function isUserPredefined(name, job) {
