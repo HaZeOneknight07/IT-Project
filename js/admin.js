@@ -86,7 +86,7 @@ function promptUserDetails() {
   // If the user is not predefined, redirect to login page
   if (!isUserPredefined(name, job)) {
     alert("You are not a predefined user. Redirecting to login page...");
-    window.location.href = "index.html"; 
+    window.location.href = "index.html";
     return;
   }
 
@@ -211,8 +211,14 @@ dashboardItems.forEach((item) => {
   item.addEventListener("click", toggleActiveClass);
 });
 
+//Dashboard Scripts
 
-// Dashboard Visability Toggle Script
+function togglePageNavigation() {
+  var pageNavigationContainer = document.getElementById(
+    "pageNavigationContainer"
+  );
+  pageNavigationContainer.classList.toggle("show");
+}
 
 function navigateToPage() {
   var selectBox = document.getElementById("pageSelector");
@@ -220,11 +226,4 @@ function navigateToPage() {
   if (selectedValue) {
     window.location.href = selectedValue;
   }
-}
-
-//Dashboard Dropdown Toggle Script
-
-function toggleUserMenu() {
-  var userMenuContainer = document.getElementById("userMenuContainer");
-  userMenuContainer.classList.toggle("show");
 }
