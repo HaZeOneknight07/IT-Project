@@ -1,123 +1,128 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-<head>
-  <meta charset="UTF-8" />
-  <title>Admin Dashboard - Gelder Group Surveyors</title>
-  <!-- Admin Stylesheet -->
-  <link rel="stylesheet" href="css/adminstyle.css" />
-  <!-- Boxicons CDN Link -->
-  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Google Poppins Font -->
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="img/favicon.png" />
-</head>
-<body>
-
-  <div class="sidebar">
-    <div class="logo-details">
-      <i class="bx bxl-c-plus-plus icon"></i>
-      <div class="logo_name">Gelder Group</div>
-      <i class="bx bx-menu" id="btn"></i>
-    </div>
-    <ul class="nav-list">
-      <li>
-        <i class="bx bx-search"></i>
-        <input type="text" placeholder="Search..." />
-        <span class="tooltip">Search</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-grid-alt"></i>
-          <span class="links_name">Dashboard</span>
-        </a>
-        <span class="tooltip">Dashboard</span>
-      </li>
-      <li>
-        <a href="#" onclick="toggleUserMenu()">
-          <i class="bx bx-user"></i>
-          <span class="links_name">User</span>
-        </a>
-        <span class="tooltip">User</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-pie-chart-alt-2"></i>
-          <span class="links_name">Analytics</span>
-        </a>
-        <span class="tooltip">Analytics</span>
-      </li>
-      <li>
-        <a href="https://github.com/HaZeOneknight07/IT-Project">
-          <i class="bx bx-folder"></i>
-          <span class="links_name">File Manager</span>
-        </a>
-        <span class="tooltip">Files</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-heart"></i>
-          <span class="links_name">Saved</span>
-        </a>
-        <span class="tooltip">Saved</span>
-      </li>
-      <li>
-        <a href="#">
-          <i class="bx bx-cog"></i>
-          <span class="links_name">Setting</span>
-        </a>
-        <span class="tooltip">Setting</span>
-      </li>
-      <li class="profile">
-        <div class="profile-details">
-          <img id="profileImg" src="" alt="profileImg" />
-          <div class="name_job">
-            <div id="name">Test Name</div>
-            <div id="job">Web designer</div>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Admin Dashboard - Gelder Group Surveyors</title>
+    <!-- Admin Stylesheet -->
+    <link rel="stylesheet" href="css/adminstyle.css" />
+    <!-- Boxicons CDN Link -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Google Poppins Font -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://fonts.googleapis.com/css?family=Poppins"
+    />
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+  </head>
+  <body>
+    <div class="sidebar">
+      <div class="logo-details">
+        <i class="bx bxl-c-plus-plus icon"></i>
+        <div class="logo_name">Gelder Group</div>
+        <i class="bx bx-menu" id="btn"></i>
+      </div>
+      <ul class="nav-list">
+        <li>
+          <i class="bx bx-search"></i>
+          <input type="text" placeholder="Search..." />
+          <span class="tooltip">Search</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashboard</span>
+        </li>
+        <li>
+          <a href="#" onclick="toggleUserMenu()">
+            <i class="bx bx-user"></i>
+            <span class="links_name">User</span>
+          </a>
+          <span class="tooltip">User</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-pie-chart-alt-2"></i>
+            <span class="links_name">Analytics</span>
+          </a>
+          <span class="tooltip">Analytics</span>
+        </li>
+        <li>
+          <a href="https://github.com/HaZeOneknight07/IT-Project">
+            <i class="bx bx-folder"></i>
+            <span class="links_name">File Manager</span>
+          </a>
+          <span class="tooltip">Files</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-heart"></i>
+            <span class="links_name">Saved</span>
+          </a>
+          <span class="tooltip">Saved</span>
+        </li>
+        <li>
+          <a href="#">
+            <i class="bx bx-cog"></i>
+            <span class="links_name">Setting</span>
+          </a>
+          <span class="tooltip">Setting</span>
+        </li>
+        <li class="profile">
+          <div class="profile-details">
+            <img id="profileImg" src="" alt="profileImg" />
+            <div class="name_job">
+              <div id="name">Test Name</div>
+              <div id="job">Web designer</div>
+            </div>
           </div>
-        </div>
-        <i class="bx bx-log-out" id="log_out"></i>
-      </li>
-    </ul>
-  </div>
+          <i class="bx bx-log-out" id="log_out"></i>
+        </li>
+      </ul>
+    </div>
 
-  <!-- Container for user menu -->
-<div id="userMenuContainer" class="user-menu-container">
-  <!-- User Menu -->
-  <div id="userMenu" class="user-menu">
-    <div class="menu-header">Current Users</div>
-    <ul id="userList">
-      <!-- Users will be dynamically added here -->
-    </ul>
-</div>
-    <div class="menu-header">Inactive Users</div>
-    <ul>
-      <li>Test 1</li>
-      <li>Test 2</li>
-      <!-- Add more inactive users as needed. -->
-    </ul>
-  </div>
-</div>
+    <!-- Container for user menu -->
+    <div id="userMenuContainer" class="user-menu-container">
+      <!-- User Menu -->
+      <div id="userMenu" class="user-menu">
+        <div class="menu-header">Current Users</div>
+        <ul id="userList">
+          <!-- Users will be dynamically added here -->
+        </ul>
+      </div>
+        <div class="menu-header">Inactive Users</div>
+        <ul>
+          <li>Test 1</li>
+          <li>Test 2</li>
+          <!-- Add more inactive users as needed. -->
+        </ul>
+      </div>
+    </div>
 
-  <section class="home-section">
-    <div class="text">Dashboard</div>
-  </section>
+    <section class="home-section">
+      <div class="text">Dashboard</div>
+    </section>
 
-  <!-- Form for adding users -->
-  <div id="addUserForm" style="display: none;">
-    <h2>Add User</h2>
-    <form id="userForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required><br><br>
-      <label for="job">Job:</label>
-      <input type="text" id="job" name="job" required><br><br>
-      <button type="submit">Submit</button>
-    </form>
-  </div>
+    <!-- Form for adding users -->
+    <div id="addUserForm" style="display: none;">
+      <h2>Add User</h2>
+      <form id="userForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required /><br /><br />
+        <label for="job">Job:</label>
+        <input type="text" id="job" name="job" required /><br /><br />
+        <button type="submit">Submit</button>
+      </form>
+    </div>
 
-<!-- Admin Script -->
-<script src="js/admin.js"></script>
-
-</body>
+    <!-- Admin Script -->
+    <script src="js/admin.js"></script>
+  </body>
 </html>
