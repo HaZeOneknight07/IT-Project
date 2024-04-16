@@ -76,16 +76,17 @@ function promptUserDetails() {
   var name = prompt("Please enter your name:", "");
   var job = prompt("Please enter your job title:", "");
 
-  // If user cancels prompt or leaves fields empty, return
+  // If user cancels prompt or leaves fields empty, redirect to login page
   if (!name || !job) {
     alert("Name and job title are required.");
+    window.location.href = "index.html";
     return;
   }
 
   // If the user is not predefined, redirect to login page
   if (!isUserPredefined(name, job)) {
     alert("You are not a predefined user. Redirecting to login page...");
-    window.location.href = "index.html"; // Change the URL to your login page
+    window.location.href = "index.html"; 
     return;
   }
 
