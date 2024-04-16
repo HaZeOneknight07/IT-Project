@@ -21,7 +21,3 @@ function menuBtnChange() {
  }
 }
 
-function toggleUserMenu() {
-  var menuContainer = document.getElementById("userMenuContainer");
-  menuContainer.classList.toggle("show");
-}

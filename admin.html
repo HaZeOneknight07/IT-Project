@@ -253,7 +253,13 @@
       alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
     }
     // You can add additional logic here if needed
-  }
+  };
+
+  function toggleUserMenu() {
+  var menuContainer = document.getElementById("userMenuContainer");
+  menuContainer.classList.toggle("show");
+}
+
 </script>
   <!-- Your other JavaScript files can be included here -->
   <script src="js/admin.js"></script>
