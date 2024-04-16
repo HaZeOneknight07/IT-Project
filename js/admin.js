@@ -213,9 +213,7 @@ function fadeIn(element) {
 
 // Function to toggle the visibility of the page navigation
 function togglePageNavigation() {
-  var pageNavigationContainer = document.getElementById(
-    "pageNavigationContainer"
-  );
+  var pageNavigationContainer = document.getElementById("pageNavigationContainer");
   var dashboardSection = document.querySelector(".home-section");
   var userMenuContainer = document.getElementById("userMenuContainer");
 
@@ -258,26 +256,27 @@ sidebarItems.forEach((item) => {
 // Function to toggle the visibility of the dashboard section
 function toggleDashboard() {
   var dashboardSection = document.querySelector(".home-section");
-  var pageNavigationContainer = document.getElementById(
-    "pageNavigationContainer"
-  );
+  var pageNavigationContainer = document.getElementById("pageNavigationContainer");
   var userMenuContainer = document.getElementById("userMenuContainer");
 
+  // Hide other sections if they are visible
   pageNavigationContainer.classList.remove("show");
   userMenuContainer.classList.remove("show");
 
+  // Toggle the visibility of the dashboard section
   dashboardSection.classList.toggle("show");
 }
 
+// Function to toggle the visibility of the user menu
 function toggleUserMenu() {
   var userMenuContainer = document.getElementById("userMenuContainer");
   var dashboardSection = document.querySelector(".home-section");
-  var pageNavigationContainer = document.getElementById(
-    "pageNavigationContainer"
-  );
+  var pageNavigationContainer = document.getElementById("pageNavigationContainer");
 
+  // Hide other sections if they are visible
   dashboardSection.classList.remove("show");
   pageNavigationContainer.classList.remove("show");
 
+  // Toggle the visibility of the user menu
   userMenuContainer.classList.toggle("show");
 }
