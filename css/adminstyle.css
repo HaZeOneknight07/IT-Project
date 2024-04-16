@@ -257,12 +257,17 @@
   border: 1px solid #ccc;
   border-radius: 8px;
   padding: 20px;
-  z-index: 9999; /* Ensure it's on top of other elements */
+  font-size: 20px;
+  z-index: 10; /* Ensure it's on top of other elements */
 }
 
 /* Show the container when user menu is toggled */
 .user-menu-container.show {
   display: block;
+}
+
+.menu-header {
+  font-size: 36px;
 }
 
 /* Media Queries */
@@ -272,11 +277,19 @@
   .user-menu-container {
     font-size: 14px; /* Adjust font size for smaller screens */
   }
+
+  .menu-header {
+    font-size: 26px;
+  }
 }
 
 @media screen and (max-width: 480px) {
   .user-menu-container {
     font-size: 12px; /* Adjust font size for even smaller screens */
+  }
+
+  .menu-header {
+    font-size: 16px;
   }
 }
 
