@@ -5,6 +5,9 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+}
+
+html {
   background-color: #262626;
 }
 
@@ -398,7 +401,7 @@
   background-color: #643b9f;
 }
 
-#pageSelector {
+#pageSelector:hover {
   background-color: #643b9f;
   transition: all .5s ease;
 }
