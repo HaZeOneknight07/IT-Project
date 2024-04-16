@@ -251,13 +251,14 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 1000px; /* Set the width to 1000px */
+  width: 1200px; /* Set the width to 1200px */
   max-width: 90%; /* Limit the maximum width to 90% of the viewport width */
   background-color: #fff;
   border: 1px solid #ccc;
   border-radius: 8px;
-  padding: 20px;
-  font-size: 20px;
+  padding: 40px; /* Increase padding for more space */
+  font-size: 20px; /* Default font size */
+  line-height: 1.5; /* Add line height for better readability */
   z-index: 10; /* Ensure it's on top of other elements */
 }
 
@@ -276,6 +277,7 @@
 @media screen and (max-width: 768px) {
   .user-menu-container {
     font-size: 14px; /* Adjust font size for smaller screens */
+    padding: 20px; /* Adjust padding for smaller screens */
   }
 
   .menu-header {
@@ -286,6 +288,7 @@
 @media screen and (max-width: 480px) {
   .user-menu-container {
     font-size: 12px; /* Adjust font size for even smaller screens */
+    padding: 10px; /* Adjust padding for even smaller screens */
   }
 
   .menu-header {
