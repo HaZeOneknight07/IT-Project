@@ -401,9 +401,9 @@ html {
   background-color: #643b9f;
 }
 
-#pageSelector:hover {
-  background-color: #643b9f;
-  transition: all .5s ease;
+.dropdown-content a:hover {
+  background-color: #643b9f; 
+  color: #f9f9f9; 
 }
 
 /* Media Queries */
