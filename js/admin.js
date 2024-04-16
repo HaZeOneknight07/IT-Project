@@ -2,28 +2,34 @@ let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
 let searchBtn = document.querySelector(".bx-search");
 
-closeBtn.addEventListener("click", ()=>{
+closeBtn.addEventListener("click", () => {
   sidebar.classList.toggle("open");
-  menuBtnChange();//calling the function(optional)
+  menuBtnChange(); //calling the function(optional)
 });
 
-searchBtn.addEventListener("click", ()=>{ // Sidebar open when you click on the search iocn
+searchBtn.addEventListener("click", () => {
+  // Sidebar open when you click on the search iocn
   sidebar.classList.toggle("open");
   menuBtnChange(); //calling the function(optional)
 });
 
 // following are the code to change sidebar button(optional)
 function menuBtnChange() {
- if(sidebar.classList.contains("open")){
-   closeBtn.classList.replace("bx-menu", "bx-menu-alt-right");//replacing the iocns class
- }else {
-   closeBtn.classList.replace("bx-menu-alt-right","bx-menu");//replacing the iocns class
- }
+  if (sidebar.classList.contains("open")) {
+    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+  } else {
+    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+  }
 }
 
 // Predefined users array
 var predefinedUsers = [
-  { name: "Ty Ashmore", job: "Web Developer", imageUrl: "img/logo.svg", password: "secret" },
+  {
+    name: "Ty Ashmore",
+    job: "Web Developer",
+    imageUrl: "img/logo.svg",
+    password: "secret",
+  },
   { name: "Guest", job: "Developer", imageUrl: "img/logo.svg" },
   { name: "Guest1", job: "Developer", imageUrl: "img/logo.svg" },
   // Add more predefined users as needed.
@@ -31,23 +37,31 @@ var predefinedUsers = [
 
 // Function to dynamically generate user list HTML
 function generateUserList(users) {
-    var userListHTML = '';
-    users.forEach(function(user) {
-        userListHTML += '<li>' +
-                            '<strong>Name:</strong> ' + user.name + '<br>' +
-                            '<strong>Job:</strong> ' + user.job +
-                        '</li>';
-    });
-    return userListHTML;
+  var userListHTML = "";
+  users.forEach(function (user) {
+    userListHTML +=
+      "<li>" +
+      "<strong>Name:</strong> " +
+      user.name +
+      "<br>" +
+      "<strong>Job:</strong> " +
+      user.job +
+      "</li>";
+  });
+  return userListHTML;
 }
 
 // Update the user list
-document.getElementById('userList').innerHTML = generateUserList(predefinedUsers);
+document.getElementById("userList").innerHTML =
+  generateUserList(predefinedUsers);
 
 // Function to check if the user is predefined
 function isUserPredefined(name, job) {
-  return predefinedUsers.some(function(user) {
-    return user.name.toLowerCase() === name.toLowerCase() && user.job.toLowerCase() === job.toLowerCase();
+  return predefinedUsers.some(function (user) {
+    return (
+      user.name.toLowerCase() === name.toLowerCase() &&
+      user.job.toLowerCase() === job.toLowerCase()
+    );
   });
 }
 
@@ -77,8 +91,10 @@ function promptUserDetails() {
 
   // Check if the input matches any predefined user
   for (var i = 0; i < predefinedUsers.length; i++) {
-    if (name.toLowerCase() === predefinedUsers[i].name.toLowerCase() && 
-        job.toLowerCase() === predefinedUsers[i].job.toLowerCase()) {
+    if (
+      name.toLowerCase() === predefinedUsers[i].name.toLowerCase() &&
+      job.toLowerCase() === predefinedUsers[i].job.toLowerCase()
+    ) {
       // If matched, prompt for password if the user is Ty Ashmore
       if (name.toLowerCase() === "ty ashmore") {
         var password = prompt("Please enter the password for Ty Ashmore:", "");
@@ -106,7 +122,7 @@ function promptUserDetails() {
 // Function to disable clickable elements
 function disableClickableElements() {
   var clickableElements = document.querySelectorAll("a, button");
-  clickableElements.forEach(function(element) {
+  clickableElements.forEach(function (element) {
     element.disabled = true;
   });
 }
@@ -114,7 +130,7 @@ function disableClickableElements() {
 // Function to enable clickable elements
 function enableClickableElements() {
   var clickableElements = document.querySelectorAll("a, button");
-  clickableElements.forEach(function(element) {
+  clickableElements.forEach(function (element) {
     element.disabled = false;
   });
 }
@@ -128,18 +144,23 @@ function showAddUserForm() {
 }
 
 // Function to handle form submission
-document.getElementById("userForm").addEventListener("submit", function(event) {
-  event.preventDefault();
-  var name = document.getElementById("name").value;
-  var job = document.getElementById("job").value;
-  var imageUrl = prompt("Please enter the image URL for the user:", "");
-  predefinedUsers.push({ name: name, job: job, imageUrl: imageUrl });
-  document.getElementById("addUserForm").style.display = "none";
-});
+document
+  .getElementById("userForm")
+  .addEventListener("submit", function (event) {
+    event.preventDefault();
+    var name = document.getElementById("name").value;
+    var job = document.getElementById("job").value;
+    var imageUrl = prompt("Please enter the image URL for the user:", "");
+    predefinedUsers.push({ name: name, job: job, imageUrl: imageUrl });
+    document.getElementById("addUserForm").style.display = "none";
+  });
 
 // Function to handle GitHub link
 function handleGitHubLink() {
-  var currentUser = document.getElementById("name").textContent.trim().toLowerCase();
+  var currentUser = document
+    .getElementById("name")
+    .textContent.trim()
+    .toLowerCase();
   if (currentUser === "ty ashmore") {
     // Redirect to GitHub page
     window.location.href = "https://github.com/HaZeOneknight07/IT-Project";
@@ -151,34 +172,37 @@ function handleGitHubLink() {
 
 // Function to handle File Manager link
 function handleFileManagerLink() {
-  var currentUser = document.getElementById("name").textContent.trim().toLowerCase();
+  var currentUser = document
+    .getElementById("name")
+    .textContent.trim()
+    .toLowerCase();
   if (currentUser !== "ty ashmore") {
     // Display insufficient privileges message
     alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
   }
   // You can add additional logic here if needed
-};
+}
 
 function toggleUserMenu() {
-var menuContainer = document.getElementById("userMenuContainer");
-menuContainer.classList.toggle("show");
+  var menuContainer = document.getElementById("userMenuContainer");
+  menuContainer.classList.toggle("show");
 }
 
 // Function to toggle the "active" class on clicked dashboard items
 function toggleActiveClass(event) {
   // Remove "active" class from all dashboard items
-  const dashboardItems = document.querySelectorAll('.nav-list li');
-  dashboardItems.forEach(item => {
-    item.classList.remove('active');
+  const dashboardItems = document.querySelectorAll(".nav-list li");
+  dashboardItems.forEach((item) => {
+    item.classList.remove("active");
   });
 
   // Add "active" class to the clicked item
   const clickedItem = event.currentTarget;
-  clickedItem.classList.add('active');
+  clickedItem.classList.add("active");
 }
 
 // Add event listeners to all dashboard items
-const dashboardItems = document.querySelectorAll('.nav-list li');
-dashboardItems.forEach(item => {
-  item.addEventListener('click', toggleActiveClass);
+const dashboardItems = document.querySelectorAll(".nav-list li");
+dashboardItems.forEach((item) => {
+  item.addEventListener("click", toggleActiveClass);
 });
