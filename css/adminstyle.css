@@ -278,7 +278,7 @@
 
 .home-section .text {
   display: inline-block;
-  color: #11101d;
+  color: #f9f9f9;
   font-size: 25px;
   font-weight: 500;
   margin: 18px;
@@ -295,7 +295,7 @@
   max-width: 90%;
   height: 1000px;
   height: 70%;
-  background-color: #fff;
+  background-color: #181A1B;
   border: 1px solid #643b9f;
   border-radius: 8px;
   padding: 40px;
