@@ -1,6 +1,7 @@
 let sidebar = document.querySelector(".sidebar");
 let closeBtn = document.querySelector("#btn");
 let searchBtn = document.querySelector(".bx-search");
+let pageNavigationBtn = document.querySelector("#pageNavigationBtn"); // Add this line
 
 closeBtn.addEventListener("click", () => {
   sidebar.classList.toggle("open");
@@ -8,17 +9,22 @@ closeBtn.addEventListener("click", () => {
 });
 
 searchBtn.addEventListener("click", () => {
-  // Sidebar open when you click on the search iocn
+  // Sidebar open when you click on the search icon
   sidebar.classList.toggle("open");
   menuBtnChange(); //calling the function(optional)
+});
+
+// Add event listener for the page navigation button
+pageNavigationBtn.addEventListener("click", () => {
+  togglePageNavigation(); // Call the function to toggle page navigation container
 });
 
 // following are the code to change sidebar button(optional)
 function menuBtnChange() {
   if (sidebar.classList.contains("open")) {
-    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the icons class
   } else {
-    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the icons class
   }
 }
 
