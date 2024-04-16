@@ -192,67 +192,39 @@ function toggleUserMenu() {
   menuContainer.classList.toggle("show");
 }
 
-// Function to fade out an element
-function fadeOut(element) {
-  element.style.transition = "opacity 0.5s";
-  element.style.opacity = 0;
-  setTimeout(() => {
-    element.style.display = "none";
-  }, 500); // Wait for the transition to complete before hiding
-}
-
-// Function to fade in an element
-function fadeIn(element) {
-  element.style.opacity = 0;
-  element.style.display = "block";
-  setTimeout(() => {
-    element.style.transition = "opacity 0.5s";
-    element.style.opacity = 1;
-  }, 100); // Delay the transition to ensure element is visible before fading in
-}
-
-// Function to handle page navigation
-function handlePageNavigation(selectedValue) {
-  var currentPage = document.querySelector(".home-section.show");
-  var nextPage = document.querySelector(selectedValue);
-
-  if (currentPage && currentPage !== nextPage) {
-    fadeOut(currentPage);
-    setTimeout(() => {
-      currentPage.classList.remove("show");
-      fadeIn(nextPage);
-      nextPage.classList.add("show");
-    }, 500); // Wait for the fade out transition to complete before fading in the new content
-  } else if (!currentPage && nextPage) {
-    fadeIn(nextPage);
-    nextPage.classList.add("show");
-  }
-}
-
-// Function to toggle active class on sidebar items and handle page navigation
-function toggleActiveClassAndNavigate(event) {
-  // Remove "active" class from all sidebar items
-  const sidebarItems = document.querySelectorAll(".nav-list li");
-  sidebarItems.forEach((item) => {
+// Function to toggle the "active" class on clicked dashboard items
+function toggleActiveClass(event) {
+  // Remove "active" class from all dashboard items
+  const dashboardItems = document.querySelectorAll(".nav-list li");
+  dashboardItems.forEach((item) => {
     item.classList.remove("active");
   });
 
   // Add "active" class to the clicked item
   const clickedItem = event.currentTarget;
   clickedItem.classList.add("active");
-
-  // Get selected page value
-  var selectBox = document.getElementById("pageSelector");
-  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-
-  // Navigate to the selected page
-  handlePageNavigation(selectedValue);
 }
 
-// Add event listeners to all sidebar items
-const sidebarItems = document.querySelectorAll(".nav-list li");
-sidebarItems.forEach((item) => {
-  item.addEventListener("click", (event) => {
-    toggleActiveClassAndNavigate(event);
-  });
+// Add event listeners to all dashboard items
+const dashboardItems = document.querySelectorAll(".nav-list li");
+dashboardItems.forEach((item) => {
+  item.addEventListener("click", toggleActiveClass);
 });
+
+//Dashboard Scripts
+
+function togglePageNavigation() {
+  var pageNavigationContainer = document.getElementById(
+    "pageNavigationContainer"
+  );
+  pageNavigationContainer.classList.toggle("show");
+}
+
+function navigateToPage() {
+  var selectBox = document.getElementById("pageSelector");
+  var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+  if (selectedValue) {
+    window.location.href = selectedValue;
+  }
+}
+
