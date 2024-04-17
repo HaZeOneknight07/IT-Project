@@ -1,13 +1,14 @@
-body,
-html {
+html,
+body {
     height: 100%;
     margin: 0;
 }
 
+/* Header Styles */
 header {
     border-radius: 0 0 1rem 1rem !important; /* Makes header bottom rounded*/
 }
-/* Header Styles */
+
 .header-container {
     background-color: var(--footer-header-colour);
     color: var(--text-colour);
@@ -45,7 +46,6 @@ main {
 
 .button-container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh; /* Make the container full height of the viewport */
@@ -62,7 +62,6 @@ main {
     border-radius: 20px;
     color: var(--text-colour);
     cursor: pointer;
-    margin: 0 1.5625rem;
     text-decoration: none;
     text-align: center;
     width: 37.5rem;
@@ -72,7 +71,7 @@ main {
     opacity: 0;
     animation: fadeIn 2s forwards;
     position: relative;
-    margin: 0 10px;
+    margin: 0 10px; /* Adjust margin as needed for spacing between buttons */
 }
 
 .rounded-button img {
@@ -130,6 +129,7 @@ main {
 .box:nth-child(1):after {
     animation: color-change 1.5s ease-in-out infinite alternate;
 }
+
 /* Keyframes */
 @keyframes slide {
     0% {
