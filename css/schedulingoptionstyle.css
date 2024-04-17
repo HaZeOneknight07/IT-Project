@@ -2,6 +2,7 @@ html,
 body {
     height: 100%;
     margin: 0;
+    overflow: hidden; /* Disable scrolling */
 }
 
 /* Header Styles */
@@ -42,13 +43,16 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    height: calc(100vh - 100px); /* Adjusted height to fit the remaining viewport height */
+    overflow-y: auto; /* Enable vertical scrolling for content exceeding viewport height */
 }
 
 .button-container {
     display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Make the container full height of the viewport */
+    margin-top: 20px; /* Adjusted top margin for spacing */
 }
 
 .rounded-button {
@@ -64,14 +68,16 @@ main {
     cursor: pointer;
     text-decoration: none;
     text-align: center;
-    width: 37.5rem;
-    height: 37.5rem;
+    width: 20vw; /* Adjusted width to be relative to viewport width */
+    height: 20vw; /* Adjusted height to be relative to viewport width */
+    max-width: 200px; /* Added max-width to prevent buttons from becoming too large */
+    max-height: 200px; /* Added max-height to prevent buttons from becoming too large */
     box-sizing: border-box;
     transition: var(--background-color) 0.5s;
     opacity: 0;
     animation: fadeIn 2s forwards;
     position: relative;
-    margin: 0 10px; /* Adjust margin as needed for spacing between buttons */
+    margin: 10px; /* Adjusted margin for spacing between buttons */
 }
 
 .rounded-button img {
@@ -85,6 +91,20 @@ main {
     left: 50%;
     transform: translate(-50%, -50%);
     border-radius: 10px;
+}
+
+.rounded-button:hover {
+    background-color: var(--button-colour);
+}
+
+.special-button {
+    margin-bottom: 70px;
+}
+/* Xactimate and Sedgwick Logos Styles */
+.logo {
+    width: 100px;
+    height: auto;
+    padding-left: 1rem;
 }
 
 /* Loading Bar Styles */
@@ -158,18 +178,4 @@ main {
     100% {
         opacity: 1;
     }
-}
-
-.rounded-button:hover {
-    background-color: var(--button-colour);
-}
-
-.special-button {
-    margin-bottom: 70px;
-}
-
-.logo {
-    width: 100px;
-    height: auto;
-    padding-left: 1rem;
 }
