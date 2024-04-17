@@ -61,7 +61,7 @@ body {
 header {
     background-color: var(--footer-header-colour);
     color: var(--text-colour);
-    padding: 1em;
+    padding: 1rem 0 1rem 0; /* Padding to top and bottom */
     display: flex;
     align-items: center;
     justify-content: center;

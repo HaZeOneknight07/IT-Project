@@ -38,12 +38,11 @@ main {
 }
 
 .button-container {
-    text-align: center;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    vertical-align: middle;
-    padding-top: 4.25rem;
+    align-items: center;
+    height: 100vh; /* Make the container full height of the viewport */
 }
 
 .rounded-button {
@@ -67,6 +66,7 @@ main {
     opacity: 0;
     animation: fadeIn 2s forwards;
     position: relative;
+    margin: 0 10px;
 }
 
 .rounded-button img {
