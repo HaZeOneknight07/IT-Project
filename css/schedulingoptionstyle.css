@@ -95,11 +95,6 @@ main {
     margin-bottom: 70px;
 }
 
-.logo {
-    padding-left: 1rem;
-}
-
-
 /* Loading Bar Styles */
 .loading-container {
     display: flex;

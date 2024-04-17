@@ -73,6 +73,7 @@ header {
 header img {
     width: 100px;
     margin-right: auto; 
+    padding-left: 1rem;
 }
 
 header h1 {
