@@ -59,7 +59,7 @@ header {
 
 #username,
 #password {
-    background-color: red;
+    background-color: rgba(70, 90, 126, 0.4);
 }
 
 .login-box form button {
