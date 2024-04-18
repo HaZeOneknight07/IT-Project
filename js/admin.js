@@ -7,13 +7,18 @@ var predefinedUsers = [
   },
   {
     email: "surveys@gelder.co.uk",
-    name: "Test Name",
+    name: "Surveyor",
     job: "Surveyor"
   },
   {
     email: "managers@gelder.co.uk",
     name: "Manager",
     job: "Manager"
+  },
+  {
+    email: "ty.ashmore@gelder.co.uk",
+    name: "Ty Ashmore",
+    job: "Apprentice Surveyor"
   },
   // Add more predefined users as needed.
 ];

@@ -10,6 +10,11 @@ var credentials = [
   { username: "admin@gelder.co.uk", password: "ADMIN!Gelder18#" },
   { username: "surveys@gelder.co.uk", password: "GelderSurveyors1" },
   { username: "managers@gelder.co.uk", password: "GelderManagers1" },
+  { username: "ty.ashmore@gelder.co.uk", password: "TA.gelder!1129" },
+  { username: "", password: "" },
+  { username: "", password: "" },
+  { username: "", password: "" },
+  { username: "", password: "" },
   // Add more username/password pairs as needed using same format
 ];
 
@@ -32,7 +37,7 @@ function redirectToHome() {
         window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
       }
       // Redirect to Surveyors Version
-      else if (username === "surveys@gelder.co.uk") {
+      else if (username === "surveys@gelder.co.uk", "ty.ashmore@gelder.co.uk") {
         window.location.href = "hub.html"; // Redirect to Hub Page
       }
       // Redirect to Admin Panel
