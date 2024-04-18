@@ -38,7 +38,11 @@
       href="https://fonts.googleapis.com/css?family=Poppins"
     />
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="img/favicon.png" />
+    <link 
+     rel="icon" 
+     type="image/x-icon" 
+     href="img/favicon.png" 
+    />
   </head>
 
   <body>
@@ -69,7 +73,7 @@
     <main id="main-content" class="hide">
       <div class="login-box">
         <h2>Login Form</h2>
-        <form onsubmit="event.preventDefault(); redirectToHome();">
+        <form id="loginForm" onsubmit="event.preventDefault(); redirectToHome();">
           <div class="user-box">
             <input type="text" id="username" name="username" required />
             <label>Username</label>
