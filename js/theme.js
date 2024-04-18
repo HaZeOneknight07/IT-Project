@@ -3,7 +3,7 @@ function setColorTheme(email) {
   // Default theme
   let theme = {
       "--footer-header-colour": "#405C59",
-      "--navigation-colour": "#D22A3A",
+      "--sidebar-colour": "#D22A3A",
       // Other default theme properties...
   };
 
@@ -15,20 +15,20 @@ function setColorTheme(email) {
       // Admin theme
       theme = {
           "--footer-header-colour": "#219ebc",
-          "--navigation-colour": "#yourAdminColor",
+          "--sdiebar-colour": "#219ebc",
           // Add more customizations as needed
       };
       // Apply separate CSS rule for admin@gelder.co.uk
-      emailCSSRules += ".sidebar { background: #219ebc !important; }";
-      emailCSSRules += ".sidebar li.active a { background: #219ebc !important; }"; // Change active item color
-      emailCSSRules += ".sidebar li a:hover { background: #219ebc !important; }"; // Change hover item color
+      emailCSSRules += ".sidebar { background: #219ebc; }";
+      emailCSSRules += ".sidebar li.active a { background: #219ebc; }"; // Change active item color
+      emailCSSRules += ".sidebar li a:hover { background: #219ebc; }"; // Change hover item color
       emailCSSRules = ".login-box form button { background: #219ebc; }";
 
   } else if (email === "surveys@gelder.co.uk") {
       // Surveyor theme
       theme = {
           "--footer-header-colour": "#2a9d8f",
-          "--navigation-colour": "#yourSurveyorColor",
+          "--sidebar-colour": "#2a9d8f",
           // Add more customizations as needed
       };
       // Apply separate CSS rule for surveys.gelder.co.uk
@@ -41,7 +41,7 @@ function setColorTheme(email) {
       // Manager theme
       theme = {
           "--footer-header-colour": "#d62828",
-          "--navigation-colour": "#yourManagerColor",
+          "--sidebar-colour": "#d62828",
           // Add more customizations as needed
       };
       // Apply separate CSS rule for managers@gelder.co.uk
@@ -51,16 +51,13 @@ function setColorTheme(email) {
       emailCSSRules = ".login-box form button { background: #d62828; }";
 
   } else if (email === "ty.ashmore@gelder.co.uk") {
-      // Manager theme
+      // My Theme
       theme = {
           "--footer-header-colour": "#643b9f",
-          "--navigation-colour": "#yourManagerColor",
+          "--sidebar-colour": "#643b9f",
           // Add more customizations as needed
       };
       // Apply separate CSS rule for ty.ashmore@gelder.co.uk
-      emailCSSRules += ".sidebar { background: #643b9f !important; }";
-      emailCSSRules += ".sidebar li.active a { background: #4a2c76 !important; }"; // Change active item color
-      emailCSSRules += ".sidebar li a:hover { background: #4a2c76 !important; }"; // Change hover item color
       emailCSSRules = ".login-box form button { background: #643b9f; }";
   }
 
