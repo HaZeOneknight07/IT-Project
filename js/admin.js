@@ -67,9 +67,6 @@ function isUserPredefined(name, job) {
 
 // Function to prompt user for details
 function promptUserDetails() {
-  // Blur page contents
-  blurPage();
-
   // Check if there are any predefined users
   if (predefinedUsers.length === 0) {
     alert("No predefined users found. Please add some predefined users.");
@@ -121,9 +118,6 @@ function promptUserDetails() {
   document.getElementById("name").textContent = name;
   document.getElementById("job").textContent = job;
   document.getElementById("profileImg").src = imageUrl;
-
-  // Remove blur from page contents
-  unblurPage();
 
   // Enable clickable elements
   enableClickableElements();
@@ -234,12 +228,3 @@ function navigateToPage() {
   }
 }
 
-// Function to blur page contents
-function blurPage() {
-  document.body.classList.add("blurred");
-}
-
-// Function to remove blur from page contents
-function unblurPage() {
-  document.body.classList.remove("blurred");
-}
