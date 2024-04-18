@@ -4,52 +4,41 @@ function setColorTheme(email) {
   let theme = {
       "--footer-header-colour": "#405C59",
       "--sidebar-colour": "#D22A3A",
-      // Other default theme properties...
+      // Add other default theme properties...
   };
-
-  // CSS rules based on email
-  let emailCSSRules = "";
 
   // Check email and set theme accordingly
   if (email === "admin@gelder.co.uk") {
       // Admin theme
       theme = {
           "--footer-header-colour": "#219ebc",
-          "--sidebar-colour": "#219ebc",
+          "--sidebar-colour": "#yourAdminColor",
           // Add more customizations as needed
       };
-      // Apply separate CSS rule for admin@gelder.co.uk
-      emailCSSRules = ".login-box form button { background: #219ebc; }";
 
   } else if (email === "surveys@gelder.co.uk") {
       // Surveyor theme
       theme = {
           "--footer-header-colour": "#2a9d8f",
-          "--sidebar-colour": "#2a9d8f",
+          "--sidebar-colour": "#yourSurveyorColor",
           // Add more customizations as needed
       };
-      // Apply separate CSS rule for surveys.gelder.co.uk
-      emailCSSRules = ".login-box form button { background: #2a9d8f; }";
 
   } else if (email === "managers@gelder.co.uk") {
       // Manager theme
       theme = {
           "--footer-header-colour": "#d62828",
-          "--sidebar-colour": "#d62828",
+          "--sidebar-colour": "#yourManagerColor",
           // Add more customizations as needed
       };
-      // Apply separate CSS rule for managers@gelder.co.uk
-      emailCSSRules = ".login-box form button { background: #d62828; }";
 
   } else if (email === "ty.ashmore@gelder.co.uk") {
-      // My Theme
+      // Manager theme
       theme = {
           "--footer-header-colour": "#643b9f",
-          "--sidebar-colour": "#643b9f",
+          "--sidebar-colour": "#yourManagerColor",
           // Add more customizations as needed
       };
-      // Apply separate CSS rule for ty.ashmore@gelder.co.uk
-      emailCSSRules = ".login-box form button { background: #643b9f; }";
   }
 
   // Apply the theme by setting CSS variables
@@ -58,10 +47,9 @@ function setColorTheme(email) {
       root.style.setProperty(key, value);
   }
 
-  // Apply additional CSS rules
-  const style = document.createElement('style');
-  style.textContent = emailCSSRules;
-  document.head.appendChild(style);
+  // Apply sidebar color directly to the sidebar
+  const sidebar = document.querySelector(".sidebar");
+  sidebar.style.background = theme["--sidebar-colour"];
 }
 
 // Call the function with the signed-in user's email
