@@ -63,4 +63,4 @@ function setColorTheme(email) {
   if (loggedInEmail) {
     setColorTheme(loggedInEmail);
   }
-  
+}
