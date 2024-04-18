@@ -407,6 +407,12 @@ html {
   color: #f9f9f9; 
 }
 
+/* Dark Mode Toggle Styles */
+
+.darkmode .dark .input{
+  color: #262626;
+}
+
 /* Media Queries */
 
 /* Adjust text size based on screen size */
