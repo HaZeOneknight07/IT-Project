@@ -19,7 +19,8 @@ function setColorTheme(email) {
           // Add more customizations as needed
       };
       // Apply separate CSS rule for admin@gelder.co.uk
-      emailCSSRules = ".sidebar li.active a { background: #219ebc; }";
+      emailCSSRules = ".sidebar i { background: #219ebc; }";
+      emailCSSRules = "button { background: #219ebc; }";
 
   } else if (email === "surveys@gelder.co.uk") {
       // Surveyor theme
@@ -29,7 +30,8 @@ function setColorTheme(email) {
           // Add more customizations as needed
       };
       // Apply separate CSS rule for surveys.gelder.co.uk
-      emailCSSRules = ".sidebar li.active a { background: #2a9d8f; }";
+      emailCSSRules = ".sidebar i { background: #2a9d8f; }";
+      emailCSSRules = "button { background: #2a9d8f; }";
 
   } else if (email === "managers@gelder.co.uk") {
       // Manager theme
@@ -39,7 +41,8 @@ function setColorTheme(email) {
           // Add more customizations as needed
       };
       // Apply separate CSS rule for managers@gelder.co.uk
-      emailCSSRules = ".sidebar li.active a { background: #d62828; }";
+      emailCSSRules = ".sidebar i { background: #d62828; }";
+      emailCSSRules = "button { background: #d62828; }";
 
   } else if (email === "ty.ashmore@gelder.co.uk") {
       // Manager theme
@@ -49,7 +52,8 @@ function setColorTheme(email) {
           // Add more customizations as needed
       };
       // Apply separate CSS rule for ty.ashmore@gelder.co.uk
-      emailCSSRules = ".sidebar li.active a { background: #643b9f; }";
+      emailCSSRules = ".sidebar i { background: #643b9f; }";
+      emailCSSRules = "button { background: #643b9f; }";
   }
 
   // Apply the theme by setting CSS variables
