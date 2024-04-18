@@ -15,13 +15,13 @@ document.addEventListener("DOMContentLoaded", function() {
     {
       username: "surveys@gelder.co.uk",
       password: "GelderSurveyors1",
-      name: "Test Name",
+      name: "Surveyor",
       job: "Surveyor",
     },
     {
       username: "managers@gelder.co.uk",
       password: "GelderManagers1",
-      name: "Test Name",
+      name: "Manager",
       job: "Contracts Manager",
     },
     // Add more username/password/name/job pairs as needed using same format
@@ -30,46 +30,34 @@ document.addEventListener("DOMContentLoaded", function() {
   function redirectToHome() {
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
+    var user = credentials.find(cred => cred.username === username);
 
-    for (var i = 0; i < credentials.length; i++) {
-      if (
-        username === credentials[i].username &&
-        password === credentials[i].password
-      ) {
-        // Populate name and job title fields
-        document.getElementById("name").value = credentials[i].name;
-        document.getElementById("job").value = credentials[i].job;
+    if (user && password === user.password) {
+      document.getElementById("name").value = user.name;
+      document.getElementById("job").value = user.job;
 
-        // Store data in local storage
-        localStorage.setItem("loggedInUsername", username);
-        localStorage.setItem("loggedInPassword", password);
+      localStorage.setItem("loggedInUsername", username);
+      localStorage.setItem("loggedInPassword", password);
 
-        // Redirect based on user type
-        if (username === "managers@gelder.co.uk") {
-          window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
-        } else if (username === "surveyors@gelder.co.uk") {
-          window.location.href = "hub.html"; // Redirect to Hub Page
-        } else if (username === "admin@gelder.co.uk") {
-          window.location.href = "admin.html"; // Redirect to Admin Panel
-        }
-        return;
+      if (username === "managers@gelder.co.uk") {
+        window.location.href = "scheduleoption.html";
+      } else if (username === "surveyors@gelder.co.uk") {
+        window.location.href = "hub.html";
+      } else if (username === "admin@gelder.co.uk") {
+        window.location.href = "admin.html";
       }
+    } else {
+      alert("Invalid login credentials. Please try again.");
     }
-
-    // If no match found in the loop
-    alert("Invalid login credentials. Please try again.");
   }
 
-  // Add event listener to the login form submit button
   document.getElementById("loginForm").addEventListener("submit", function (event) {
-    event.preventDefault(); // Prevent the default form submission
-    redirectToHome(); // Call the redirectToHome function
+    event.preventDefault();
+    redirectToHome();
   });
 
-  // Caps Lock Indicator Script
   document.getElementById("password").addEventListener("keyup", function (event) {
-    var capsLockEnabled =
-      event.getModifierState && event.getModifierState("CapsLock");
+    var capsLockEnabled = event.getModifierState && event.getModifierState("CapsLock");
     var warningElement = document.querySelector(".caps-lock-warning");
     if (capsLockEnabled) {
       warningElement.style.display = "block";
