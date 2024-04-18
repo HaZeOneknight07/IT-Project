@@ -104,11 +104,12 @@ function menuBtnChange() {
 
 // Function to handle GitHub link
 function handleGitHubLink() {
-  var currentUser = document
-    .getElementById("name")
-    .textContent.trim()
-    .toLowerCase();
-  if (currentUser === "ty ashmore") {
+  var currentUserEmail = localStorage.getItem("loggedInUserEmail");
+  var currentUser = predefinedUsers.find(function(user) {
+    return user.email === currentUserEmail;
+  });
+
+  if (currentUser && currentUser.name === "Ty Ashmore") {
     // Redirect to GitHub page
     window.location.href = "https://github.com/HaZeOneknight07/IT-Project";
   } else {
@@ -119,11 +120,12 @@ function handleGitHubLink() {
 
 // Function to handle File Manager link
 function handleFileManagerLink() {
-  var currentUser = document
-    .getElementById("name")
-    .textContent.trim()
-    .toLowerCase();
-  if (currentUser !== "ty ashmore") {
+  var currentUserEmail = localStorage.getItem("loggedInUserEmail");
+  var currentUser = predefinedUsers.find(function(user) {
+    return user.email === currentUserEmail;
+  });
+
+  if (currentUser && currentUser.name !== "Ty Ashmore") {
     // Display insufficient privileges message
     alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
   }
