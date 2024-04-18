@@ -31,7 +31,7 @@ function redirectToHome() {
           window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
         }
         // Redirect to Surveyors Version
-        else if (username === "surveyors@gelder.co.uk") {
+        else if (username === "surveys@gelder.co.uk") {
           window.location.href = "hub.html"; // Redirect to Hub Page
         }
         // Redirect to Admin Panel
