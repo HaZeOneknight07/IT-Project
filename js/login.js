@@ -33,17 +33,22 @@ function redirectToHome() {
         window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
       }
       // Redirect to Surveyors Version
-      else if (username === "surveys@gelder.co.uk" || "ty.ashmore@gelder.co.uk") {
+      else if (
+        username === "surveys@gelder.co.uk" ||
+        "ty.ashmore@gelder.co.uk"
+      ) {
         window.location.href = "hub.html"; // Redirect to Hub Page
       }
       // Redirect to Admin Panel
       else if (username === "admin@gelder.co.uk") {
+        console.log("Redirecting to Admin Panel");
         window.location.href = "admin.html"; // Redirect to Admin Panel
+        return;
       }
       return;
     }
   }
-  
+
   // If no match found in the loop
   alert("Invalid login credentials. Please try again.");
 }
