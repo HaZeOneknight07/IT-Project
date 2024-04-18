@@ -76,7 +76,7 @@ header {
 }
 
 .login-box form button:hover {
-    box-shadow: 0 0 15px var(--button-colour-submit);
+    box-shadow: 0 0 15px var(--sidebar-colour);
 }
 
 .caps-lock-warning {
