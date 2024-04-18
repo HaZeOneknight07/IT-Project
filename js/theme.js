@@ -21,6 +21,7 @@ function setColorTheme(email) {
     // Apply separate CSS rule for admin@gelder.co.uk
     emailCSSRules = ".sidebar li a:hover { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar .bx-search { background: var(--sidebar-colour); }";
+    emailCSSRules = ".sidebar li.profile { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar input { background: var(--sidebar-colour); }";
 
   } else if (email === "surveys@gelder.co.uk") {
@@ -33,6 +34,7 @@ function setColorTheme(email) {
     // Apply separate CSS rule for surveys@gelder.co.uk
     emailCSSRules = ".sidebar li a:hover { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar .bx-search { background: var(--sidebar-colour); }";
+    emailCSSRules = ".sidebar li.profile { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar input { background: var(--sidebar-colour); }";
 
   } else if (email === "managers@gelder.co.uk") {
@@ -45,6 +47,7 @@ function setColorTheme(email) {
     // Apply separate CSS rule for managers@gelder.co.uk
     emailCSSRules = ".sidebar li a:hover { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar .bx-search { background: var(--sidebar-colour); }";
+    emailCSSRules = ".sidebar li.profile { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar input { background: var(--sidebar-colour); }";
 
   } else if (email === "ty.ashmore@gelder.co.uk") {
@@ -57,6 +60,7 @@ function setColorTheme(email) {
     // Apply separate CSS rule for ty.ashmore@gelder.co.uk
     emailCSSRules = ".sidebar li a:hover { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar .bx-search { background: var(--sidebar-colour); }";
+    emailCSSRules = ".sidebar li.profile { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar input { background: var(--sidebar-colour); }";
   }
 
