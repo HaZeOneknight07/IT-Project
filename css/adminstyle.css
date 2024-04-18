@@ -409,7 +409,7 @@ html {
 
 /* Blur class for page contents before login details are entered */
 .blurred {
-  filter: blur(5px); /* Adjust the blur intensity as needed */
+  filter: blur(200px);
 }
 
 /* Media Queries */
