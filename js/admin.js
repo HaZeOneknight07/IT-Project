@@ -18,7 +18,7 @@ var predefinedUsers = [
   {
     email: "ty.ashmore@gelder.co.uk",
     name: "Ty Ashmore",
-    job: "Apprentice Surveyor"
+    job: "Apprentice"
   },
   // Add more predefined users as needed.
 ];
