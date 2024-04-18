@@ -160,6 +160,10 @@ footer {
     display: none;
 }
 
+.darkmode .dark #username, #password{
+    color: #f9f9f9;
+}
+
 .dark .darkmode .light,
 :not(.dark) .darkmode .dark {
     display: inline-block;
