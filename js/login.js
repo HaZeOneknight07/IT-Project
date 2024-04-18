@@ -35,7 +35,7 @@ function redirectToHome() {
       // Redirect to Surveyors Version
       else if (
         username === "surveys@gelder.co.uk" ||
-        "ty.ashmore@gelder.co.uk"
+        username === "ty.ashmore@gelder.co.uk"
       ) {
         window.location.href = "hub.html"; // Redirect to Hub Page
       }
