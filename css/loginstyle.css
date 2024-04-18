@@ -57,6 +57,11 @@ header {
     font-size: 12px;
 }
 
+#username,
+#password {
+    background-color: red;
+}
+
 .login-box form button {
     position: relative;
     left: 50%;
