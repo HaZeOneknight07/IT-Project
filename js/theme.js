@@ -19,7 +19,9 @@ function setColorTheme(email) {
           // Add more customizations as needed
       };
       // Apply separate CSS rule for admin@gelder.co.uk
-      emailCSSRules += ".sidebar i { background: #219ebc; }";
+      emailCSSRules += ".sidebar { background: #219ebc; }";
+      emailCSSRules += ".sidebar.open { background: #219ebc; }"; 
+      emailCSSRules += ".sidebar li.active a { background: #219ebc; }"; 
       emailCSSRules += ".sidebar i:hover { background: #219ebc; }";
       emailCSSRules = ".login-box form button { background: #219ebc; }";
 
@@ -43,8 +45,10 @@ function setColorTheme(email) {
           // Add more customizations as needed
       };
       // Apply separate CSS rule for managers@gelder.co.uk
-      emailCSSRules += ".sidebar i { background: #d62828; }";
-      emailCSSRules += ".sidebar i:hover { background: #d62828; }"; 
+      emailCSSRules += ".sidebar { background: #d62828; }";
+      emailCSSRules += ".sidebar.open { background: #d62828; }"; 
+      emailCSSRules += ".sidebar li.active a { background: #d62828; }"; 
+      emailCSSRules += ".sidebar i:hover { background: #d62828; }";
       emailCSSRules = ".login-box form button { background: #d62828; }";
 
   } else if (email === "ty.ashmore@gelder.co.uk") {
@@ -55,8 +59,10 @@ function setColorTheme(email) {
           // Add more customizations as needed
       };
       // Apply separate CSS rule for ty.ashmore@gelder.co.uk
-      emailCSSRules += ".sidebar i { background: #643b9f; }";
-      emailCSSRules += ".sidebar i:hover { background: #4a2c76; }"; 
+      emailCSSRules += ".sidebar { background: #643b9f; }";
+      emailCSSRules += ".sidebar.open { background: #643b9f; }"; 
+      emailCSSRules += ".sidebar li.active a { background: #643b9f; }"; 
+      emailCSSRules += ".sidebar i:hover { background: #643b9f; }";
       emailCSSRules = ".login-box form button { background: #643b9f; }";
   }
 
