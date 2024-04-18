@@ -23,6 +23,7 @@ function setColorTheme(email) {
     emailCSSRules = ".sidebar .bx-search { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar li.profile { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar input { background: var(--sidebar-colour); }";
+    emailCSSRules = ".login-box form button { background: var(--sidebar-colour); }";
 
   } else if (email === "surveys@gelder.co.uk") {
     // Surveyor theme
@@ -36,6 +37,7 @@ function setColorTheme(email) {
     emailCSSRules = ".sidebar .bx-search { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar li.profile { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar input { background: var(--sidebar-colour); }";
+    emailCSSRules = ".login-box form button { background: var(--sidebar-colour); }";
 
   } else if (email === "managers@gelder.co.uk") {
     // Manager theme
@@ -49,6 +51,7 @@ function setColorTheme(email) {
     emailCSSRules = ".sidebar .bx-search { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar li.profile { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar input { background: var(--sidebar-colour); }";
+    emailCSSRules = ".login-box form button { background: var(--sidebar-colour); }";
 
   } else if (email === "ty.ashmore@gelder.co.uk") {
     // Manager theme
@@ -62,6 +65,7 @@ function setColorTheme(email) {
     emailCSSRules = ".bx-search { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar li.profile { background: var(--sidebar-colour); }";
     emailCSSRules = ".sidebar input { background: var(--sidebar-colour); }";
+    emailCSSRules = ".login-box form button { background: var(--sidebar-colour); }";
   }
 
   // Apply the theme by setting CSS variables
