@@ -409,7 +409,7 @@ html {
 
 /* Dark Mode Toggle Styles */
 
-.darkmode .dark .input{
+.darkmode .dark .sidebar input{
   color: #262626;
 }
 
