@@ -59,6 +59,12 @@ function redirectToHome() {
   alert("Invalid login credentials. Please try again.");
 }
 
+// Add event listener to the login form submit button
+document.getElementById("loginForm").addEventListener("submit", function (event) {
+  event.preventDefault(); // Prevent the default form submission
+  redirectToHome(); // Call the redirectToHome function
+});
+
 // Caps Lock Indicator Script
 document.getElementById("password").addEventListener("keyup", function (event) {
   var capsLockEnabled =
