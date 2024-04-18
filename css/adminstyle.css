@@ -407,6 +407,11 @@ html {
   color: #f9f9f9; 
 }
 
+/* Blur class for page contents before login details are entered */
+.blurred {
+  filter: blur(5px); /* Adjust the blur intensity as needed */
+}
+
 /* Media Queries */
 
 /* Adjust text size based on screen size */
