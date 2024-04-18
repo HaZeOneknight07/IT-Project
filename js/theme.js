@@ -14,8 +14,8 @@ function setColorTheme(email) {
   if (email === "admin@gelder.co.uk") {
     // Admin theme
     theme = {
-      "--footer-header-colour": "#219ebc",
-      "--sidebar-colour": "#219ebc",
+      "--footer-header-colour": "#3a5a40",
+      "--sidebar-colour": "#3a5a40",
       // Add more customizations as needed
     };
     // Apply separate CSS rule for admin@gelder.co.uk
@@ -28,8 +28,8 @@ function setColorTheme(email) {
   } else if (email === "surveys@gelder.co.uk") {
     // Surveyor theme
     theme = {
-      "--footer-header-colour": "#2a9d8f",
-      "--sidebar-colour": "#2a9d8f",
+      "--footer-header-colour": "#405C59",
+      "--sidebar-colour": "#D22A3A",
       // Add more customizations as needed
     };
     // Apply separate CSS rule for surveys@gelder.co.uk
@@ -42,8 +42,8 @@ function setColorTheme(email) {
   } else if (email === "managers@gelder.co.uk") {
     // Manager theme
     theme = {
-      "--footer-header-colour": "#d62828",
-      "--sidebar-colour": "#d62828",
+      "--footer-header-colour": "#405C59",
+      "--sidebar-colour": "#D22A3A",
       // Add more customizations as needed
     };
     // Apply separate CSS rule for managers@gelder.co.uk
