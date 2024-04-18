@@ -11,10 +11,6 @@ var credentials = [
   { username: "surveys@gelder.co.uk", password: "GelderSurveyors1" },
   { username: "managers@gelder.co.uk", password: "GelderManagers1" },
   { username: "ty.ashmore@gelder.co.uk", password: "TA.gelder!1129" },
-  { username: "", password: "" },
-  { username: "", password: "" },
-  { username: "", password: "" },
-  { username: "", password: "" },
   // Add more username/password pairs as needed using same format
 ];
 
