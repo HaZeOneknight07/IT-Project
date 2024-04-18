@@ -147,7 +147,7 @@ footer {
 .darkmode {
     display: inline-block;
     font-size: 2rem;
-    padding: 1rem;
+    padding: 0rem 1rem 0.75rem 1rem;
     cursor: pointer;
     position: absolute;
     top: 1rem;
