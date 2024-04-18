@@ -1,5 +1,6 @@
 /* Google Font Link */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -90,7 +91,7 @@ html {
 }
 
 .sidebar li.active a {
-  background: #643b9f;
+  background: var(--sidebar-colour);
 }
 
 .sidebar li .tooltip {
@@ -133,7 +134,7 @@ html {
   border: none;
   border-radius: 12px;
   transition: all 0.5s ease;
-  background: #643b9f;
+  background: var(--sidebar-colour);
 }
 
 .sidebar.open input {
@@ -147,17 +148,17 @@ html {
   left: 0;
   transform: translateY(-50%);
   font-size: 22px;
-  background: #643b9f;
+  background: var(--sidebar-colour);
   color: #f9f9f9;
 }
 
 .sidebar.open .bx-search:hover {
-  background: #643b9f;
+  background: var(--sidebar-colour);
   color: #f9f9f9;
 }
 
 .sidebar .bx-search:hover {
-  background: #643b9f;
+  background: var(--sidebar-colour);
   color: #11101d;
 }
 
@@ -173,7 +174,7 @@ html {
 }
 
 .sidebar li a:hover {
-  background: #643b9f;
+  background: var(--sidebar-colour);
 }
 
 .sidebar li a .links_name {
@@ -211,7 +212,7 @@ html {
   left: 0;
   bottom: -8px;
   padding: 10px 14px;
-  background: #643b9f;
+  background: var(--sidebar-colour);
   transition: all 0.5s ease;
   overflow: hidden;
 }
@@ -251,7 +252,7 @@ html {
   top: 50%;
   right: 0;
   transform: translateY(-50%);
-  background: #643b9f;
+  background: var(--sidebar-colour);
   width: 100%;
   height: 60px;
   line-height: 60px;
@@ -275,7 +276,7 @@ html {
   z-index: 2;
 }
 
-.sidebar.open ~ .home-section {
+.sidebar.open~.home-section {
   left: 250px;
   width: calc(100% - 250px);
 }
@@ -301,7 +302,7 @@ html {
   max-height: 70%;
   background-color: #181A1B;
   color: #f9f9f9;
-  border: 1px solid #643b9f;
+  background: var(--sidebar-colour);
   border-radius: 8px;
   padding: 40px;
   font-size: 20px;
@@ -331,7 +332,7 @@ html {
   position: absolute;
   background-color: #f9f9f9;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -351,7 +352,7 @@ html {
 }
 
 .dropdown:hover .dropbtn {
-  background-color: #643b9f;
+  background: var(--sidebar-colour);
 }
 
 /* Custom styles for page navigation container */
@@ -390,7 +391,7 @@ html {
   display: block;
   width: 100%;
   padding: 10px;
-  background-color: #643b9f;
+  background: var(--sidebar-colour);
   color: #ffffff;
   border: none;
   border-radius: 5px;
@@ -398,18 +399,18 @@ html {
 }
 
 .page-navigation-container button:hover {
-  background-color: #643b9f;
+  background: var(--sidebar-colour);
 }
 
 /* Override default hover color for dropdown list */
 .page-navigation-container select option.hovered:hover {
-  background-color: #643b9f; 
-  color: #f9f9f9; 
+  background: var(--sidebar-colour);
+  color: #f9f9f9;
 }
 
 /* Dark Mode Toggle Styles */
 
-.darkmode .dark .sidebar input{
+.darkmode .dark .sidebar input {
   color: #262626;
 }
 
