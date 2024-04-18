@@ -60,6 +60,7 @@ header {
 #username,
 #password {
     background-color: rgba(70, 90, 126, 0.4);
+    text-decoration:  solid rgb(232, 230, 227);
 }
 
 .login-box form button {
