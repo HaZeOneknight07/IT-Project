@@ -49,18 +49,17 @@ function setColorTheme(email) {
           "--navigation-colour": "#yourManagerColor",
           // Add more customizations as needed
         };
-    
+    }
   
     // Apply the theme by setting CSS variables
     const root = document.documentElement;
     for (const [key, value] of Object.entries(theme)) {
       root.style.setProperty(key, value);
     }
-  }
+}
   
-  // Call the function with the signed-in user's email
-  var loggedInEmail = localStorage.getItem("loggedInUserEmail");
-  if (loggedInEmail) {
+// Call the function with the signed-in user's email
+var loggedInEmail = localStorage.getItem("loggedInUserEmail");
+if (loggedInEmail) {
     setColorTheme(loggedInEmail);
-  }
 }
