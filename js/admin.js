@@ -1,26 +1,64 @@
-let sidebar = document.querySelector(".sidebar");
-let closeBtn = document.querySelector("#btn");
-let searchBtn = document.querySelector(".bx-search");
+// Login Validation Script
 
-closeBtn.addEventListener("click", () => {
-  sidebar.classList.toggle("open");
-  menuBtnChange(); //calling the function(optional)
-});
+// Delay the hiding of preloader and showing login content after 5 seconds
+setTimeout(function () {
+  document.querySelector(".preloader-container").classList.add("hide");
+  document.getElementById("main-content").classList.remove("hide");
+}, 5000);
 
-searchBtn.addEventListener("click", () => {
-  // Sidebar open when you click on the search iocn
-  sidebar.classList.toggle("open");
-  menuBtnChange(); //calling the function(optional)
-});
+var credentials = [
+  { username: "admin@gelder.co.uk", password: "ADMIN!Gelder18#" },
+  { username: "surveys@gelder.co.uk", password: "GelderSurveyors1" },
+  { username: "managers@gelder.co.uk", password: "GelderManagers1" },
+  // Add more username/password pairs as needed using same format
+];
 
-// following are the code to change sidebar button(optional)
-function menuBtnChange() {
-  if (sidebar.classList.contains("open")) {
-    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
-  } else {
-    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+function redirectToHome() {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
+  for (var i = 0; i < credentials.length; i++) {
+    if (
+      username === credentials[i].username &&
+      password === credentials[i].password
+    ) {
+      // Store data in local storage
+      localStorage.setItem("loggedInUsername", username);
+      localStorage.setItem("loggedInPassword", password);
+      localStorage.setItem("loggedInUserEmail", username);
+
+      // Redirect to Managers Version
+      if (username === "managers@gelder.co.uk") {
+        window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
+      }
+      // Redirect to Surveyors Version
+      else if (username === "surveys@gelder.co.uk") {
+        window.location.href = "hub.html"; // Redirect to Hub Page
+      }
+      // Redirect to Admin Panel
+      else if (username === "admin@gelder.co.uk") {
+        window.location.href = "admin.html"; // Redirect to Admin Panel
+      }
+      return;
+    }
   }
+  
+  // If no match found in the loop
+  alert("Invalid login credentials. Please try again.");
 }
+
+// Caps Lock Indicator Script
+
+document.getElementById("password").addEventListener("keyup", function (event) {
+  var capsLockEnabled =
+    event.getModifierState && event.getModifierState("CapsLock");
+  var warningElement = document.querySelector(".caps-lock-warning");
+  if (capsLockEnabled) {
+    warningElement.style.display = "block";
+  } else {
+    warningElement.style.display = "none";
+  }
+});
 
 // Predefined users array
 var predefinedUsers = [
@@ -67,57 +105,45 @@ function isUserPredefined(name, job) {
 
 // Function to prompt user for details
 function promptUserDetails() {
-  // Check if there are any predefined users
-  if (predefinedUsers.length === 0) {
-    alert("No predefined users found. Please add some predefined users.");
-    return;
-  }
+  // Retrieve stored email from local storage
+  var storedEmail = localStorage.getItem("loggedInUserEmail");
 
-  var name = prompt("Please enter your name:", "");
-  var job = prompt("Please enter your job title:", "");
-
-  // If user cancels prompt or leaves fields empty, redirect to login page
-  if (!name || !job) {
-    alert("Name and job title are required.");
+  // Check if stored email exists
+  if (!storedEmail) {
+    // If email does not exist, redirect to login page
+    alert("No email found. Redirecting to login page...");
     window.location.href = "index.html";
     return;
   }
 
-  // If the user is not predefined, redirect to login page
-  if (!isUserPredefined(name, job)) {
-    alert("You are not a predefined user. Redirecting to login page...");
-    window.location.href = "index.html";
-    return;
-  }
+  // Set default name and job title
+  var name = "";
+  var job = "";
 
-  var imageUrl = ""; // Default image URL
-  var found = false;
-
-  // Check if the input matches any predefined user
-  for (var i = 0; i < predefinedUsers.length; i++) {
-    if (
-      name.toLowerCase() === predefinedUsers[i].name.toLowerCase() &&
-      job.toLowerCase() === predefinedUsers[i].job.toLowerCase()
-    ) {
-      // If matched, prompt for password if the user is Ty Ashmore
-      if (name.toLowerCase() === "ty ashmore") {
-        var password = prompt("Please enter the password for Ty Ashmore:", "");
-        if (password !== predefinedUsers[i].password) {
-          alert("Incorrect password for Ty Ashmore.");
-          return;
-        }
-      }
-      // Populate the image URL
-      imageUrl = predefinedUsers[i].imageUrl;
-      found = true;
-      break; // Exit loop once a match is found
-    }
+  // Set name and job title based on the logged-in email
+  switch (storedEmail) {
+    case "admin@gelder.co.uk":
+      name = "Admin";
+      job = "Administrator";
+      break;
+    case "surveys@gelder.co.uk":
+      name = "Test Name"; // Modify as needed
+      job = "Surveyor"; // Modify as needed
+      break;
+    case "managers@gelder.co.uk":
+      name = "Manager";
+      job = "Manager";
+      break;
+    default:
+      // Redirect to login page if email does not match predefined users
+      alert("User not found. Redirecting to login page...");
+      window.location.href = "index.html";
+      return;
   }
 
   // Update profile information with user details
   document.getElementById("name").textContent = name;
   document.getElementById("job").textContent = job;
-  document.getElementById("profileImg").src = imageUrl;
 
   // Enable clickable elements
   enableClickableElements();
@@ -141,23 +167,6 @@ function enableClickableElements() {
 
 // Call the function when the page loads
 window.onload = promptUserDetails;
-
-// Function to show the form for adding users
-function showAddUserForm() {
-  document.getElementById("addUserForm").style.display = "block";
-}
-
-// Function to handle form submission
-document
-  .getElementById("userForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    var name = document.getElementById("name").value;
-    var job = document.getElementById("job").value;
-    var imageUrl = prompt("Please enter the image URL for the user:", "");
-    predefinedUsers.push({ name: name, job: job, imageUrl: imageUrl });
-    document.getElementById("addUserForm").style.display = "none";
-  });
 
 // Function to handle GitHub link
 function handleGitHubLink() {
@@ -227,4 +236,3 @@ function navigateToPage() {
     window.location.href = selectedValue;
   }
 }
-
