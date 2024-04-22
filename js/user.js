@@ -16,24 +16,24 @@ searchBtn.addEventListener("click", () => {
 // following are the code to change sidebar button(optional)
 function menuBtnChange() {
   if (sidebar.classList.contains("open")) {
-    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the iocns class
+    closeBtn.classList.replace("bx-menu", "bx-menu-alt-right"); //replacing the icons class
   } else {
-    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the iocns class
+    closeBtn.classList.replace("bx-menu-alt-right", "bx-menu"); //replacing the icons class
   }
 }
 
 // Predefined users array
-var predefinedUsers = [
-  {
-    name: "Ty Ashmore",
-    job: "Web Developer",
-    imageUrl: "img/logo.svg",
-    password: "secret",
-  },
-  { name: "Guest", job: "Developer", imageUrl: "img/logo.svg" },
-  { name: "Guest1", job: "Developer", imageUrl: "img/logo.svg" },
-  // Add more predefined users as needed.
-];
+// var predefinedUsers = [
+//   {
+//     name: "Ty Ashmore",
+//     job: "Web Developer",
+//     imageUrl: "img/logo.svg",
+
+//   },
+//   { name: "Guest", job: "Developer", imageUrl: "img/logo.svg" },
+//   { name: "Guest1", job: "Developer", imageUrl: "img/logo.svg" },
+//   // Add more predefined users as needed.
+// ];
 
 // Function to dynamically generate user list HTML
 function generateUserList(users) {
@@ -117,7 +117,7 @@ function promptUserDetails() {
   // Update profile information with user details
   document.getElementById("name").textContent = name;
   document.getElementById("job").textContent = job;
-  document.getElementById("profileImg").src = imageUrl;
+  document.getElementById("logo.svg").src = imageUrl;
 
   // Enable clickable elements
   enableClickableElements();
