@@ -77,7 +77,7 @@ function promptUserDetails() {
     return;
   }
 
-  var imageUrl = "logo.svg"; // Default image URL
+  var imageUrl = "img/logo.svg"; // Default image URL
   var found = false;
 
   // Check if the input matches any predefined user
