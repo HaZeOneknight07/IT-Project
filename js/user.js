@@ -22,19 +22,6 @@ function menuBtnChange() {
   }
 }
 
-// Predefined users array
-// var predefinedUsers = [
-//   {
-//     name: "Ty Ashmore",
-//     job: "Web Developer",
-//     imageUrl: "img/logo.svg",
-
-//   },
-//   { name: "Guest", job: "Developer", imageUrl: "img/logo.svg" },
-//   { name: "Guest1", job: "Developer", imageUrl: "img/logo.svg" },
-//   // Add more predefined users as needed.
-// ];
-
 // Function to dynamically generate user list HTML
 function generateUserList(users) {
   var userListHTML = "";
@@ -90,7 +77,7 @@ function promptUserDetails() {
     return;
   }
 
-  var imageUrl = ""; // Default image URL
+  var imageUrl = "logo.svg"; // Default image URL
   var found = false;
 
   // Check if the input matches any predefined user
@@ -117,7 +104,7 @@ function promptUserDetails() {
   // Update profile information with user details
   document.getElementById("name").textContent = name;
   document.getElementById("job").textContent = job;
-  document.getElementById("logo.svg").src = imageUrl;
+  document.getElementById("profileImg").src = imageUrl;
 
   // Enable clickable elements
   enableClickableElements();
