@@ -45,8 +45,27 @@ function promptUserDetails(email) {
   enableClickableElements();
 }
 
+// Function to disable clickable elements
+function disableClickableElements() {
+  var clickableElements = document.querySelectorAll("a, button");
+  clickableElements.forEach(function (element) {
+    element.disabled = true;
+  });
+}
+
+// Function to enable clickable elements
+function enableClickableElements() {
+  var clickableElements = document.querySelectorAll("a, button");
+  clickableElements.forEach(function (element) {
+    element.disabled = false;
+  });
+}
+
 // Call the function when the page loads
 window.onload = function() {
+  // Disable clickable elements initially
+  disableClickableElements();
+
   // Retrieve stored email from local storage
   var storedEmail = localStorage.getItem("loggedInUserEmail");
 
