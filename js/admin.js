@@ -13,7 +13,7 @@ var predefinedUsers = [
   {
     email: "managers@gelder.co.uk",
     name: "Manager",
-    job: "Manager"
+    job: "Contracts Manager"
   },
   {
     email: "ty.ashmore@gelder.co.uk",
