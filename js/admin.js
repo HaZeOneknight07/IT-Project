@@ -145,7 +145,7 @@ function toggleActiveClass(event) {
     item.classList.remove("active");
   });
 
-  // Add "active" class to the clicked item
+  // Add "active" class to the clicked item.
   const clickedItem = event.currentTarget;
   clickedItem.classList.add("active");
 }
