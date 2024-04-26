@@ -28,6 +28,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 });
 
+function handleAutofill(field) {
+  if (field.value !== "") {
+    field.nextElementSibling.classList.add("active");
+  }
+}
+
 function redirectToHome() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
@@ -78,4 +84,10 @@ document.getElementById("password").addEventListener("keyup", function (event) {
   } else {
     warningElement.style.display = "none";
   }
+});
+
+// Check for autofilled fields on page load
+window.addEventListener("load", function() {
+  handleAutofill(document.getElementById("username"));
+  handleAutofill(document.getElementById("password"));
 });
