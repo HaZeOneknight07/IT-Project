@@ -146,34 +146,6 @@ document
     document.getElementById("addUserForm").style.display = "none";
   });
 
-// Function to handle GitHub link
-function handleGitHubLink() {
-  var currentUser = document
-    .getElementById("name")
-    .textContent.trim()
-    .toLowerCase();
-  if (currentUser === "ty ashmore") {
-    // Redirect to GitHub page
-    window.location.href = "https://github.com/HaZeOneknight07/IT-Project";
-  } else {
-    // Display insufficient privileges message
-    alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
-  }
-}
-
-// Function to handle File Manager link
-function handleFileManagerLink() {
-  var currentUser = document
-    .getElementById("name")
-    .textContent.trim()
-    .toLowerCase();
-  if (currentUser !== "ty ashmore") {
-    // Display insufficient privileges message
-    alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
-  }
-  // You can add additional logic here if needed
-}
-
 function toggleUserMenu() {
   var menuContainer = document.getElementById("userMenuContainer");
   menuContainer.classList.toggle("show");
