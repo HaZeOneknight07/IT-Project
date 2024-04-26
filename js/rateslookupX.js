@@ -4,39 +4,44 @@ let xactimateRates; // Variable to store Xactimate rates
 
 // Function to display items in the results div
 function displayResults(searchTerm) {
-const resultsDiv = document.getElementById('results');
-resultsDiv.innerHTML = ''; // Clear previous results
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = ""; // Clear previous results
 
-// Split the search term into an array of words
-const searchWords = searchTerm.toLowerCase().split(/\s+/);
+  // Check if the search term is empty
+  if (!searchTerm.trim()) {
+    return; // If empty, do not display anything
+  }
 
-// Filter items based on each word in the search term
-const filteredItems = itemsData.filter(item =>
-searchWords.every(word =>
-    item.name.toLowerCase().includes(word)
-)
-);
+  // Split the search term into an array of words
+  const searchWords = searchTerm.toLowerCase().split(/\s+/);
 
-// Display a maximum of 10 results - To keep the webpage looking organized
-const maxResults = Math.min(filteredItems.length, 10);
+  // Filter items based on each word in the search term
+  const filteredItems = itemsData.filter((item) =>
+    searchWords.every((word) => item.name.toLowerCase().includes(word))
+  );
 
-// Display filtered items in the results div
-for (let i = 0; i < maxResults; i++) {
-const item = filteredItems[i];
-const selectedRateOption = document.getElementById('rateOption').value;
-const rateArray = selectedRateOption === 'xactimate' ? xactimateRates : sedgwickRates;
-const rate = rateArray.find(r => r.id === item.id);
+  // Display a maximum of 10 results - To keep the webpage looking organized
+  const maxResults = Math.min(filteredItems.length, 10);
 
-if (rate) {
-    const itemDiv = document.createElement('div');
-    itemDiv.innerHTML = `
-        <button onclick="selectItem(${item.id})">
-            ${item.name} - Code: ${item.code}
-        </button>`;
-    resultsDiv.appendChild(itemDiv);
+  // Display filtered items in the results div
+  for (let i = 0; i < maxResults; i++) {
+    const item = filteredItems[i];
+    const selectedRateOption = document.getElementById("rateOption").value;
+    const rateArray =
+      selectedRateOption === "xactimate" ? xactimateRates : sedgwickRates;
+    const rate = rateArray.find((r) => r.id === item.id);
+
+    if (rate) {
+      const itemDiv = document.createElement("div");
+      itemDiv.innerHTML = `
+                <button onclick="selectItem(${item.id})">
+                    ${item.name} - Code: ${item.code}
+                </button>`;
+      resultsDiv.appendChild(itemDiv);
+    }
+  }
 }
-}
-}
+
 
 function selectItem(itemId) {
 // Fetch and display Item Name and Item Code based on itemId
