@@ -1,0 +1,57 @@
+header {
+    border-radius: 0 0 1rem 1rem !important;
+}
+
+main {
+    padding: 2em;
+    display: flex;
+    flex: 1;
+    align-items: stretch !important;
+    flex-direction: column !important;
+    text-align: center;
+    color: var(--footer-header-colour);
+}
+
+form {
+    max-width: 300px;
+    margin: 0 auto;
+    color: var(--footer-header-colour);
+}
+
+label, input, select {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 5px
+}
+
+input {
+    border-radius:  5px  !important;
+}
+
+button {
+    background-color: var(--footer-header-colour);
+    color: #fff;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.option {
+    color: red;
+}
+
+.option-boxes {
+    display: none;
+    border-radius: 5px;
+    color: var(--footer-header-colour);
+}
+
+input[type="date"] {
+    width: 300px; 
+    padding: 10px;
+    border-radius: 5px; 
+    box-sizing: border-box;
+}
