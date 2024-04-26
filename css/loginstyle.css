@@ -57,6 +57,11 @@ header {
     font-size: 12px;
 }
 
+.login-box .user-box input:focus,
+.login-box .user-box input:valid {
+    border-bottom: 1px solid var(--button-text-colour);
+}
+
 .login-box form button {
     position: relative;
     left: 50%;
