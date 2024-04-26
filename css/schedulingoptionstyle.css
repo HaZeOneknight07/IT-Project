@@ -1,39 +1,26 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
-/* Header Styles */
-header {
-    border-radius: 0 0 1rem 1rem !important; /* Makes header bottom rounded*/
+html {
+  background-color: #262626;
 }
 
-.header-container {
-    background-color: var(--footer-header-colour);
-    color: var(--text-colour);
-    padding: 1em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-}
-
-header img {
-    width: 100px;
-    margin-right: auto; 
-}
-
-.header-container h1 {
-    margin: 0;
-    flex: 1;
-    text-align: center;
-}
-
+header, 
 header h1 {
-    margin: 0 auto; 
-    text-align: 100vw;
-    padding-right: 5.85rem;
+    padding-right: 0px !important;
+    width: 100% !important;
+}
+
+/* Dark Mode Toggle Styles */
+
+.darkmode .dark .sidebar input{
+  color: #262626;
 }
 
 /* Main Content Styles */
@@ -42,13 +29,14 @@ main {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 3.5rem !important;
 }
 
 .button-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh; /* Make the container full height of the viewport */
+
 }
 
 .rounded-button {
@@ -167,4 +155,3 @@ main {
         opacity: 1;
     }
 }
-

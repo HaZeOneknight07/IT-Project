@@ -1,5 +1,15 @@
-header {
-    border-radius: 0 0 1rem 1rem !important; /* Makes bottom header edges rounded*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header, 
+header h1 {
+    padding-right: 0px !important;
+    width: 100% !important;
 }
 /* Insured Info Container Styles */
 main {
@@ -9,6 +19,8 @@ main {
     margin: 20vh;
     box-sizing: border-box;
     text-align: center; 
+    justify-content: space-between;
+    align-items: stretch;
     border-radius: 10px;
     flex-direction: column !important;
 }
@@ -46,17 +58,4 @@ main {
 
 .special-button {
     margin-bottom: 70px; 
-}
-#backButton {
-    background-color: #555;
-    color: var(--text-colour);
-    padding: 10px;
-    text-decoration: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-#backButton:hover {
-    background-color: var(--button-hover-colour);
 }
