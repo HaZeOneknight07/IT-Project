@@ -24,9 +24,20 @@ document.addEventListener("DOMContentLoaded", function() {
     handleAutofill(passwordField);
 });
 
+// Listen for input events on username and password fields
+document.getElementById("username").addEventListener("input", function() {
+  handleAutofill(this);
+});
+
+document.getElementById("password").addEventListener("input", function() {
+  handleAutofill(this);
+});
+
 function handleAutofill(field) {
   if (field.value !== "") {
     field.nextElementSibling.classList.add("active");
+  } else {
+    field.nextElementSibling.classList.remove("active");
   }
 }
 
