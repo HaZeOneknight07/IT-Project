@@ -22,10 +22,6 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if the password field is autofilled
     var passwordField = document.getElementById("password");
     handleAutofill(passwordField);
-
-    // Remove focus from input fields
-    usernameField.blur();
-    passwordField.blur();
 });
 
 // Listen for input events on username and password fields
@@ -35,14 +31,6 @@ document.getElementById("username").addEventListener("input", function() {
 
 document.getElementById("password").addEventListener("input", function() {
   handleAutofill(this);
-});
-
-// Listen for clicks on the document body to remove focus from input fields
-document.body.addEventListener("click", function() {
-    var usernameField = document.getElementById("username");
-    var passwordField = document.getElementById("password");
-    usernameField.blur();
-    passwordField.blur();
 });
 
 function handleAutofill(field) {
