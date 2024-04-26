@@ -17,15 +17,11 @@ var credentials = [
 document.addEventListener("DOMContentLoaded", function() {
     // Check if the username field is autofilled
     var usernameField = document.getElementById("username");
-    if (usernameField.value !== "") {
-        usernameField.nextElementSibling.classList.add("active");
-    }
+    handleAutofill(usernameField);
 
     // Check if the password field is autofilled
     var passwordField = document.getElementById("password");
-    if (passwordField.value !== "") {
-        passwordField.nextElementSibling.classList.add("active");
-    }
+    handleAutofill(passwordField);
 });
 
 function handleAutofill(field) {
@@ -84,10 +80,4 @@ document.getElementById("password").addEventListener("keyup", function (event) {
   } else {
     warningElement.style.display = "none";
   }
-});
-
-// Check for autofilled fields on page load
-window.addEventListener("load", function() {
-  handleAutofill(document.getElementById("username"));
-  handleAutofill(document.getElementById("password"));
 });
