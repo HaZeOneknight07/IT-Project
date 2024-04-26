@@ -14,6 +14,20 @@ var credentials = [
   // Add more username/password pairs as needed using same format
 ];
 
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if the username field is autofilled
+    var usernameField = document.getElementById("username");
+    if (usernameField.value !== "") {
+        usernameField.nextElementSibling.classList.add("active");
+    }
+
+    // Check if the password field is autofilled
+    var passwordField = document.getElementById("password");
+    if (passwordField.value !== "") {
+        passwordField.nextElementSibling.classList.add("active");
+    }
+});
+
 function redirectToHome() {
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
