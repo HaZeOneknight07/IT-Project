@@ -121,35 +121,35 @@ function menuBtnChange() {
   }
 }
 
-// Function to handle GitHub link
-function handleGitHubLink() {
-  var currentUserEmail = localStorage.getItem("loggedInUserEmail");
-  var currentUser = predefinedUsers.find(function(user) {
-    return user.email === currentUserEmail;
-  });
+// // Function to handle GitHub link
+// function handleGitHubLink() {
+//   var currentUserEmail = localStorage.getItem("loggedInUserEmail");
+//   var currentUser = predefinedUsers.find(function(user) {
+//     return user.email === currentUserEmail;
+//   });
 
-  if (currentUser && currentUser.name === "Ty Ashmore") {
-    // Redirect to GitHub page
-    window.location.href = "https://github.com/HaZeOneknight07/IT-Project";
-  } else {
-    // Display insufficient privileges message
-    alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
-  }
-}
+//   if (currentUser && currentUser.name === "Ty Ashmore") {
+//     // Redirect to GitHub page
+//     window.location.href = "https://github.com/HaZeOneknight07/IT-Project";
+//   } else {
+//     // Display insufficient privileges message
+//     alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
+//   }
+// }
 
-// Function to handle File Manager link
-function handleFileManagerLink() {
-  var currentUserEmail = localStorage.getItem("loggedInUserEmail");
-  var currentUser = predefinedUsers.find(function(user) {
-    return user.email === currentUserEmail;
-  });
+// // Function to handle File Manager link
+// function handleFileManagerLink() {
+//   var currentUserEmail = localStorage.getItem("loggedInUserEmail");
+//   var currentUser = predefinedUsers.find(function(user) {
+//     return user.email === currentUserEmail;
+//   });
 
-  if (currentUser && currentUser.name !== "Ty Ashmore") {
-    // Display insufficient privileges message
-    alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
-  }
-  // You can add additional logic here if needed
-}
+//   if (currentUser && currentUser.name !== "Ty Ashmore") {
+//     // Display insufficient privileges message
+//     alert("Insufficient Privileges. If this is incorrect, contact Web Admin.");
+//   }
+//   // You can add additional logic here if needed
+// }
 
 function toggleUserMenu() {
   var menuContainer = document.getElementById("userMenuContainer");
