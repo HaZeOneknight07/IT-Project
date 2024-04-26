@@ -26,10 +26,16 @@
      rel="stylesheet" 
      href="css/style.css" 
     />
-    <!-- Font Awesome Icons -->
+    <!-- Loading Bar Stylesheet -->
+    <link 
+    rel="stylesheet" 
+    type="text/css" 
+    href="css/loadingbarstyle.css" 
+    />
+    <!-- Boxicons CDN Link -->
     <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
     />
     <!-- Google Poppins Font -->
     <link 
@@ -47,17 +53,83 @@
   <body>
     <!-- Header Content -->
     <header>
-      <a href="https://gnet.geldergroup.co.uk/" target="_blank">
-        <img src="img/logo.svg" alt="GelderGroupLogo" />
-      </a>
-      <h1>Gelder Group Surveyors</h1>
+      <h1>Insured Info</h1>
 
       <!-- Dark mode toggle -->
       <div class="darkmode">
-        <div class="light fas fa-sun"></div>
-        <div class="dark fas fa-moon"></div>
+        <div class="light bx bx-sun"></div>
+        <div class="dark bx bx-moon"></div>
       </div>
     </header>
+
+      <div class="sidebar">
+        <div class="logo-details">
+          <i class="bx bxl-c-plus-plus icon"></i>
+          <div class="logo_name">Gelder Group</div>
+          <i class="bx bx-menu" id="btn"></i>
+        </div>
+        <ul class="nav-list">
+          <li>
+            <i class="bx bx-search"></i>
+            <input type="text" placeholder="Search..." />
+            <span class="tooltip">Search</span>
+          </li>
+          <li>
+            <a href="claiminfo.html">
+              <i class="bx bxs-info-circle"></i>
+              <span class="links_name">Claim Info</span>
+            </a>
+            <span class="tooltip">Claim Info</span>
+          </li>
+          <li>
+            <a href="scheduleoption.html">
+              <i class="bx bxs-pencil"></i>
+              <span class="links_name">Rates</span>
+            </a>
+            <span class="tooltip">Rates</span>
+          </li>
+          <li>
+            <a href="documents.html">
+              <i class="bx bxs-file-doc"></i>
+              <span class="links_name">Documents</span>
+            </a>
+            <span class="tooltip">Documents</span>
+          </li>
+          <li>
+            <a href="complete.html">
+              <i class="bx bx-check"></i>
+              <span class="links_name">Complete</span>
+            </a>
+            <span class="tooltip">Complete</span>
+          </li>
+          <li>
+            <a href="insuredinfo.html">
+              <i class="bx bx-info-circle"></i>
+              <span class="links_name">Insured Info</span>
+            </a>
+            <span class="tooltip">Insured Info</span>
+          </li>
+          <li>
+            <a href="reportinfo.html">
+              <i class="bx bxs-report"></i>
+              <span class="links_name">Report Info</span>
+            </a>
+            <span class="tooltip">Report Info</span>
+          </li>
+          <li class="profile">
+            <div class="profile-details">
+              <img id="profileImg" src="img/logo.svg" alt="profileImg" />
+              <div class="name_job">
+                <div id="name">Placeholder</div>
+                <!-- Placeholder for Name -->
+                <div id="job">Placeholder</div>
+                <!-- Placeholder for Job Title -->
+              </div>
+            </div>
+            <i class="bx bx-log-out" id="log_out"></i>
+          </li>
+        </ul>
+      </div>
 
     <!-- Insured Info Container -->
     <main>
@@ -71,7 +143,6 @@
       <p>Date: <span id="date"></span></p>
       <p>Address: <span id="address"></span></p>
       <p>Phone Number: <span id="phoneNumber"></span></p>
-      <a href="claiminfo.html" id="backButton">Back to Claim Info</a>
     </main>
 
     <!-- Footer Content -->
