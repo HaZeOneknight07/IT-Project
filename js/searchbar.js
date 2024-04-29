@@ -23,7 +23,7 @@ document.getElementById('searchInput').addEventListener('keypress', function(eve
           window.location.href = 'hub.html'; 
           break;
         case 'rates':
-          window.location.href = 'rates.html'; 
+          window.location.href = 'ratesoption.html'; 
           break;
         case 'documents':
           window.location.href = 'documents.html'; 
