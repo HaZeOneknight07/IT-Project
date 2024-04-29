@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', function() {
 document.getElementById('searchInput').addEventListener('keypress', function(event) {
   if (event.key === 'Enter') {
     var searchTerm = event.target.value.trim().toLowerCase();
@@ -54,4 +55,5 @@ document.getElementById('searchInput').addEventListener('keypress', function(eve
       // Handle other search terms or do nothing
     }
   }
+});
 });
