@@ -164,7 +164,7 @@ button:hover {
 
 /* Media Queries */
 
-@media (min-width:1025px) {
+@media (min-width:1024px) {
     .item-container {
         width: 50%;
     }
