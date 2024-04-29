@@ -91,6 +91,7 @@ header h1 {
   .sidebar.open .logo-details .icon,
   .sidebar.open .logo-details .logo_name {
     opacity: 1;
+    margin-left: 8px;
   }
   
   .sidebar .logo-details #btn {
