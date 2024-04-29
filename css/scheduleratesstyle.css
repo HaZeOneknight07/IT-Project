@@ -161,3 +161,11 @@ button:hover {
 .back-button:hover {
     background-color: var(--button-colour);
 }
+
+/* Media Queries */
+
+@media (min-width:1025px) {
+    .item-container {
+        width: 50%;
+    }
+}
