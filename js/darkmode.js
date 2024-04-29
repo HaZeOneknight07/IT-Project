@@ -6,6 +6,7 @@ const darkmodeToggle = document.querySelector(".darkmode");
         const isDarkMode = document.body.classList.contains("dark");
         document.body.style.background = isDarkMode ? "#202225" : "#f9f9f9";
         document.body.style.color = isDarkMode ? "#f9f9f9" : "#202225";
+        document.sidebar.style.background = isDarkMode ? "#20225" : "#f9f9f9";
 
         // Toggle visibility of light and dark mode icons
         const lightIcon = document.querySelector(".darkmode .light");
