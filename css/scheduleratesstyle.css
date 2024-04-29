@@ -169,7 +169,7 @@ button:hover {
         width: 50%;
     }
 }
-@media (min-width:768) {
+@media (min-width:768px) {
     .item-container {
         width: 40%;
     }
