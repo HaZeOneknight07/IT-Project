@@ -15,7 +15,7 @@ header h1 {
     padding-right: 0px !important;
 }
 
-.sidebar {
+/* .sidebar {
   position: fixed;
   left: 0;
   top: 0;
@@ -293,13 +293,13 @@ header h1 {
 }
 
 /* Show the container when user menu is toggled */
-.user-menu-container.show {
+/* .user-menu-container.show {
   display: block;
 }
 
 .menu-header {
   font-size: 36px;
-}
+}  */
 
 /* Dark Mode Toggle Styles */
 
