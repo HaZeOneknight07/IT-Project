@@ -57,7 +57,7 @@ function redirectToHome() {
 
       // Redirect to Managers Version
       if (username === "managers@gelder.co.uk") {
-        window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
+        window.location.href = "ratesoption.html"; // Redirect to Schedule Option Page
       }
       // Redirect to Surveyors Version
       else if (
