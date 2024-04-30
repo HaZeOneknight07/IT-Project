@@ -18,6 +18,14 @@ backButton.setAttribute('href', redirectUrl);
 backButton.setAttribute('class', 'back-button');
 backButton.textContent = buttonText;
 
-// Append the anchor tag to the desired container in your HTML
-var container = document.getElementById('back-button'); 
+// Get the existing container where the button is located
+var container = document.getElementById('itemContainer');
+
+// Remove the existing anchor tag if it exists
+var existingBackButton = container.querySelector('.back-button');
+if (existingBackButton) {
+    existingBackButton.remove();
+}
+
+// Append the new anchor tag to the container
 container.appendChild(backButton);
