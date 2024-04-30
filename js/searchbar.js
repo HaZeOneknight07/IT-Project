@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
           console.log('Unauthorized search term for managers');
         }
         // Example: Redirect to a specific page for managers
-        window.location.href = 'scheduleoption.html';
+        window.location.href = 'ratesoption.html';
       } else {
         // Allow full search functionality for non-managers
         // Check if the entered search term matches any of the predefined search terms for non-managers
