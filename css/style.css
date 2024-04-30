@@ -451,6 +451,7 @@ footer {
 
   @media screen and (device-width: 414px) {
     .darkmode {
+      padding-top: 12px;
       margin-top: 10px;
     }
   }
