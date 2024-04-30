@@ -448,3 +448,9 @@ footer {
       display: none;
     }
   }
+
+  @media screen and (device-width: 414px) {
+    .darkmode {
+      margin-top: 10px;
+    }
+  }
