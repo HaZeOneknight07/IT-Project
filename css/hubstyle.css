@@ -20,3 +20,7 @@ header h1 {
 .darkmode .dark .sidebar input{
   color: #262626;
 }
+
+body .darkmode {
+  margin-top: 0px !important;
+}
