@@ -65,8 +65,6 @@ codeParagraph.textContent = `Code: ${selectedItem.code}`;
 itemContainer.appendChild(itemNameParagraph);
 itemContainer.appendChild(codeParagraph);
 
-document.getElementById('price').textContent = `Price: £${selectedItem.price.toFixed(2)}`;
-
 // Fetch the rate information for the selected item
 const selectedRateOption = document.getElementById('rateOption').value;
 const rateArray = selectedRateOption === 'xactimate' ? xactimateRates : sedgwickRates;
