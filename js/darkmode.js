@@ -17,17 +17,16 @@ function setDarkMode(isDarkMode) {
     lightIcon.style.display = "none";
     darkIcon.style.display = "inline-block";
   }
-}
-
-// Function to toggle dark mode
-function toggleDarkMode() {
-  const isDarkMode = document.body.classList.contains("dark");
+  
+  // Store the theme preference in localStorage
   localStorage.setItem("darkMode", isDarkMode ? "enabled" : "disabled");
-  setDarkMode(!isDarkMode);
 }
 
 // Event listener for dark mode toggle
-darkmodeToggle.addEventListener("click", toggleDarkMode);
+darkmodeToggle.addEventListener("click", function() {
+  const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+  setDarkMode(!isDarkMode);
+});
 
 // Check if dark mode is enabled/disabled on page load
 const darkModeState = localStorage.getItem("darkMode");
