@@ -13,7 +13,6 @@ html {
 
 header, 
 header h1 {
-    padding-right: 0px !important;
     width: 100% !important;
     border-radius: 0 0 1rem 1rem !important;
 }
