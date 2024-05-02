@@ -165,12 +165,10 @@ html {
 .sidebar li a {
   display: flex;
   height: 100%;
-  width: 100%;
   border-radius: 12px;
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
-  background: #11101d;
 }
 
 .sidebar li a:hover {
