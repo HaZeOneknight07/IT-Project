@@ -100,7 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 19,"name":"Dishwasher Freestanding Labour only","code": "APPDWFSF"},
         {"id": 20,"name":"Dishwasher Freestanding Remove & refit","code": "APPDWFSRF"},
         {"id": 21,"name":"Dishwasher Integrated Remove & refit","code": "APPDWRF"},
-        //B) dont need
         //C) CDM CONSTRUCTION DESIGN MANAGEMENT
         {"id": 22, "name": "Chimney access scaffold Full system","code": "CDMACSF"},
         {"id": 23, "name": "Chimney access scaffold Half system","code": "CDMACSH"},
@@ -140,9 +139,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 124, "name": "Welfare unit All in one 3.6m x 2.3m (per week)","code": "CDMWU<"},
         {"id": 125, "name": "Portable welfare unit hire Del./pickup charge (each way)","code": "CDMWUDP"},
         {"id": 126, "name": "Portable welfare unit Sanitation servicing","code": "CDMWUS"},
-        //D) dont need
-        //E) dont need
-        //F) dont need
         //G) CLD CLADDING
         {"id": 127, "name": "Cladding PVCu", "code": "CLDCLAD"},
         {"id": 128, "name": "Fascia  18mm x 175mm  PVCu  White", "code": "CLDFP175"},
@@ -341,7 +337,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 319, "name": "Beam  Precast concrete  150mm deep  Per lineal metre", "code": "CNCB150LM"},
         {"id": 320, "name": "Beam  Precast concrete  175mm deep  Per lineal metre", "code": "CNCB175LM"},
         {"id": 320, "name": "Beam  Precast concrete  225mm deep  Per lineal metre", "code": "CNCB225LM"},
-
         //J) CON CONTENT HANDLING
         {"id": 400, "name": "Content handling General labourer Per hour", "code": "CONLAB"},
         {"id": 401, "name": "Content handling General labourer Per hour After hrs", "code": "CONLABA"},
@@ -351,9 +346,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 405, "name": "Jobsite storage container 10' long Per week", "code": "CONSTOPC<"},
         {"id": 406, "name": "Jobsite storage container 40' long Per week", "code": "CONSTOPC>"},
         {"id": 407, "name": "Jobsite stor. container Pick up/del. charge (each way)", "code": "CONSTOPCD"},
-        //K) CPS CONT: PACKING,HANDLING,STORAGE dont need
-        //L) clean upholstry & soft dont need
-        //M) CWH CONT: CLEAN WALL HANGINGS dont need
         //N) DEW DRYING & EMERGENCY WORK
         {"id": 408, "name": "Containment barrier/airlock/decon. chamber", "code": "DEWBARR"},
         {"id": 409, "name": "Block and pad furniture in room", "code": "DEWBLK"},
@@ -450,7 +442,6 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 500, "name": "Antibacterial UVL treament large property 16  30 rooms", "code": "DEWUVL>"},
         {"id": 501, "name": "LV Water Test/Sampling (Standalone Visit)", "code": "DEWWTS"},
         {"id": 502, "name": "LV Water Test/Sampling (sample taken when already on site)", "code": "DEWWTSA"},
-        //O) dont need
         //P) DMO GENERAL DEMOLITION 
         {"id": 503, "name": "PC Sum Clearabee invoice", "code": "DMOCLEAR"},
         {"id": 504, "name": "Emergency/Cash Settlement Debris Removal and Disposal", "code": "DMOCM"},
@@ -914,7 +905,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 959, "name": "Excavate  Plant Operator  Per hour", "code": "EXCLAB"},
         {"id": 960, "name": "Excavate  General Labourer  Per hour", "code": "EXCLABL"},
         {"id": 961, "name": "Excavate  Minimum trade rate", "code": "EXCMN"},
-        //U) FCC FLOOR COVERING  CARPET 
+        //U) FCC FLOOR COVERING CARPET 
         {"id": 962, "name": "Carpet  Synthetic fibres", "code": "FCCAV"},
         {"id": 963, "name": "Carpet  Synthetic fibres  Standard grade", "code": "FCCAV-"},
         {"id": 964, "name": "Carpet  Synthetic fibres  High grade", "code": "FCCAV+"},
@@ -947,7 +938,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 991, "name": "Carpet Wool Standard grade", "code": "FCCWOOL-"},
         {"id": 992, "name": "Carpet Wool High grade", "code": "FCCWOOL+"},
         {"id": 993, "name": "Carpet Wool Premium grade", "code": "FCCWOOL++"},
-        //V) FCC FLOOR COVERING  EXTRAS 
+        //V) FCC FLOOR COVERING EXTRAS 
         {"id": 994, "name": "Mask or cover  Per square metre", "code": "FCEMASKSM"},
         {"id": 995, "name": "Flooring  Silicone seal around edges", "code": "FCEMASTIC"},
         {"id": 996, "name": "Stair nosing  Per tread", "code": "FCENOS"},
@@ -973,7 +964,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 1016, "name": "Floor underlay  Plywood  12mm", "code": "FCEUNPL12"},
         {"id": 1017, "name": "Floor underlay  Polyethylene Matting  3mm", "code": "FCEUNPM03"},
         {"id": 1018, "name": "Floor underlay  Remove & refit", "code": "FCEUNRF"},
-        //W) FCC FLOOR COVERING  RESILIENT  
+        //W) FCC FLOOR COVERING RESILIENT  
         {"id": 1019, "name": "Resilient floor covering  Installer  Per hour", "code": "FCRLAB"},
         {"id": 1020, "name": "Resilient floor covering  General labourer  Per hour", "code": "FCRLABL"},
         {"id": 1021, "name": "Rubber floor covering  Minimum trade rate", "code": "FCRMN"},
@@ -983,7 +974,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 1025, "name": "Rubber floor tile  Smooth  3mm", "code": "FCRTRUS"},
         {"id": 1026, "name": "Vinyl composition floor tile", "code": "FCRTVC"},
         {"id": 1027, "name": "Vinyl composition floor tile  High grade", "code": "FCRTVC+"},
-        //X) FCC FLOOR COVERING  STONE
+        //X) FCC FLOOR COVERING STONE
         {"id": 1028, "name": "Grout or regrout stone floor", "code": "FCSGROUT"},
         {"id": 1029, "name": "Stone floor covering  Installer  Per hour", "code": "FCSLAB"},
         {"id": 1030, "name": "Stone floor covering  General labourer  Per hour", "code": "FCSLABL"},
@@ -998,7 +989,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 1039, "name": "Slate floor tile  Remove & refit", "code": "FCSSLRF"},
         {"id": 1040, "name": "Slate floor tile", "code": "FCSSLT"},
         {"id": 1041, "name": "Slate floor tile  High grade", "code": "FCSSLT+"},
-        //Y) FCT FLOOR COVERING  CERAMIC TILE
+        //Y) FCT FLOOR COVERING CERAMIC TILE
         {"id": 1042, "name": "Ceramic floor tile", "code": "FCTAV"},
         {"id": 1043, "name": "Ceramic floor tile  Standard grade", "code": "FCTAV-"},
         {"id": 1044, "name": "Ceramic floor tile  High grade", "code": "FCTAV+"},
@@ -1030,7 +1021,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 1070, "name": "Travertine floor tile  Standard grade", "code": "FCTTRAV-"},
         {"id": 1071, "name": "Travertine floor tile  High grade", "code": "FCTTRAV+"},
         {"id": 1072, "name": "Travertine floor tile  Premium grade", "code": "FCTTRAV++"},
-        //Z) FCV FLOOR COVERING  VINYL  
+        //Z) FCV FLOOR COVERING VINYL  
         {"id": 1073, "name": "Vinyl floor covering (sheet goods)", "code": "FCVAV"},
         {"id": 1074, "name": "Vinyl floor covering (sheet goods)  Standard grade", "code": "FCVAV-"},
         {"id": 1075, "name": "Vinyl floor covering (sheet goods)  High grade", "code": "FCVAV+"},
@@ -1060,7 +1051,7 @@ document.addEventListener('DOMContentLoaded', () => {
         {"id": 1099, "name": "Vinyl floor tile  Self adhesive  Standard grade", "code": "FCVVS-"},
         {"id": 1100, "name": "Vinyl floor tile  Self adhesive  Labour only", "code": "FCVVSF"},
         {"id": 1101, "name": "Wet floor membrane", "code": "FCVWFM"},
-        //AA) FCW FLOOR COVERING  WOOD  
+        //AA) FCW FLOOR COVERING WOOD  
         {"id": 1102, "name": "Solid hardwood flooring Labour only", "code": "FCWAVPFF"},
         {"id": 1103, "name": "Solid hardwood flooring", "code": "FCWAVS"},
         {"id": 1104, "name": "Solid hardwood flooring Standard grade", "code": "FCWAVS-"},
