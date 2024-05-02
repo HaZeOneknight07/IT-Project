@@ -1,12 +1,22 @@
-@keyframes slideInOut {
+@keyframes fadeInScale {
   0% {
     opacity: 0;
-    transform: translateX(-100%);
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.1);
   }
   100% {
     opacity: 1;
-    transform: translateX(0%);
+    transform: scale(1);
   }
+}
+
+body .darkmode .light,
+body .darkmode .dark {
+  display: none;
+  animation: fadeInScale 0.5s ease-in-out; 
 }
 
 body .darkmode {
@@ -15,13 +25,14 @@ body .darkmode {
   padding: 0rem 1rem 0.75rem 1rem;
   cursor: pointer;
   margin-top: 10px;
-  transition: background-color 0.5s ease-in-out;
 }
 
-body.dark .darkmode {
-  background-color: #000; /* Set your dark mode background color */
+body .darkmode .light,
+body .darkmode .dark {
+  display: none;
 }
 
-body:not(.dark) .darkmode {
-  background-color: #fff; /* Set your light mode background color */
+body.dark .darkmode .light, 
+body:not(.dark) .darkmode .dark {
+  display: inline-block;
 }
