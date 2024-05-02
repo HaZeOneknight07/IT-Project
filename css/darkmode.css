@@ -9,26 +9,19 @@
   }
 }
 
-body .darkmode .light,
-body .darkmode .dark {
-  display: none;
-  animation: slideInOut 0.5s ease-in-out; 
-}
-
 body .darkmode {
   display: inline-block;
   font-size: 2rem;
   padding: 0rem 1rem 0.75rem 1rem;
   cursor: pointer;
   margin-top: 10px;
+  transition: background-color 0.5s ease-in-out;
 }
 
-body .darkmode .light,
-body .darkmode .dark {
-  display: none;
+body.dark .darkmode {
+  background-color: #000; /* Set your dark mode background color */
 }
 
-body.dark .darkmode .light, 
-body:not(.dark) .darkmode .dark {
-  display: inline-block;
+body:not(.dark) .darkmode {
+  background-color: #fff; /* Set your light mode background color */
 }
