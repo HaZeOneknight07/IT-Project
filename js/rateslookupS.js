@@ -12,6 +12,21 @@ function displayResults(searchTerm) {
     return; // If empty, do not display anything
   }
 
+  // Mapping of trade types to general operative rate
+  const generalOperativeTrades = ["plasterer", "joiner", "decorator"]; // Add more trades as needed
+
+  // Check if the search term matches any general operative trade
+  const isGeneralOperative = generalOperativeTrades.some(trade =>
+    searchTerm.toLowerCase().includes(trade)
+  );
+
+  // If search term matches any general operative trade, display general operative rate
+  if (isGeneralOperative) {
+    displayGeneralOperativeRate();
+    return;
+  }
+
+  // Otherwise, display specific rates based on search term
   // Split the search term into an array of words
   const searchWords = searchTerm.toLowerCase().split(/\s+/);
 
@@ -41,6 +56,28 @@ function displayResults(searchTerm) {
                 </button>`;
       resultsDiv.appendChild(itemDiv);
     }
+  }
+}
+
+// Function to display general operative rate
+function displayGeneralOperativeRate() {
+  // Display general operative rate in results div
+  const resultsDiv = document.getElementById("results");
+  resultsDiv.innerHTML = `<div>
+    <button onclick="selectGeneralOperative()">
+      General Operative Rate
+    </button>
+  </div>`;
+}
+
+// Function to handle selection of general operative rate
+function selectGeneralOperative() {
+  // Fetch and display the general operative rate details
+  const generalOperativeRate = sedgwickRates.find(rate => rate.id === 6809);
+  if (generalOperativeRate) {
+    // Handle displaying the general operative rate details
+    // For example, you can display it in a modal or update a specific area of the page
+    console.log("General Operative Rate:", generalOperativeRate);
   }
 }
 
