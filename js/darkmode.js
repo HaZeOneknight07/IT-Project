@@ -11,11 +11,11 @@ function setDarkMode(isDarkMode) {
   const darkIcon = document.querySelector(".darkmode .dark");
 
   if (isDarkMode) {
-    lightIcon.style.display = "inline-block";
-    darkIcon.style.display = "none";
-  } else {
     lightIcon.style.display = "none";
     darkIcon.style.display = "inline-block";
+  } else {
+    lightIcon.style.display = "inline-block";
+    darkIcon.style.display = "none";
   }
   
   // Store the theme preference in localStorage
