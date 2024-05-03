@@ -17,7 +17,9 @@ function displayResults(searchTerm) {
 
   // Filter items based on each word in the search term
   const filteredItems = itemsData.filter((item) =>
-    searchWords.every((word) => item.name.toLowerCase().includes(word))
+    searchWords.every((word) =>
+      item.name.toLowerCase().includes(word) // Check if item name matches search term
+    )
   );
 
   // Display a maximum of 10 results - To keep the webpage looking organized
@@ -41,7 +43,6 @@ function displayResults(searchTerm) {
     }
   }
 }
-
 
 function selectItem(itemId) {
 // Fetch and display Item Name and Item Code based on itemId
