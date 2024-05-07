@@ -1,7 +1,9 @@
+/* Header style */
 header {
     border-radius: 0 0 1rem 1rem !important;
 }
 
+/* Main content style */
 main {
     padding: 2em;
     display: flex;
@@ -12,24 +14,29 @@ main {
     color: var(--footer-header-colour);
 }
 
+/* Form style */
 form {
     max-width: 300px;
     margin: 0 auto;
     color: var(--footer-header-colour);
+    transition: all 0.3s ease; /* Adding transition */
 }
 
+/* Input and label style */
 label, input, select {
     display: block;
     width: 100%;
     margin-bottom: 10px;
     box-sizing: border-box;
-    border-radius: 5px
+    border-radius: 5px;
+    transition: all 0.3s ease; /* Adding transition */
 }
 
 input {
-    border-radius:  5px  !important;
+    border-radius: 5px !important;
 }
 
+/* Button style */
 button {
     background-color: var(--footer-header-colour);
     color: #fff;
@@ -37,21 +44,27 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    transition: all 0.3s ease; /* Adding transition */
 }
 
+/* Option style */
 .option {
     color: red;
 }
 
+/* Option boxes style */
 .option-boxes {
     display: none;
     border-radius: 5px;
     color: var(--footer-header-colour);
+    transition: all 0.3s ease; /* Adding transition */
 }
 
+/* Date input style */
 input[type="date"] {
     width: 300px; 
     padding: 10px;
     border-radius: 5px; 
     box-sizing: border-box;
+    transition: all 0.3s ease; /* Adding transition */
 }
