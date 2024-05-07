@@ -90,26 +90,4 @@ header {
     margin-top: 5px;
   }
 
-  @media only screen and (max-width: 414px) {
-    .login-box {
-        width: 90%; /* Adjust as needed */
-        padding: 5%; /* Adjust as needed */
-    }
-
-    .login-box h2 {
-        font-size: 1.5em; /* Adjust as needed */
-    }
-
-    .login-box .user-box input {
-        font-size: 1em; /* Adjust as needed */
-    }
-
-    .login-box .user-box label {
-        font-size: 1em; /* Adjust as needed */
-    }
-
-    .login-box form button {
-        font-size: 1em; /* Adjust as needed */
-    }
-}
 
