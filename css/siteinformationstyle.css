@@ -3,54 +3,53 @@ header {
     border-radius: 0 0 1rem 1rem !important;
 }
 
-/* Main content style */
 main {
     padding: 2em;
-    display: flex;
-    flex: 1;
-    align-items: stretch !important;
-    flex-direction: column !important;
     text-align: center;
     color: var(--footer-header-colour);
-}
-
-/* Form style */
-form {
-    max-width: 300px;
+  }
+  
+  .form-container {
+    max-width: 600px;
     margin: 0 auto;
-    color: var(--footer-header-colour);
-    transition: all 0.3s ease;
-    /* Adding transition */
-}
-
-/* Input and label style */
-label,
-input,
-select {
-    display: block;
+    padding: 1em;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    margin-bottom: 0.5em;
+  }
+  
+  select, input[type="text"], input[type="date"] {
     width: 100%;
-    margin-bottom: 10px;
-    box-sizing: border-box;
+    padding: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    transition: all 0.3s ease;
-    /* Adding transition */
-}
-
-input {
-    border-radius: 5px !important;
-}
-
-/* Button style */
-button {
+  }
+  
+  button {
     background-color: var(--footer-header-colour);
     color: #fff;
-    padding: 10px;
+    padding: 1em;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: all 0.3s ease;
-    /* Adding transition */
-}
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #333; /* Darken the button color on hover */
+  }
+  
 
 /* Option style */
 .option {
