@@ -92,23 +92,24 @@ header {
 
   @media only screen and (max-width: 414px) {
     .login-box {
-        width: 80%; /* Adjust as needed */
-        padding: 20px; /* Adjust as needed */
+        width: 90%; /* Adjust as needed */
+        padding: 5%; /* Adjust as needed */
     }
 
     .login-box h2 {
-        font-size: 18px; /* Adjust as needed */
+        font-size: 1.5em; /* Adjust as needed */
     }
 
     .login-box .user-box input {
-        font-size: 14px; /* Adjust as needed */
+        font-size: 1em; /* Adjust as needed */
     }
 
     .login-box .user-box label {
-        font-size: 14px; /* Adjust as needed */
+        font-size: 1em; /* Adjust as needed */
     }
 
     .login-box form button {
-        font-size: 14px; /* Adjust as needed */
+        font-size: 1em; /* Adjust as needed */
     }
 }
+
