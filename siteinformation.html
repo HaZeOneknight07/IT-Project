@@ -60,15 +60,14 @@
     </header>
     <main>
       <h2>Site Information</h2>
-      <div class="form-container">
-        <form id="scheduling-form">
-          <!-- Dropdown to select a client -->
-          <label for="scheduling-option">Select Client:</label>
-          <select id="scheduling-option" onchange="showOptionBoxes()">
-            <option value="">Select an option</option>
-            <option class="XactimateOption" value="Xactimate">Xactimate</option>
-            <option class="SedgwickOption" value="Sedgwick">Sedgwick</option>
-          </select>
+      <form id="scheduling-form">
+        <!-- Dropdown to select a client -->
+        <label for="scheduling-option">Select Client:</label>
+        <select id="scheduling-option" onchange="showOptionBoxes()">
+          <option value="">Select an option</option>
+          <option class="XactimateOption" value="Xactimate">Xactimate</option>
+          <option class="SedgwickOption" value="Sedgwick">Sedgwick</option>
+        </select>
 
         <div class="option-boxes" id="Xactimate-boxes">
           <label for="Xactimate-input1">Job Number:</label>
@@ -133,7 +132,6 @@
 
         <button type="button" onclick="submitForm()">Submit</button>
       </form>
-      </div>
     </main>
 
     <!-- Footer Content -->

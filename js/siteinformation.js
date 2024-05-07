@@ -5,30 +5,25 @@ function showOptionBoxes() {
     var SedgwickBoxes = document.getElementById("Sedgwick-boxes");
 
     // Display Xactimate boxes if selected, hide Sedgwick boxes, and vice versa
-    if (selectedOption === "Xactimate") {
-        XactimateBoxes.style.display = "block";
-        SedgwickBoxes.style.display = "none";
-        XactimateBoxes.classList.remove("fadeOut");
-        XactimateBoxes.classList.add("fadeIn");
-        SedgwickBoxes.classList.remove("fadeIn");
-        SedgwickBoxes.classList.add("fadeOut");
-    } else if (selectedOption === "Sedgwick") {
-        SedgwickBoxes.style.display = "block";
-        XactimateBoxes.style.display = "none";
-        SedgwickBoxes.classList.remove("fadeOut");
-        SedgwickBoxes.classList.add("fadeIn");
-        XactimateBoxes.classList.remove("fadeIn");
-        XactimateBoxes.classList.add("fadeOut");
-    } else {
-        XactimateBoxes.style.display = "none";
-        SedgwickBoxes.style.display = "none";
-        XactimateBoxes.classList.remove("fadeIn");
-        XactimateBoxes.classList.add("fadeOut");
-        SedgwickBoxes.classList.remove("fadeIn");
-        SedgwickBoxes.classList.add("fadeOut");
-    }
-}
+    XactimateBoxes.style.display =
+      selectedOption === "Xactimate" ? "block" : "none";
+    SedgwickBoxes.style.display =
+      selectedOption === "Sedgwick" ? "block" : "none";
+  }
 
+  // Function to validate phone number format
+  function validatePhoneNumber(input) {
+    var phoneNumber = input.value;
+    var phoneRegex =
+      /^(?:(?:\+|00)44|0) ?(?:\d{3}|\(0\d{3}\)) ?\d{3}(?: |-)?\d{4}$/;
+
+    if (!phoneRegex.test(phoneNumber)) {
+      document.getElementById("phone-error").textContent =
+        "Invalid UK phone number format";
+    } else {
+      document.getElementById("phone-error").textContent = "";
+    }
+  }
 
   // Function to submit the form and store data in local storage
   function submitForm() {

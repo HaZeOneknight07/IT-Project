@@ -1,102 +1,57 @@
-/* Header style */
 header {
     border-radius: 0 0 1rem 1rem !important;
 }
 
 main {
     padding: 2em;
+    display: flex;
+    flex: 1;
+    align-items: stretch !important;
+    flex-direction: column !important;
     text-align: center;
     color: var(--footer-header-colour);
-  }
-  
-  .form-container {
-    max-width: 600px;
+}
+
+form {
+    max-width: 300px;
     margin: 0 auto;
-    padding: 1em;
-    border-radius: 10px;
-    background-color: #f7f7f7;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  label {
-    margin-bottom: 0.5em;
-  }
-  
-  select, input[type="text"], input[type="date"] {
+    color: var(--footer-header-colour);
+}
+
+label, input, select {
+    display: block;
     width: 100%;
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  button {
+    margin-bottom: 10px;
+    box-sizing: border-box;
+    border-radius: 5px
+}
+
+input {
+    border-radius: 5px !important;
+}
+
+button {
     background-color: var(--footer-header-colour);
     color: #fff;
-    padding: 1em;
+    padding: 10px;
     border: none;
     cursor: pointer;
     border-radius: 5px;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #333; /* Darken the button color on hover */
-  }
-  
+}
 
-/* Option style */
 .option {
     color: red;
 }
 
-/* Option boxes style */
-/* Add animation for showing and hiding option boxes */
 .option-boxes {
     display: none;
     border-radius: 5px;
     color: var(--footer-header-colour);
-    transition: all 0.3s ease;
-    animation-duration: 0.3s;
-    animation-fill-mode: both;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-@keyframes fadeOut {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(-20px);
-    }
-}
-
-/* Date input style */
 input[type="date"] {
-    width: 300px;
+    width: 300px; 
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 5px; 
     box-sizing: border-box;
-    transition: all 0.3s ease;
-    /* Adding transition */
 }
