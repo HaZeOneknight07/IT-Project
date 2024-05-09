@@ -38,9 +38,27 @@ function displayResults(searchTerm) {
                     ${item.name} - Code: ${item.code}
                 </button>`;
       resultsDiv.appendChild(itemDiv);
+    } else {
+      // If rate not found, check for special cases like "labourer"
+      if (searchTerm.toLowerCase() === "labourer") {
+        // Display the rate for labourer
+        displayLabourerRate(resultsDiv);
+      }
+      // Add other special cases if needed
     }
   }
 }
+
+function displayLabourerRate(resultsDiv) {
+  // Display the rate for labourer
+  const labourerRateDiv = document.createElement("div");
+  labourerRateDiv.innerHTML = `
+        <button>
+            General Operative; Building; UK generally - Code: 00LAB012
+        </button>`;
+  resultsDiv.appendChild(labourerRateDiv);
+}
+
 
 
 function selectItem(itemId) {
