@@ -83,7 +83,7 @@ function selectItem(itemId) {
       // Check if the selected item is a special case like "labourer"
       if (selectedItem.name.toLowerCase().includes("labourer")) {
         // Display the rate for labourer in the container
-        displayLabourerRate(itemContainer);
+        displayLabourerRate(codeParagraph);
       }
       // Add other special cases if needed
     }
