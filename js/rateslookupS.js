@@ -38,63 +38,8 @@ function displayResults(searchTerm) {
                     ${item.name} - Code: ${item.code}
                 </button>`;
       resultsDiv.appendChild(itemDiv);
-    } else {
-      // If rate not found, check for special cases like "labourer"
-      if (searchTerm.toLowerCase() === "labourer") {
-        // Display the rate for labourer in the search section
-        displayLabourerRate(resultsDiv);
-      }
-      // Add other special cases if needed
     }
   }
-}
-
-function selectItem(itemId) {
-  // Fetch and display Item Name and Item Code based on itemId
-  const selectedItem = itemsData.find((item) => item.id === itemId);
-  if (selectedItem) {
-    // Clear previous content in the container
-    const itemContainer = document.getElementById("itemContainer");
-    itemContainer.innerHTML = "";
-
-    // Create a paragraph for the Item Name
-    const itemNameParagraph = document.createElement("p");
-    itemNameParagraph.id = "itemName";
-    itemNameParagraph.textContent = `Item Name: ${selectedItem.name}`;
-
-    // Create a paragraph for the Item Code
-    const codeParagraph = document.createElement("p");
-    codeParagraph.id = "itemCode";
-    codeParagraph.textContent = `Code: ${selectedItem.code}`;
-
-    // Append paragraphs to the container
-    itemContainer.appendChild(itemNameParagraph);
-    itemContainer.appendChild(codeParagraph);
-
-    document.getElementById("price").textContent = `Price: £${selectedItem.price.toFixed(2)}`;
-
-    // Fetch the rate information for the selected item
-    const selectedRateOption = document.getElementById("rateOption").value;
-    const rateArray = selectedRateOption === "xactimate" ? xactimateRates : sedgwickRates;
-    const rate = rateArray.find((r) => r.id === itemId);
-
-    // If rate is not found, check for special cases like "labourer"
-    if (!rate) {
-      // Check if the selected item is a special case like "labourer"
-      if (selectedItem.name.toLowerCase().includes("labourer")) {
-        // Display the rate for labourer in the container
-        displayLabourerRate(codeParagraph);
-      }
-      // Add other special cases if needed
-    }
-  }
-}
-
-function displayLabourerRate(element) {
-  // Display the rate for labourer
-  const labourerRateParagraph = document.createElement("p");
-  labourerRateParagraph.textContent = "General Operative; Building; UK generally - Code: 00LAB012";
-  element.appendChild(labourerRateParagraph);
 }
 
 
