@@ -38,6 +38,13 @@ function displayResults(searchTerm) {
                     ${item.name} - Code: ${item.code}
                 </button>`;
       resultsDiv.appendChild(itemDiv);
+    } else {
+      // If rate not found, check for special cases like "labourer"
+      if (searchTerm.toLowerCase() === "labourer") {
+        // Display the rate for labourer in the search section
+        displayLabourerRate(resultsDiv);
+      }
+      // Add other special cases if needed
     }
   }
 }
@@ -83,12 +90,13 @@ function selectItem(itemId) {
   }
 }
 
-function displayLabourerRate(itemContainer) {
-  // Display the rate for labourer in the container
+function displayLabourerRate(element) {
+  // Display the rate for labourer
   const labourerRateParagraph = document.createElement("p");
   labourerRateParagraph.textContent = "General Operative; Building; UK generally - Code: 00LAB012";
-  itemContainer.appendChild(labourerRateParagraph);
+  element.appendChild(labourerRateParagraph);
 }
+
 
 function selectItem(itemId) {
 // Fetch and display Item Name and Item Code based on itemId
