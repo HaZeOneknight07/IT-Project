@@ -34,10 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
 function handleAutofill(field) {
   if (field.value !== "") {
     field.nextElementSibling.classList.add("active");
+    // Add "active" class to label
+    field.nextElementSibling.setAttribute("class", "active");
   } else {
     field.nextElementSibling.classList.remove("active");
   }
-
+  
   // Check if both username and password fields are filled
   var username = document.getElementById("username").value;
   var password = document.getElementById("password").value;
@@ -57,6 +59,7 @@ function handleAutofill(field) {
     }
   }
 }
+
 
 function redirectToHome() {
   var username = document.getElementById("username").value;
