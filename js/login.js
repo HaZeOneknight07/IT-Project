@@ -14,52 +14,32 @@ var credentials = [
   // Add more username/password pairs as needed using same format
 ];
 
-document.addEventListener("DOMContentLoaded", function () {
-  // Check if the username and password fields are pre-filled with credentials
-  var usernameField = document.getElementById("username");
-  var passwordField = document.getElementById("password");
-  handleAutofill(usernameField);
-  handleAutofill(passwordField);
+document.addEventListener("DOMContentLoaded", function() {
+    // Check if the username field is autofilled
+    var usernameField = document.getElementById("username");
+    handleAutofill(usernameField);
 
-  // Listen for input events on username and password fields
-  document.getElementById("username").addEventListener("input", function () {
-    handleAutofill(this);
-  });
+    // Check if the password field is autofilled
+    var passwordField = document.getElementById("password");
+    handleAutofill(passwordField);
+});
 
-  document.getElementById("password").addEventListener("input", function () {
-    handleAutofill(this);
-  });
+// Listen for input events on username and password fields
+document.getElementById("username").addEventListener("input", function() {
+  handleAutofill(this);
+});
+
+document.getElementById("password").addEventListener("input", function() {
+  handleAutofill(this);
 });
 
 function handleAutofill(field) {
   if (field.value !== "") {
     field.nextElementSibling.classList.add("active");
-    // Add "active" class to label
-    field.nextElementSibling.setAttribute("class", "active");
   } else {
     field.nextElementSibling.classList.remove("active");
   }
-  
-  // Check if both username and password fields are filled
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-
-  if (username !== "" && password !== "") {
-    // Loop through credentials array to check for match
-    for (var i = 0; i < credentials.length; i++) {
-      if (
-        username === credentials[i].username &&
-        password === credentials[i].password
-      ) {
-        // Add "active" class to labels
-        document.querySelector("label[for='username']").classList.add("active");
-        document.querySelector("label[for='password']").classList.add("active");
-        return;
-      }
-    }
-  }
 }
-
 
 function redirectToHome() {
   var username = document.getElementById("username").value;
