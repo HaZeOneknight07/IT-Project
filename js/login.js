@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", function() {
     // Check if the password field is autofilled
     var passwordField = document.getElementById("password");
     handleAutofill(passwordField);
+  
+    // Trigger handleAutofill for username and password fields on page load
+    handleAutofill(document.getElementById("username"));
+    handleAutofill(document.getElementById("password"));
 });
 
 // Listen for input events on username and password fields
@@ -34,10 +38,29 @@ document.getElementById("password").addEventListener("input", function() {
 });
 
 function handleAutofill(field) {
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
   if (field.value !== "") {
     field.nextElementSibling.classList.add("active");
   } else {
     field.nextElementSibling.classList.remove("active");
+  }
+
+  // Check if both username and password fields are filled
+  if (username !== "" && password !== "") {
+    // Loop through credentials array to check for match
+    for (var i = 0; i < credentials.length; i++) {
+      if (
+        username === credentials[i].username &&
+        password === credentials[i].password
+      ) {
+        // Add "active" class to labels
+        document.querySelector("label[for='username']").classList.add("active");
+        document.querySelector("label[for='password']").classList.add("active");
+        return;
+      }
+    }
   }
 }
 
@@ -92,32 +115,3 @@ document.getElementById("password").addEventListener("keyup", function (event) {
     warningElement.style.display = "none";
   }
 });
-
-// Auto Fill Check for Active Class
-
-function handleAutofill(field) {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-
-  if (field.value !== "") {
-    field.nextElementSibling.classList.add("active");
-  } else {
-    field.nextElementSibling.classList.remove("active");
-  }
-
-  // Check if both username and password fields are filled
-  if (username !== "" && password !== "") {
-    // Loop through credentials array to check for match
-    for (var i = 0; i < credentials.length; i++) {
-      if (
-        username === credentials[i].username &&
-        password === credentials[i].password
-      ) {
-        // Add "active" class to labels
-        document.querySelector("label[for='username']").classList.add("active");
-        document.querySelector("label[for='password']").classList.add("active");
-        return;
-      }
-    }
-  }
-}
