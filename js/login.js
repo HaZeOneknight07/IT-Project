@@ -14,33 +14,24 @@ var credentials = [
   // Add more username/password pairs as needed using same format
 ];
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Check if the username field is autofilled
-    var usernameField = document.getElementById("username");
-    handleAutofill(usernameField);
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if the username and password fields are pre-filled with credentials
+  var usernameField = document.getElementById("username");
+  var passwordField = document.getElementById("password");
+  handleAutofill(usernameField);
+  handleAutofill(passwordField);
 
-    // Check if the password field is autofilled
-    var passwordField = document.getElementById("password");
-    handleAutofill(passwordField);
-  
-    // Trigger handleAutofill for username and password fields on page load
-    handleAutofill(document.getElementById("username"));
-    handleAutofill(document.getElementById("password"));
-});
+  // Listen for input events on username and password fields
+  document.getElementById("username").addEventListener("input", function () {
+    handleAutofill(this);
+  });
 
-// Listen for input events on username and password fields
-document.getElementById("username").addEventListener("input", function() {
-  handleAutofill(this);
-});
-
-document.getElementById("password").addEventListener("input", function() {
-  handleAutofill(this);
+  document.getElementById("password").addEventListener("input", function () {
+    handleAutofill(this);
+  });
 });
 
 function handleAutofill(field) {
-  var username = document.getElementById("username").value;
-  var password = document.getElementById("password").value;
-
   if (field.value !== "") {
     field.nextElementSibling.classList.add("active");
   } else {
@@ -48,6 +39,9 @@ function handleAutofill(field) {
   }
 
   // Check if both username and password fields are filled
+  var username = document.getElementById("username").value;
+  var password = document.getElementById("password").value;
+
   if (username !== "" && password !== "") {
     // Loop through credentials array to check for match
     for (var i = 0; i < credentials.length; i++) {
