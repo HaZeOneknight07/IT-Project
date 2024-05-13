@@ -14,22 +14,22 @@ var credentials = [
   // Add more username/password pairs as needed using same format
 ];
 
-document.addEventListener("DOMContentLoaded", function() {
-    // Check if the username field is autofilled
-    var usernameField = document.getElementById("username");
-    handleAutofill(usernameField);
+document.addEventListener("DOMContentLoaded", function () {
+  // Check if the username field is autofilled
+  var usernameField = document.getElementById("username");
+  handleAutofill(usernameField);
 
-    // Check if the password field is autofilled
-    var passwordField = document.getElementById("password");
-    handleAutofill(passwordField);
+  // Check if the password field is autofilled
+  var passwordField = document.getElementById("password");
+  handleAutofill(passwordField);
 });
 
 // Listen for input events on username and password fields
-document.getElementById("username").addEventListener("input", function() {
+document.getElementById("username").addEventListener("input", function () {
   handleAutofill(this);
 });
 
-document.getElementById("password").addEventListener("input", function() {
+document.getElementById("password").addEventListener("input", function () {
   handleAutofill(this);
 });
 
@@ -42,12 +42,12 @@ function handleAutofill(field) {
 }
 
 function redirectToHome() {
-  var username = document.getElementById("username").value;
+  var username = document.getElementById("username").value.toLowerCase(); // Convert username to lowercase
   var password = document.getElementById("password").value;
 
   for (var i = 0; i < credentials.length; i++) {
     if (
-      username === credentials[i].username &&
+      username === credentials[i].username.toLowerCase() && // Convert stored username to lowercase for comparison
       password === credentials[i].password
     ) {
       // Store data in local storage
