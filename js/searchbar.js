@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
     document
-      getElementById("searchInput")
+      .getElementById("searchInput")
       addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
           var searchTerm = event.target.value.trim().toLowerCase();
