@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     document
-      .getElementById("searchInput")
-      .addEventListener("keypress", function (event) {
+      getElementById("searchInput")
+      addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
           var searchTerm = event.target.value.trim().toLowerCase();
           var loggedInUser = localStorage.getItem("loggedInUsername"); // Retrieve logged-in user from local storage
