@@ -67,30 +67,23 @@ document.addEventListener("DOMContentLoaded", function () {
             localStorage.setItem("loggedInUserEmail", username);
 
             // Fetch user role from Realtime Database using UID
-            database.ref("users/" + user.uid).once("value")
+            database.ref("users/" + user.uid + "/role").once("value")
                 .then((snapshot) => {
-                    if (snapshot.exists()) {
-                        var userData = snapshot.val();
-                        // Get user role from userData object
-                        var role = userData.role;
-                        // Redirect based on user role
-                        if (role === "manager") {
-                            window.location.href = "scheduleoption.html";
-                        } else if (role === "surveyor") {
-                            window.location.href = "hub.html";
-                        } else if (role === "admin") {
-                            window.location.href = "admin.html";
-                        } else {
-                            console.error("Invalid user role:", role);
-                            // Handle invalid user role
-                        }
+                    var role = snapshot.val();
+                    // Redirect based on user role
+                    if (role === "manager") {
+                        window.location.href = "scheduleoption.html";
+                    } else if (role === "surveyor") {
+                        window.location.href = "hub.html";
+                    } else if (role === "admin") {
+                        window.location.href = "admin.html";
                     } else {
-                        console.error("User data not found.");
-                        // Handle the case where user data is not found
+                        console.error("Invalid user role:", role);
+                        // Handle invalid user role
                     }
                 })
                 .catch((error) => {
-                    console.error("Error fetching user data:", error);
+                    console.error("Error fetching user role:", error);
                     // Handle database query error
                 });
         })
@@ -100,6 +93,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // Handle authentication error
         });
 }
+
   // Caps Lock Indicator Script
   if (passwordField) {
     passwordField.addEventListener("keyup", function (event) {
