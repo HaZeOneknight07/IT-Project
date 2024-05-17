@@ -1,4 +1,4 @@
-// Your web app's Firebase configuration
+document.addEventListener("DOMContentLoaded", function() {
 const firebaseConfig = {
   apiKey: "AIzaSyCq4mZfp2XSASkrdoCt4BrQHKsMpMdPz20",
   authDomain: "rates-website-db.firebaseapp.com",
@@ -87,4 +87,4 @@ document.getElementById("password").addEventListener("keyup", function(event) {
   } else {
     warningElement.style.display = "none";
   }
-});
+})});
