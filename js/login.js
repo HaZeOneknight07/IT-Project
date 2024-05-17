@@ -58,41 +58,44 @@ document.addEventListener("DOMContentLoaded", function () {
     var username = document.getElementById("username").value.toLowerCase();
     var password = document.getElementById("password").value;
 
-    auth.signInWithEmailAndPassword(username, password)
-        .then((userCredential) => {
-            var user = userCredential.user;
+    auth
+      .signInWithEmailAndPassword(username, password)
+      .then((userCredential) => {
+        var user = userCredential.user;
 
-            // Store data in local storage
-            localStorage.setItem("loggedInUsername", username);
-            localStorage.setItem("loggedInUserEmail", username);
+        // Store data in local storage
+        localStorage.setItem("loggedInUsername", username);
+        localStorage.setItem("loggedInUserEmail", username);
 
-            // Fetch user role from Realtime Database using UID
-            database.ref("users/" + user.uid + "/role").once("value")
-                .then((snapshot) => {
-                    var role = snapshot.val();
-                    // Redirect based on user role
-                    if (role === "manager") {
-                        window.location.href = "scheduleoption.html";
-                    } else if (role === "surveyor") {
-                        window.location.href = "hub.html";
-                    } else if (role === "admin") {
-                        window.location.href = "admin.html";
-                    } else {
-                        console.error("Invalid user role:", role);
-                        // Handle invalid user role
-                    }
-                })
-                .catch((error) => {
-                    console.error("Error fetching user role:", error);
-                    // Handle database query error
-                });
-        })
-        .catch((error) => {
-            alert("Invalid login credentials. Please try again.");
-            console.error("Authentication error:", error);
-            // Handle authentication error
-        });
-}
+        // Fetch user role from Realtime Database using UID
+        database
+          .ref("users/" + user.uid + "/role")
+          .once("value")
+          .then((snapshot) => {
+            var role = snapshot.val();
+
+            // Redirect based on user role
+            if (role === "manager") {
+              window.location.href = "scheduleoption.html";
+            } else if (role === "surveyor") {
+              window.location.href = "hub.html";
+            } else if (role === "admin") {
+              window.location.href = "admin.html";
+            } else {
+              alert("Invalid user role.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching user role:", error);
+            // Handle database query error
+          });
+      })
+      .catch((error) => {
+        alert("Invalid login credentials. Please try again.");
+        console.error("Authentication error:", error);
+        // Handle authentication error
+      });
+  }
 
   // Caps Lock Indicator Script
   if (passwordField) {
