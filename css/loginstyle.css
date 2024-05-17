@@ -62,7 +62,7 @@ header {
     border-bottom: 1px solid var(--button-text-colour);
 }
 
-#main-content form button {
+#main-content .submitBtn {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -80,7 +80,7 @@ header {
     cursor: pointer;
 }
 
-#main-content form button:hover {
+#main-content .submitBtn:hover {
     box-shadow: 0 0 15px var(--sidebar-colour);
 }
 
