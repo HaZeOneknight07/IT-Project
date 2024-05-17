@@ -72,23 +72,33 @@ document.addEventListener("DOMContentLoaded", function () {
           .ref("users/" + user.uid)
           .once("value")
           .then((snapshot) => {
-            var role = snapshot.val().role;
+            if (snapshot.exists()) {
+              // Check if snapshot exists and contains data
+              var role = snapshot.val().role;
 
-            // Redirect based on user role
-            if (role === "manager") {
-              window.location.href = "scheduleoption.html";
-            } else if (role === "surveyor") {
-              window.location.href = "hub.html";
-            } else if (role === "admin") {
-              window.location.href = "admin.html";
+              // Redirect based on user role
+              if (role === "manager") {
+                window.location.href = "scheduleoption.html";
+              } else if (role === "surveyor") {
+                window.location.href = "hub.html";
+              } else if (role === "admin") {
+                window.location.href = "admin.html";
+              } else {
+                alert("Invalid user role.");
+              }
             } else {
-              alert("Invalid user role.");
+              console.error("User data not found.");
+              // Handle the case where user data is not found
             }
+          })
+          .catch((error) => {
+            console.error("Error fetching user data:", error);
+            // Handle the error
           });
       })
       .catch((error) => {
         alert("Invalid login credentials. Please try again.");
-        console.error(error);
+        console.error("Authentication error:", error);
       });
   }
 
