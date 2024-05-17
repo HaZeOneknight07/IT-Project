@@ -89,7 +89,6 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   // Caps Lock Indicator Script
-  const passwordField = document.getElementById("password");
   if (passwordField) {
       passwordField.addEventListener("keyup", function(event) {
           var capsLockEnabled = event.getModifierState && event.getModifierState("CapsLock");
