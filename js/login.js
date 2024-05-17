@@ -1,94 +1,115 @@
-// Login Validation Script
-
 // Delay the hiding of preloader and showing login content after 5 seconds
 setTimeout(function () {
   document.querySelector(".preloader-container").classList.add("hide");
   document.getElementById("main-content").classList.remove("hide");
 }, 5000);
 
-var credentials = [
-  { username: "admin@gelder.co.uk", password: "ADMIN!Gelder18#" },
-  { username: "surveys@gelder.co.uk", password: "GelderSurveyors1" },
-  { username: "managers@gelder.co.uk", password: "GelderManagers1" },
-  { username: "ty.ashmore@gelder.co.uk", password: "TA.gelder!1129" },
-  // Add more username/password pairs as needed using same format
-];
-
 document.addEventListener("DOMContentLoaded", function () {
-  // Check if the username field is autofilled
-  var usernameField = document.getElementById("username");
-  handleAutofill(usernameField);
+  const firebaseConfig = {
+    apiKey: "AIzaSyCq4mZfp2XSASkrdoCt4BrQHKsMpMdPz20",
+    authDomain: "rates-website-db.firebaseapp.com",
+    databaseURL: "https://rates-website-db-default-rtdb.firebaseio.com",
+    projectId: "rates-website-db",
+    storageBucket: "rates-website-db.appspot.com",
+    messagingSenderId: "841721059290",
+    appId: "1:841721059290:web:19edd2668bb7b86ca112e3",
+  };
 
-  // Check if the password field is autofilled
-  var passwordField = document.getElementById("password");
-  handleAutofill(passwordField);
-});
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const database = firebase.database();
 
-// Listen for input events on username and password fields
-document.getElementById("username").addEventListener("input", function () {
-  handleAutofill(this);
-});
-
-document.getElementById("password").addEventListener("input", function () {
-  handleAutofill(this);
-});
-
-function handleAutofill(field) {
-  if (field.value !== "") {
-    field.nextElementSibling.classList.add("active");
+  // Add event listener for form submission
+  const loginForm = document.getElementById("main-content");
+  if (loginForm) {
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      redirectToHome();
+    });
   } else {
-    field.nextElementSibling.classList.remove("active");
+    console.error("Login form element not found.");
   }
-}
 
-function redirectToHome() {
-  var username = document.getElementById("username").value.toLowerCase(); // Convert username to lowercase
-  var password = document.getElementById("password").value;
+  // Listen for input events on username and password fields
+  const usernameField = document.getElementById("username");
+  const passwordField = document.getElementById("password");
+  if (usernameField && passwordField) {
+    usernameField.addEventListener("input", function () {
+      handleAutofill(this);
+    });
 
-  for (var i = 0; i < credentials.length; i++) {
-    if (
-      username === credentials[i].username.toLowerCase() && // Convert stored username to lowercase for comparison
-      password === credentials[i].password
-    ) {
-      // Store data in local storage
-      localStorage.setItem("loggedInUsername", username); // Store email
-      localStorage.setItem("loggedInPassword", password);
-      localStorage.setItem("loggedInUserEmail", username); // Store email separately for later use
+    passwordField.addEventListener("input", function () {
+      handleAutofill(this);
+    });
+  } else {
+    console.error("Username or password field not found.");
+  }
 
-      // Redirect to Managers Version
-      if (username === "managers@gelder.co.uk") {
-        window.location.href = "scheduleoption.html"; // Redirect to Schedule Option Page
-      }
-      // Redirect to Surveyors Version
-      else if (
-        username === "surveys@gelder.co.uk" ||
-        username === "ty.ashmore@gelder.co.uk"
-      ) {
-        window.location.href = "hub.html"; // Redirect to Hub Page
-      }
-      // Redirect to Admin Panel
-      else if (username === "admin@gelder.co.uk") {
-        console.log("Redirecting to Admin Panel");
-        window.location.href = "admin.html"; // Redirect to Admin Panel
-        return;
-      }
-      return;
+  function handleAutofill(field) {
+    if (field.value !== "") {
+      field.nextElementSibling.classList.add("active");
+    } else {
+      field.nextElementSibling.classList.remove("active");
     }
   }
 
-  // If no match found in the loop
-  alert("Invalid login credentials. Please try again.");
-}
+  function redirectToHome() {
+    var username = document.getElementById("username").value.toLowerCase();
+    var password = document.getElementById("password").value;
 
-// Caps Lock Indicator Script
+    auth
+      .signInWithEmailAndPassword(username, password)
+      .then((userCredential) => {
+        var user = userCredential.user;
 
-document.getElementById("password").addEventListener("keyup", function (event) {
-  var capsLockEnabled =
-    event.getModifierState && event.getModifierState("CapsLock");
-  var warningElement = document.querySelector(".caps-lock-warning");
-  if (capsLockEnabled) {
-    warningElement.style.display = "block";
+        // Store data in local storage
+        localStorage.setItem("loggedInUsername", username);
+        localStorage.setItem("loggedInUserEmail", username);
+
+        // Fetch user role from Realtime Database using UID
+        database
+          .ref("users/" + user.uid + "/role")
+          .once("value")
+          .then((snapshot) => {
+            var role = snapshot.val();
+
+            // Redirect based on user role
+            if (role === "manager") {
+              window.location.href = "ratesoption.html";
+            } else if (role === "surveyor") {
+              window.location.href = "hub.html";
+            } else if (role === "admin") {
+              window.location.href = "admin.html";
+            } else {
+              alert("Invalid user role.");
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching user role:", error);
+            // Handle database query error
+          });
+      })
+      .catch((error) => {
+        alert("Invalid login credentials. Please try again.");
+        console.error("Authentication error:", error);
+        // Handle authentication error
+      });
+  }
+
+  // Caps Lock Indicator Script
+  if (passwordField) {
+    passwordField.addEventListener("keyup", function (event) {
+      var capsLockEnabled =
+        event.getModifierState && event.getModifierState("CapsLock");
+      var warningElement = document.querySelector(".caps-lock-warning");
+      if (capsLockEnabled) {
+        warningElement.style.display = "block";
+      } else {
+        warningElement.style.display = "none";
+      }
+    });
   } else {
-    warningElement.style.display = "none";
+    console.error("Password field not found.");
   }
 });

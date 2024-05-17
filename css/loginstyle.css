@@ -1,7 +1,9 @@
+/* Header styles */
 header {
     border-radius: 0 0 1rem 1rem !important;
-} 
+}
 
+/* Login box styles */
 .login-box {
     position: fixed;
     top: 50%;
@@ -22,11 +24,11 @@ header {
     text-align: center;
 }
 
-.login-box .user-box {
+.user-box {
     position: relative;
 }
 
-.login-box .user-box input {
+.user-box input {
     width: 100%;
     padding: 10px 0;
     font-size: 16px;
@@ -38,7 +40,7 @@ header {
     background: transparent;
 }
 
-.login-box .user-box label {
+.user-box label {
     position: absolute;
     top: 0;
     left: 0;
@@ -49,16 +51,16 @@ header {
     transition: .5s;
 }
 
-.login-box .user-box input:focus~label,
-.login-box .user-box input:valid~label {
+.user-box input:focus~label,
+.user-box input:valid~label {
     top: -20px;
     left: 0;
     color: var(--button-text-colour);
     font-size: 12px;
 }
 
-.login-box .user-box input:focus,
-.login-box .user-box input:valid {
+.user-box input:focus,
+.user-box input:valid {
     border-bottom: 1px solid var(--button-text-colour);
 }
 
@@ -84,10 +86,9 @@ header {
     box-shadow: 0 0 15px var(--sidebar-colour);
 }
 
+/* Caps lock warning styles */
 .caps-lock-warning {
     font-size: 12px;
     color: #D22A3A;
     margin-top: 5px;
-  }
-
-
+}
