@@ -2,7 +2,7 @@
 setTimeout(function () {
   document.querySelector(".preloader-container").classList.add("hide");
   document.getElementById("main-content").classList.remove("hide");
-}, 5000);
+}, 10000);
 
 document.addEventListener("DOMContentLoaded", function () {
   const firebaseConfig = {
