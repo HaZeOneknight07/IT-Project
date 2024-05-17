@@ -129,11 +129,6 @@ function enableClickableElements() {
 // Call the function when the page loads
 window.onload = promptUserDetails;
 
-// Function to show the form for adding users
-function showAddUserForm() {
-  document.getElementById("addUserForm").style.display = "block";
-}
-
 // Function to handle form submission
 document
   .getElementById("userForm")
