@@ -40,6 +40,14 @@ function promptUserDetails(email) {
   enableClickableElements();
 }
 
+// Function to disable clickable elements
+function disableClickableElements() {
+  var clickableElements = document.querySelectorAll("a, button");
+  clickableElements.forEach(function (element) {
+    element.disabled = true;
+  });
+}
+
 // Function to enable clickable elements
 function enableClickableElements() {
   var clickableElements = document.querySelectorAll("a, button");
@@ -66,6 +74,22 @@ window.onload = function() {
 
   promptUserDetails(storedEmail);
 };
+
+// Function to disable clickable elements
+function disableClickableElements() {
+  var clickableElements = document.querySelectorAll("a, button");
+  clickableElements.forEach(function (element) {
+    element.disabled = true;
+  });
+}
+
+// Function to enable clickable elements
+function enableClickableElements() {
+  var clickableElements = document.querySelectorAll("a, button");
+  clickableElements.forEach(function (element) {
+    element.disabled = false;
+  });
+}
 
 // Sidebar functionality
 var sidebar = document.querySelector(".sidebar");
