@@ -21,6 +21,29 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
 
+// Add event listener for form submission
+document.getElementById("login-box").addEventListener("submit", function(event) {
+  event.preventDefault();
+  redirectToHome();
+});
+
+// Listen for input events on username and password fields
+document.getElementById("username").addEventListener("input", function() {
+  handleAutofill(this);
+});
+
+document.getElementById("password").addEventListener("input", function() {
+  handleAutofill(this);
+});
+
+function handleAutofill(field) {
+  if (field.value !== "") {
+    field.nextElementSibling.classList.add("active");
+  } else {
+    field.nextElementSibling.classList.remove("active");
+  }
+}
+
 function redirectToHome() {
   var username = document.getElementById("username").value.toLowerCase();
   var password = document.getElementById("password").value;
@@ -44,6 +67,8 @@ function redirectToHome() {
           window.location.href = "hub.html";
         } else if (role === "admin") {
           window.location.href = "admin.html";
+        } else {
+          alert("Invalid user role.");
         }
       });
     })
@@ -54,7 +79,7 @@ function redirectToHome() {
 }
 
 // Caps Lock Indicator Script
-document.getElementById("password").addEventListener("keyup", function (event) {
+document.getElementById("password").addEventListener("keyup", function(event) {
   var capsLockEnabled = event.getModifierState && event.getModifierState("CapsLock");
   var warningElement = document.querySelector(".caps-lock-warning");
   if (capsLockEnabled) {
