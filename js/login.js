@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             // Redirect based on user role
             if (role === "manager") {
-              window.location.href = "scheduleoption.html";
+              window.location.href = "ratesoption.html";
             } else if (role === "surveyor") {
               window.location.href = "hub.html";
             } else if (role === "admin") {
