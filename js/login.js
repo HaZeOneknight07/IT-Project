@@ -1,4 +1,4 @@
-// Delay the hiding of preloader and showing login content after 5 seconds
+// Delay the hiding of preloader and showing login content after 10 seconds
 setTimeout(function () {
   document.querySelector(".preloader-container").classList.add("hide");
   document.getElementById("main-content").classList.remove("hide");
