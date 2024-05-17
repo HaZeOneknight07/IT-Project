@@ -25,6 +25,11 @@ var predefinedUsers = [
 
 // Function to prompt user for details
 function promptUserDetails(email) {
+  // Find the user associated with the provided email
+  var user = predefinedUsers.find(function (user) {
+    return user.email === email;
+  });
+
   // If user is not found, redirect to login page
   if (!user) {
     alert("User not found. Redirecting to login page...");
@@ -74,6 +79,22 @@ window.onload = function() {
 
   promptUserDetails(storedEmail);
 };
+
+// Function to disable clickable elements
+function disableClickableElements() {
+  var clickableElements = document.querySelectorAll("a, button");
+  clickableElements.forEach(function (element) {
+    element.disabled = true;
+  });
+}
+
+// Function to enable clickable elements
+function enableClickableElements() {
+  var clickableElements = document.querySelectorAll("a, button");
+  clickableElements.forEach(function (element) {
+    element.disabled = false;
+  });
+}
 
 // Sidebar functionality
 var sidebar = document.querySelector(".sidebar");
