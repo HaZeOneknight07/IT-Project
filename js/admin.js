@@ -1,44 +1,31 @@
 // Predefined users array
-var predefinedUsers = [
-  {
-    email: "admin@gelder.co.uk",
-    name: "Admin",
-    job: "Administrator"
-  },
-  {
-    email: "surveys@gelder.co.uk",
-    name: "Surveyor",
-    job: "Surveyor"
-  },
-  {
-    email: "managers@gelder.co.uk",
-    name: "Manager",
-    job: "Contracts Manager"
-  },
-  // Add more predefined users as needed.
-];
-
-// Function to prompt user details
-function promptUserDetails(email) {
-  // Find the user associated with the provided email
-  var user = predefinedUsers.find(function (user) {
-    return user.email === email;
-  });
-
-  // If user is not found, redirect to login page
-  if (!user) {
-    alert("User not found. Redirecting to login page...");
-    window.location.href = "index.html";
-    return;
-  }
-
-  // Update profile information with user details
-  document.getElementById("name").textContent = user.name;
-  document.getElementById("job").textContent = user.job;
-
-  // Enable clickable elements
-  enableClickableElements();
+// Function to redirect users to the login page if they are not authenticated or not an admin
+function redirectToLogin() {
+  window.location.href = "index.html"; // Replace 'index.html' with your login page URL
 }
+
+// Check if a user is logged in
+firebase.auth().onAuthStateChanged((user) => {
+  if (user) {
+    // User is logged in, check if they are the admin
+    if (user.email === "admin@gelder.co.uk") {
+      // User is the admin, allow access
+      console.log("Access granted");
+      // Enable clickable elements here if needed
+      enableClickableElements();
+      // Update profile information
+      document.getElementById("name").textContent = "Admin";
+      document.getElementById("job").textContent = "Administrator";
+    } else {
+      // User is not the admin, redirect to login page
+      alert("You do not have permission to access this page.");
+      redirectToLogin();
+    }
+  } else {
+    // No user is logged in, redirect to login page
+    redirectToLogin();
+  }
+});
 
 // Function to disable clickable elements
 function disableClickableElements() {
@@ -57,39 +44,10 @@ function enableClickableElements() {
 }
 
 // Call the function when the page loads
-window.onload = function() {
+window.onload = function () {
   // Disable clickable elements initially
   disableClickableElements();
-
-  // Retrieve stored email from local storage
-  var storedEmail = localStorage.getItem("loggedInUserEmail");
-
-  // Check if stored email exists
-  if (!storedEmail) {
-    // If email does not exist, redirect to login page
-    alert("No email found. Redirecting to login page...");
-    window.location.href = "index.html";
-    return;
-  }
-
-  promptUserDetails(storedEmail);
 };
-
-// Function to disable clickable elements
-function disableClickableElements() {
-  var clickableElements = document.querySelectorAll("a, button");
-  clickableElements.forEach(function (element) {
-    element.disabled = true;
-  });
-}
-
-// Function to enable clickable elements
-function enableClickableElements() {
-  var clickableElements = document.querySelectorAll("a, button");
-  clickableElements.forEach(function (element) {
-    element.disabled = false;
-  });
-}
 
 // Sidebar functionality
 var sidebar = document.querySelector(".sidebar");
