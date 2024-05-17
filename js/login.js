@@ -58,50 +58,48 @@ document.addEventListener("DOMContentLoaded", function () {
     var username = document.getElementById("username").value.toLowerCase();
     var password = document.getElementById("password").value;
 
-    auth
-      .signInWithEmailAndPassword(username, password)
-      .then((userCredential) => {
-        var user = userCredential.user;
+    auth.signInWithEmailAndPassword(username, password)
+        .then((userCredential) => {
+            var user = userCredential.user;
 
-        // Store data in local storage
-        localStorage.setItem("loggedInUsername", username);
-        localStorage.setItem("loggedInUserEmail", username);
+            // Store data in local storage
+            localStorage.setItem("loggedInUsername", username);
+            localStorage.setItem("loggedInUserEmail", username);
 
-        // Fetch user role from Realtime Database using UID
-        database
-          .ref("users/" + user.uid)
-          .once("value")
-          .then((snapshot) => {
-            if (snapshot.exists()) {
-              // Check if snapshot exists and contains data
-              var role = snapshot.val().role;
-
-              // Redirect based on user role
-              if (role === "manager") {
-                window.location.href = "scheduleoption.html";
-              } else if (role === "surveyor") {
-                window.location.href = "hub.html";
-              } else if (role === "admin") {
-                window.location.href = "admin.html";
-              } else {
-                alert("Invalid user role.");
-              }
-            } else {
-              console.error("User data not found.");
-              // Handle the case where user data is not found
-            }
-          })
-          .catch((error) => {
-            console.error("Error fetching user data:", error);
-            // Handle the error
-          });
-      })
-      .catch((error) => {
-        alert("Invalid login credentials. Please try again.");
-        console.error("Authentication error:", error);
-      });
-  }
-
+            // Fetch user role from Realtime Database using UID
+            database.ref("users/" + user.uid).once("value")
+                .then((snapshot) => {
+                    if (snapshot.exists()) {
+                        var userData = snapshot.val();
+                        // Get user role from userData object
+                        var role = userData.role;
+                        // Redirect based on user role
+                        if (role === "manager") {
+                            window.location.href = "scheduleoption.html";
+                        } else if (role === "surveyor") {
+                            window.location.href = "hub.html";
+                        } else if (role === "admin") {
+                            window.location.href = "admin.html";
+                        } else {
+                            console.error("Invalid user role:", role);
+                            // Handle invalid user role
+                        }
+                    } else {
+                        console.error("User data not found.");
+                        // Handle the case where user data is not found
+                    }
+                })
+                .catch((error) => {
+                    console.error("Error fetching user data:", error);
+                    // Handle database query error
+                });
+        })
+        .catch((error) => {
+            alert("Invalid login credentials. Please try again.");
+            console.error("Authentication error:", error);
+            // Handle authentication error
+        });
+}
   // Caps Lock Indicator Script
   if (passwordField) {
     passwordField.addEventListener("keyup", function (event) {
