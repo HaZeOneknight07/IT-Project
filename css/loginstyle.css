@@ -86,7 +86,7 @@ header {
     cursor: pointer;
 }
 
-#main-content .submitBtn:hover {
+#main-content #submitBtn:hover {
     box-shadow: 0 0 15px var(--sidebar-colour);
 }
 
@@ -94,6 +94,7 @@ header {
     font-size: 12px;
     color: #D22A3A;
     margin-top: 5px;
+    transition: all 0.6 ease-in-out;
   }
 
 
