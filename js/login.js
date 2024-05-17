@@ -1,3 +1,9 @@
+// Delay the hiding of preloader and showing login content after 5 seconds
+setTimeout(function () {
+  document.querySelector(".preloader-container").classList.add("hide");
+  document.getElementById("main-content").classList.remove("hide");
+}, 5000);
+
 document.addEventListener("DOMContentLoaded", function () {
   const firebaseConfig = {
     apiKey: "AIzaSyCq4mZfp2XSASkrdoCt4BrQHKsMpMdPz20",
@@ -14,95 +20,96 @@ document.addEventListener("DOMContentLoaded", function () {
   const auth = firebase.auth();
   const database = firebase.database();
 
-  // Function to handle autofill detection
-  function handleAutofill(field) {
-      if (field.value !== "") {
-          field.nextElementSibling.classList.add("active");
-      } else {
-          field.nextElementSibling.classList.remove("active");
-      }
-  }
-
-  // Delay the hiding of preloader and showing login content after 5 seconds
-  setTimeout(function () {
-      document.querySelector(".preloader-container").classList.add("hide");
-      document.getElementById("main-content").classList.remove("hide");
-  }, 5000);
-
+  // Add event listener for form submission
   const loginForm = document.getElementById("main-content");
   if (loginForm) {
-      loginForm.addEventListener("submit", function (event) {
-          event.preventDefault();
-          redirectToHome();
-      });
+    loginForm.addEventListener("submit", function (event) {
+      event.preventDefault();
+      redirectToHome();
+    });
   } else {
-      console.error("Login form element not found.");
+    console.error("Login form element not found.");
   }
 
   // Listen for input events on username and password fields
   const usernameField = document.getElementById("username");
   const passwordField = document.getElementById("password");
   if (usernameField && passwordField) {
-      usernameField.addEventListener("input", function () {
-          handleAutofill(this);
-      });
+    usernameField.addEventListener("input", function () {
+      handleAutofill(this);
+    });
 
-      passwordField.addEventListener("input", function () {
-          handleAutofill(this);
-          // Caps Lock Indicator Script
-          var capsLockEnabled =
-              event.getModifierState && event.getModifierState("CapsLock");
-          var warningElement = document.querySelector(".caps-lock-warning");
-          if (capsLockEnabled) {
-              warningElement.classList.add("show");
-          } else {
-              warningElement.classList.remove("show");
-          }
-      });
+    passwordField.addEventListener("input", function () {
+      handleAutofill(this);
+    });
   } else {
-      console.error("Username or password field not found.");
+    console.error("Username or password field not found.");
+  }
+
+  function handleAutofill(field) {
+    if (field.value !== "") {
+      field.nextElementSibling.classList.add("active");
+    } else {
+      field.nextElementSibling.classList.remove("active");
+    }
   }
 
   function redirectToHome() {
-      var username = document.getElementById("username").value.toLowerCase();
-      var password = document.getElementById("password").value;
+    var username = document.getElementById("username").value.toLowerCase();
+    var password = document.getElementById("password").value;
 
-      auth
-          .signInWithEmailAndPassword(username, password)
-          .then((userCredential) => {
-              var user = userCredential.user;
+    auth
+      .signInWithEmailAndPassword(username, password)
+      .then((userCredential) => {
+        var user = userCredential.user;
 
-              // Store data in local storage
-              localStorage.setItem("loggedInUsername", username);
-              localStorage.setItem("loggedInUserEmail", username);
+        // Store data in local storage
+        localStorage.setItem("loggedInUsername", username);
+        localStorage.setItem("loggedInUserEmail", username);
 
-              // Fetch user role from Realtime Database using UID
-              database
-                  .ref("users/" + user.uid + "/role")
-                  .once("value")
-                  .then((snapshot) => {
-                      var role = snapshot.val();
+        // Fetch user role from Realtime Database using UID
+        database
+          .ref("users/" + user.uid + "/role")
+          .once("value")
+          .then((snapshot) => {
+            var role = snapshot.val();
 
-                      // Redirect based on user role
-                      if (role === "manager") {
-                          window.location.href = "ratesoption.html";
-                      } else if (role === "surveyor") {
-                          window.location.href = "hub.html";
-                      } else if (role === "admin") {
-                          window.location.href = "admin.html";
-                      } else {
-                          alert("Invalid user role.");
-                      }
-                  })
-                  .catch((error) => {
-                      console.error("Error fetching user role:", error);
-                      // Handle database query error
-                  });
+            // Redirect based on user role
+            if (role === "manager") {
+              window.location.href = "ratesoption.html";
+            } else if (role === "surveyor") {
+              window.location.href = "hub.html";
+            } else if (role === "admin") {
+              window.location.href = "admin.html";
+            } else {
+              alert("Invalid user role.");
+            }
           })
           .catch((error) => {
-              alert("Invalid login credentials. Please try again.");
-              console.error("Authentication error:", error);
-              // Handle authentication error
+            console.error("Error fetching user role:", error);
+            // Handle database query error
           });
+      })
+      .catch((error) => {
+        alert("Invalid login credentials. Please try again.");
+        console.error("Authentication error:", error);
+        // Handle authentication error
+      });
+  }
+
+  // Caps Lock Indicator Script
+  if (passwordField) {
+    passwordField.addEventListener("keyup", function (event) {
+      var capsLockEnabled =
+        event.getModifierState && event.getModifierState("CapsLock");
+      var warningElement = document.querySelector(".caps-lock-warning");
+      if (capsLockEnabled) {
+        warningElement.classList.add("show");
+      } else {
+        warningElement.classList.remove("show");
+      }
+    });
+  } else {
+    console.error("Password field not found.");
   }
 });
