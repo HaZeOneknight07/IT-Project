@@ -1,8 +1,8 @@
-// Delay the hiding of preloader and showing login content after 10 seconds
+// Delay the hiding of preloader and showing login content after 5 seconds
 setTimeout(function () {
   document.querySelector(".preloader-container").classList.add("hide");
   document.getElementById("main-content").classList.remove("hide");
-}, 10000);
+}, 5000);
 
 document.addEventListener("DOMContentLoaded", function () {
   const firebaseConfig = {
