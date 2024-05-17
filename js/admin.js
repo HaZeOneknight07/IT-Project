@@ -18,7 +18,7 @@ var predefinedUsers = [
   // Add more predefined users as needed.
 ];
 
-// Function to prompt user for details
+// Function to prompt user details
 function promptUserDetails(email) {
   // Find the user associated with the provided email
   var user = predefinedUsers.find(function (user) {
