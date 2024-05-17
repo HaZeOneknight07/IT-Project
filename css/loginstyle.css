@@ -36,6 +36,7 @@ header {
     border-bottom: 1px solid var(--text-colour);
     outline: none;
     background: transparent;
+    border-radius: 10px 0 0 10px;
 }
 
 #main-content .user-box label {
@@ -51,8 +52,8 @@ header {
 
 #main-content .user-box input:focus~label,
 #main-content .user-box input:valid~label {
-    top: -20px;
-    left: 0;
+    top: -30px;
+    left: 2px;
     color: var(--button-text-colour);
     font-size: 12px;
 }
@@ -60,6 +61,11 @@ header {
 #main-content .user-box input:focus,
 #main-content .user-box input:valid {
     border-bottom: 1px solid var(--button-text-colour);
+    border-radius: 10px;
+}
+
+#main-content .user-box input:hover {
+    border-radius: 10px;
 }
 
 #main-content #submitBtn {
