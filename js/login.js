@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
   const database = firebase.database();
   
   // Add event listener for form submission
-  const loginForm = document.getElementById("login-box");
+  const loginForm = document.getElementById("main-content");
   if (loginForm) {
       loginForm.addEventListener("submit", function(event) {
           event.preventDefault();
@@ -89,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function() {
   }
   
   // Caps Lock Indicator Script
+  const passwordField = document.getElementById("password");
   if (passwordField) {
       passwordField.addEventListener("keyup", function(event) {
           var capsLockEnabled = event.getModifierState && event.getModifierState("CapsLock");
