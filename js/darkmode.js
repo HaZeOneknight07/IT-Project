@@ -4,8 +4,8 @@ const darkmodeToggle = document.querySelector(".darkmode");
         document.body.classList.toggle("dark");
 
         const isDarkMode = document.body.classList.contains("dark");
-        document.body.style.background = isDarkMode ? "#202225" : "#f9f9f9";
-        document.body.style.color = isDarkMode ? "#f9f9f9" : "#202225";
+        document.body.style.background = isDarkMode ? "#252525" : "#f9f9f9";
+        document.body.style.color = isDarkMode ? "#f9f9f9" : "#252525";
 
         // Toggle visibility of light and dark mode icons
         const lightIcon = document.querySelector(".darkmode .light");
