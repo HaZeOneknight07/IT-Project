@@ -1,3 +1,5 @@
+// Only reason rates arent stored in a database is because im not hand writing over 10000 rates again
+
 //Stored Arrays
 let itemsData; // Variable to store the loaded items data
 let sedgwickRates; // Variable to store Sedgwick rates
