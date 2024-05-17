@@ -62,7 +62,7 @@ header {
     border-bottom: 1px solid var(--button-text-colour);
 }
 
-#main-content .submitBtn {
+#main-content #submitBtn {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
