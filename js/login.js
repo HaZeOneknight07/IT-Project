@@ -104,9 +104,9 @@ document.addEventListener("DOMContentLoaded", function () {
         event.getModifierState && event.getModifierState("CapsLock");
       var warningElement = document.querySelector(".caps-lock-warning");
       if (capsLockEnabled) {
-        warningElement.style.display = "block";
+        warningElement.classList.add("show");
       } else {
-        warningElement.style.display = "none";
+        warningElement.classList.remove("show");
       }
     });
   } else {
