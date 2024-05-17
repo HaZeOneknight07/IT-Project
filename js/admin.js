@@ -1,3 +1,23 @@
+// Predefined users array for sidebar
+var predefinedUsers = [
+  {
+    email: "admin@gelder.co.uk",
+    name: "Admin",
+    job: "Administrator"
+  },
+  {
+    email: "surveys@gelder.co.uk",
+    name: "Surveyor",
+    job: "Surveyor"
+  },
+  {
+    email: "managers@gelder.co.uk",
+    name: "Manager",
+    job: "Contracts Manager"
+  },
+  // Add more predefined users as needed.
+];
+
 // Function to prompt user for details
 function promptUserDetails(email) {
   // Find the user associated with the provided email
