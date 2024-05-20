@@ -1,121 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Gelder Group Surveyors</title>
 
-    <!-- Login Stylesheet -->
-    <link 
-     rel="stylesheet" 
-     href="css/loginstyle.css" 
-    />
-    <!-- Colour Stylesheet -->
-    <link 
-     rel="stylesheet" 
-     href="css/colours.css"
-    >
-    <!-- Theme Toggle Stylesheet -->
-    <link 
-     rel="stylesheet" 
-     type="text/css" 
-     media="screen" 
-     href="css/darkmode.css" 
-    />
-    <!-- General Stylesheet -->
-    <link 
-     rel="stylesheet" 
-     href="css/style.css" 
-    />
-    <!-- Preloader Stylesheet -->
-    <link 
-     rel="stylesheet" 
-     href="css/preloaderstyle.css" 
-    />
-    <!-- Boxicons CDN Link -->
-    <link
-      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
-      rel="stylesheet"
-    />
-    <!-- Google Poppins Font -->
-    <link 
-     rel="stylesheet" 
-     type="text/css" 
-     href="https://fonts.googleapis.com/css?family=Poppins" 
-    />
-    <!-- Favicon -->
-    <link 
-     rel="icon" 
-     type="image/x-icon" 
-     href="img/favicon.png" 
-    />
-    <!-- IOS Bookmark Icon -->
-    <link 
-    rel="apple-touch-icon" 
-    type="image/x-icon" 
-    href="img/iosfavicon.png"
-    >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Gelder Group Surveyors</title>
 
-  </head>
+  <!-- Login Stylesheet -->
+  <link rel="stylesheet" href="css/loginstyle.css" />
+  <!-- Colour Stylesheet -->
+  <link rel="stylesheet" href="css/colours.css">
+  <!-- Theme Toggle Stylesheet -->
+  <link rel="stylesheet" type="text/css" media="screen" href="css/darkmode.css" />
+  <!-- General Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- Preloader Stylesheet -->
+  <link rel="stylesheet" href="css/preloaderstyle.css" />
+  <!-- Boxicons CDN Link -->
+  <link href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css" rel="stylesheet" />
+  <!-- Google Poppins Font -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Poppins" />
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://gelder-group-surveyors.netlify.app//apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://gelder-group-surveyors.netlify.app//favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://gelder-group-surveyors.netlify.app//favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="https://gelder-group-surveyors.netlify.app//safari-pinned-tab.svg" color="#405C59">
+  <meta name="msapplication-TileColor" content="#D22A3A">
+  <meta name="theme-color" content="#ffffff">
 
-  <body>
-    <!-- Preloader container -->
-    <div class="preloader-container">
-      <main class="container">
-        <div class="ring"></div>
-        <div class="ring"></div>
-        <div class="ring"></div>
-      </main>
+</head>
+
+<body>
+  <!-- Preloader container -->
+  <div class="preloader-container">
+    <main class="container">
+      <div class="ring"></div>
+      <div class="ring"></div>
+      <div class="ring"></div>
+    </main>
+  </div>
+
+  <!-- Header Content -->
+  <header>
+    <a href="https://gnet.geldergroup.co.uk/" target="_blank">
+      <img src="img/logo.svg" alt="GelderGroupLogo" />
+    </a>
+    <h1>Gelder Group Surveyors</h1>
+
+    <!-- Dark mode toggle -->
+    <div class="darkmode">
+      <div class="light bx bx-sun"></div>
+      <div class="dark bx bx-moon"></div>
     </div>
+  </header>
 
-    <!-- Header Content -->
-    <header>
-      <a href="https://gnet.geldergroup.co.uk/" target="_blank">
-        <img src="img/logo.svg" alt="GelderGroupLogo" />
-      </a>
-      <h1>Gelder Group Surveyors</h1>
-
-      <!-- Dark mode toggle -->
-      <div class="darkmode">
-        <div class="light bx bx-sun"></div>
-        <div class="dark bx bx-moon"></div>
-      </div>
-    </header>
-
-    <!-- Login Form -->
-    <form id="main-content">
-      <h2>Login Form</h2>
-      <div class="user-box">
-          <input type="text" id="username" name="username" required />
-          <label for="username">Username</label>
-      </div>
-      <div class="user-box">
-          <input type="password" id="password" name="password" required />
-          <label for="password">Password</label>
-          <div class="caps-lock-warning">Caps Lock is on</div>
-      </div>          
-      <button type="submit" id="submitBtn">Submit</button>
+  <!-- Login Form -->
+  <form id="main-content">
+    <h2>Login Form</h2>
+    <div class="user-box">
+      <input type="text" id="username" name="username" required />
+      <label for="username">Username</label>
+    </div>
+    <div class="user-box">
+      <input type="password" id="password" name="password" required />
+      <label for="password">Password</label>
+      <div class="caps-lock-warning">Caps Lock is on</div>
+    </div>
+    <button type="submit" id="submitBtn">Submit</button>
   </form>
 
-    <!-- Footer Content -->
-    <footer>2024 &copy; Gelder Group.</footer>
+  <!-- Footer Content -->
+  <footer>2024 &copy; Gelder Group.</footer>
 
-    <!-- Firebase SDK -->
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-database-compat.js"></script>
-    
-    <!-- Config Script -->
-    <script defer src="js/config.js"></script>
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.2.0/firebase-database-compat.js"></script>
 
-    <!-- Login Script -->
-    <script defer src="js/login.js"></script>
+  <!-- Config Script -->
+  <script defer src="js/config.js"></script>
 
-    <!-- Theme Toggle Script -->
-    <script src="js/darkmode.js"></script>
+  <!-- Login Script -->
+  <script defer src="js/login.js"></script>
 
-    <!-- Theme Script -->
-    <script src="js/theme.js"></script>
+  <!-- Theme Toggle Script -->
+  <script src="js/darkmode.js"></script>
 
-  </body>
+  <!-- Theme Script -->
+  <script src="js/theme.js"></script>
+
+</body>
+
 </html>
